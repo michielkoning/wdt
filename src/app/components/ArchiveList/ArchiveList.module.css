@@ -3,10 +3,7 @@
   gap: var(--spacing-8);
   padding-inline-start: 0;
   list-style: none outside;
-
-  &.highlights {
-    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
-  }
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
 }
 
 .list-item {

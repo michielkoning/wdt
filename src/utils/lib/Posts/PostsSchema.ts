@@ -13,6 +13,8 @@ export const PostsSchema = z.array(
     slug: z.string().transform((val) => `/nieuws/${val}`),
     _embedded: z.object({
       "wp:featuredmedia": z.array(ImageSchema).default([]),
+    }).default({
+      "wp:featuredmedia": []
     }),
   })
 );

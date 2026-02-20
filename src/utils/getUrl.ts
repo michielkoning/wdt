@@ -15,7 +15,6 @@ const getUrl = ({
   excludeId?: number;
   parentId?: number;
 }) => {
-  // const apiUrl = process.env.API_URL;
   const apiUrl = `${process.env.API_URL}/wp-json/wp/v2/`;
 
   const baseUrl = `${apiUrl}${type}/`;
@@ -50,7 +49,6 @@ const getUrl = ({
     url.searchParams.set("slug", slug);
   }
 
-  console.log(url.toString());
   return url.toString();
 };
 

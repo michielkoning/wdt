@@ -2,7 +2,7 @@ import { z } from "zod";
 import { ImageSchema } from "../Images/imageSchema";
 import { ContentSchema } from "../Content/ContentSchema";
 
-export const ProjectSchema = z.array(
+export const ShowSchema = z.array(
   z.object({
     id: z.number(),
     title: z.object({
@@ -17,6 +17,8 @@ export const ProjectSchema = z.array(
     }),
     _embedded: z.object({
       "wp:featuredmedia": z.array(ImageSchema).default([]),
+    }).default({
+      "wp:featuredmedia": []
     }),
   })
 );

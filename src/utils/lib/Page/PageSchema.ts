@@ -17,6 +17,8 @@ export const PageSchema = z.array(
     }),
     _embedded: z.object({
       "wp:featuredmedia": z.array(ImageSchema).default([]),
+    }).default({
+      "wp:featuredmedia": []
     }),
     parent: z.number(),
   })

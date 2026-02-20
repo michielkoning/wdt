@@ -2,10 +2,10 @@ import { notFound } from "next/navigation";
 import fetchData from "utils/fetchData";
 import getUrl from "utils/getUrl";
 import { cache } from "react";
-import { ProjectSchema } from "./ProjectSchema";
-import { getProject } from "./getProject";
+import { ShowSchema } from "./ShowSchema";
+import { getShow } from "./getShow";
 
-export const fetchProject = cache(async (slug: string) => {
+export const fetchShow = cache(async (slug: string) => {
   const url = getUrl({
     type: "shows",
     fields: ["title", "content", "excerpt"],
@@ -13,11 +13,11 @@ export const fetchProject = cache(async (slug: string) => {
     slug,
   });
 
-  const parsed = await fetchData(url, ProjectSchema);
+  const parsed = await fetchData(url, ShowSchema);
 
   if (!parsed.length) {
     notFound();
   }
 
-  return getProject(parsed);
+  return getShow(parsed);
 });

@@ -1,8 +1,8 @@
 import { getImage } from "../Images/getImage";
 import { z } from "zod";
-import { ProjectsSchema } from "./ProjectsSchema";
+import { ShowsSchema } from "./ShowsSchema";
 
-export const getProjects = (entries: z.infer<typeof ProjectsSchema>) => {
+export const getShows = (entries: z.infer<typeof ShowsSchema>) => {
   return entries.map((entry) => {
     return {
       id: entry.id,

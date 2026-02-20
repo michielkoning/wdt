@@ -14,8 +14,8 @@ const ubuntu = Ubuntu({
 
 export const metadata: Metadata = {
   title: {
-    default: "Stichting Frans Corstens",
-    template: "%s | Stichting Frans Corstens",
+    default: "Toneelvereniging WDT Wageningen",
+    template: "%s | Toneelvereniging WDT Wageningen",
   },
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="nl" dir="ltr" className={`${ubuntu.variable}`}>
       <body className={styles.body}>
-        {/* <Header /> */}
+        <Header />
         <main className={styles.main}>{children}</main>
         {/* <Footer /> */}
       </body>

@@ -13,6 +13,8 @@ export const PagesSchema = z.array(
     }),
     _embedded: z.object({
       "wp:featuredmedia": z.array(ImageSchema).default([]),
+    }).default({
+      "wp:featuredmedia": []
     }),
   })
 );

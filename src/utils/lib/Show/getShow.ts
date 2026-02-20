@@ -1,8 +1,8 @@
 import { getImage } from "../Images/getImage";
 import { z } from "zod";
-import { ProjectSchema } from "./ProjectSchema";
+import { ShowSchema } from "./ShowSchema";
 
-export const getProject = (data: z.infer<typeof ProjectSchema>) => {
+export const getShow = (data: z.infer<typeof ShowSchema>) => {
   const entry = data[0];
 
   return {

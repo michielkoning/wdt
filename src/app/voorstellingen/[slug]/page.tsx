@@ -1,14 +1,14 @@
 import { Content } from "./../../components/Content/Content";
 import { Metadata } from "next";
-import { Projects } from "app/components/Projects/Projects";
-import { fetchProject } from "utils/lib/Project/fetchProject";
-import { fetchProjects } from "utils/lib/Projects/fetchProjects";
+import { Shows } from "app/components/Shows/Shows";
+import { fetchShow } from "utils/lib/Show/fetchShow";
+import { fetchShows } from "utils/lib/Shows/fetchShows";
 
 export async function generateStaticParams() {
-  const entries = await fetchProjects({});
+  const entries = await fetchShows({});
 
   return entries.map((page) => ({
-    slug: page.slug.replace("/projecten/", ""),
+    slug: page.slug.replace("/voorstellingen/", ""),
   }));
 }
 export async function generateMetadata({
@@ -18,7 +18,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
 
-  const entry = await fetchProject(slug);
+  const entry = await fetchShow(slug);
 
   return {
     title: entry.title,
@@ -33,7 +33,7 @@ export default async function Post({
 }) {
   const { slug } = await params;
 
-  const entry = await fetchProject(slug);
+  const entry = await fetchShow(slug);
 
   return (
     <>
@@ -43,7 +43,7 @@ export default async function Post({
         image={entry.image}
         id={entry.id}
       />
-      <Projects excludeId={entry.id} />
+      <Shows excludeId={entry.id} />
     </>
   );
 }

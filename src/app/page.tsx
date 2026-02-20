@@ -2,7 +2,7 @@ import { fetchPage } from "./../utils/lib/Page/fetchPage";
 import type { Metadata } from "next";
 import { Content } from "./components/Content/Content";
 import { RelatedPages } from "./components/RelatedPages/RelatedPages";
-import { Projects } from "./components/Projects/Projects";
+import { Shows } from "./components/Shows/Shows";
 import { Posts } from "./components/Posts/Posts";
 
 const POST_ID = 6946;
@@ -28,7 +28,7 @@ export default async function Page() {
   return (
     <>
       <Content {...entry} />
-      <Projects variant="highlights" />
+      <Shows variant="highlights" />
       <RelatedPages parentId={parentId} id={entry.id} title={entry.title} />
       <Posts />
     </>

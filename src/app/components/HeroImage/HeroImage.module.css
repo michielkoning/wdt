@@ -14,11 +14,3 @@
     aspect-ratio: auto;
   }
 }
-
-.svg {
-  position: absolute;
-  inset: auto 0 -1px;
-  display: block;
-  fill: var(--color-dominant);
-  scale: -1 1;
-}

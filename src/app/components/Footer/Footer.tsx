@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 import { FunctionComponent } from "react";
 import { z } from "zod";
 import { fetchPosts } from "utils/lib/Posts/fetchPosts";
-import { fetchProjects } from "utils/lib/Projects/fetchProjects";
+import { fetchShows } from "utils/lib/Shows/fetchShows";
 
 const schema = z.array(
   z.object({
@@ -32,7 +32,7 @@ export const Footer: FunctionComponent = async () => {
   const mainItems = parsed.data.filter((item) => item.menu_item_parent === 0);
 
   const posts = await fetchPosts();
-  const projects = await fetchProjects();
+  const shows = await fetchShows();
 
   const items = mainItems.map((mainItem) => {
     return (
@@ -44,13 +44,6 @@ export const Footer: FunctionComponent = async () => {
 
   return (
     <footer className={styles.footer}>
-      <svg
-        className={styles.svg}
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1920 301"
-      >
-        <path d="M1920 301V143.7C1293.5 19.8 648.5-25 0 15.4V301h1920z" />
-      </svg>
       <CenterWrapper>
         <nav className={styles.nav}>
           <div>
@@ -66,9 +59,9 @@ export const Footer: FunctionComponent = async () => {
             </ul>
           </div>
           <div>
-            <h2>Laatste projecten</h2>
+            <h2>Laatste voorstellingen</h2>
             <ul className={styles.list}>
-              {projects.map((item) => {
+              {shows.map((item) => {
                 return (
                   <li className={styles["list-item"]} key={item.id}>
                     <Link href={item.slug}>{item.title}</Link>
