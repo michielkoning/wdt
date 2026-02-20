@@ -1,0 +1,24 @@
+.image {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+
+  @media (width >= 1024px) {
+    block-size: 30vw;
+    aspect-ratio: auto;
+  }
+}
+
+.svg {
+  position: absolute;
+  inset: auto 0 -1px;
+  display: block;
+  fill: var(--color-dominant);
+  scale: -1 1;
+}

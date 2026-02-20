@@ -1,0 +1,10 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100dvh;
+}
+
+.main {
+  flex: 1 0 auto;
+  padding-block-end: 5vw;
+}

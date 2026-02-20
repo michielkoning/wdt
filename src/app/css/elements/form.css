@@ -1,0 +1,51 @@
+form {
+  margin-block-end: var(--spacing-4);
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  margin-block-end: var(--spacing-2);
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+}
+
+label {
+  display: block;
+  margin-block-end: var(--spacing-1);
+}
+
+textarea {
+  line-height: 1.6;
+  resize: vertical;
+
+  @supports (field-sizing: content) {
+    min-block-size: 7lh;
+    resize: none;
+    field-sizing: content;
+  }
+}
+
+input,
+textarea {
+  display: block;
+  inline-size: 100%;
+  padding: var(--spacing-3) var(--spacing-4);
+  margin-block-end: var(--spacing-1);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: currentcolor;
+  background: transparent;
+  border: 3px solid var(--color-accent);
+  transition: border-color var(--transition);
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent-alternative);
+  }
+}

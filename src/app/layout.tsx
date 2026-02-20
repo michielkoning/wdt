@@ -1,0 +1,36 @@
+import { Ubuntu } from "next/font/google";
+import "./css/globals.css";
+import { Footer } from "./components/Footer/Footer";
+import { Header } from "./components/Header/Header";
+import { Metadata} from "next";
+import styles from "./layout.module.css";
+
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  variable: "--font-family-body",
+  display: "swap",
+  weight: "400",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Stichting Frans Corstens",
+    template: "%s | Stichting Frans Corstens",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="nl" dir="ltr" className={`${ubuntu.variable}`}>
+      <body className={styles.body}>
+        {/* <Header /> */}
+        <main className={styles.main}>{children}</main>
+        {/* <Footer /> */}
+      </body>
+    </html>
+  );
+}

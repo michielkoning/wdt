@@ -1,0 +1,39 @@
+:root {
+  color-scheme: light dark;
+  interpolate-size: allow-keywords;
+}
+
+::selection {
+  color: var(--text-on-accent);
+  background: var(--color-accent);
+}
+
+* {
+  &,
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text-on-dominant);
+  background: var(--color-dominant);
+}
+
+ul,
+ol {
+  padding-inline-start: 1rem;
+  margin: 0 0 var(--spacing-4);
+  list-style-position: outside;
+}
+
+figure {
+  display: block;
+  margin: 0;
+}
