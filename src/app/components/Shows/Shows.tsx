@@ -1,19 +1,42 @@
-import { FunctionComponent } from "react";
+
+'use client'
+
+import { FunctionComponent, useEffect, useState } from "react";
 import { fetchShows } from "utils/lib/Shows/fetchShows";
 import { ThemeProvider } from "../ThemeProvider/ThemeProvider";
 import { CenterWrapper } from "../CenterWrapper/CenterWrapper";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./Shows.module.css";
+import z from "zod";
+import { ImageType } from "../HeroImage/ImageType";
 
 export const Shows: FunctionComponent<{
   excludeId?: number;
   variant?: "highlights" | "list";
-}> = async ({ excludeId, variant }) => {
-  const data = await fetchShows({
-    excludeId,
-  });
+}> = ({ excludeId, variant }) => {
 
+  const [page, setPage] = useState(1)
+   
+  const [data, setData] = useState<{
+    id: number;
+    title: string;
+    description: string;
+    image: ImageType | undefined;
+    slug: string;
+}[]>([])
+
+  useEffect(() => {
+    fetchShows({
+      excludeId,
+      page: page,
+    }).then((response) => {
+      setData(response)
+    })
+  }, [page])  
+
+
+  if (!data) return <p>No profile data</p>  
   if (!data.length) {
     return <p>Geen voorstellingen gevonden</p>;
   }
@@ -38,9 +61,14 @@ export const Shows: FunctionComponent<{
     </li>
   ));
 
-     return (
+  const updatePage = () => {
+    setPage(page + 1)
+  }
+
+  return (
     <ThemeProvider>
         <CenterWrapper>
+          <button onClick={updatePage} type="button">togglePage - {page}</button>
           <ul className={styles.list}>{list}</ul>
         </CenterWrapper>
     </ThemeProvider>

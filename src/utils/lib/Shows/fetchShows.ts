@@ -4,11 +4,12 @@ import { cache } from "react";
 import { ShowsSchema } from "./ShowsSchema";
 import { getShows } from "./getShows";
 
-export const fetchShows = cache(async (props?: { excludeId?: number }) => {
+export const fetchShows = cache(async (props?: { excludeId?: number, page?: number }) => {
   const url = getUrl({
     type: "shows",
     fields: ["title", "excerpt", "slug"],
     image: true,
+    page: props?.page,
     excludeId: props?.excludeId,
   });
 

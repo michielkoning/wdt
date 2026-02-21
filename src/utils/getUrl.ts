@@ -3,6 +3,7 @@ const getUrl = ({
   type,
   id,
   slug,
+  page,
   image,
   excludeId,
   parentId,
@@ -11,12 +12,12 @@ const getUrl = ({
   type: "posts" | "pages" | "shows";
   id?: number;
   slug?: string;
+  page?: number
   image?: boolean;
   excludeId?: number;
   parentId?: number;
 }) => {
-  const apiUrl = `${process.env.API_URL}/wp-json/wp/v2/`;
-
+  const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/wp-json/wp/v2/`;
   const baseUrl = `${apiUrl}${type}/`;
 
   const url = new URL(baseUrl);
@@ -48,7 +49,9 @@ const getUrl = ({
   if (slug) {
     url.searchParams.set("slug", slug);
   }
-
+  if (page) {
+    url.searchParams.set('page', page.toString())
+  }
   return url.toString();
 };
 

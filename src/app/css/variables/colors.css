@@ -8,9 +8,12 @@
   --text-on-accent-theme-light: oklch(93.2% 0.0375 237.0489deg);
 
   /* Dark theme */
-  --color-dominant-theme-dark: oklch(37.98% 0.0937 244.05deg);
-  --color-secondary-theme-dark: oklch(23.79% 0.0151 235.7deg);
-  --color-accent-theme-dark: oklch(75.98% 0.1387 239.03deg);
+  /* #22262A */
+  /* #22262A */
+  /* #22262A */
+  --color-dominant-theme-dark: oklch(0.3182 0.0113 248.18);
+  --color-secondary-theme-dark: oklch(0.2662 0.0095 248.18);
+  --color-accent-theme-dark: oklch(0.4578 0.1729 15.42);
   --text-on-dominant-theme-dark: oklch(100% 0 0deg);
   --text-on-secondary-theme-dark: oklch(100% 0 0deg);
   --text-on-accent-theme-dark: oklch(0% 0 0deg);
