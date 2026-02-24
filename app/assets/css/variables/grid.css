@@ -1,0 +1,6 @@
+:root {
+  --container-size-sm: 26rem;
+  --container-size-md: 48rem;
+  --container-size-lg: 64rem;
+  --gutter: var(--spacing-4);
+}

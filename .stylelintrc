@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-vue",
+    "@stylistic/stylelint-config",
+    "stylelint-config-recess-order"
+  ],
+  "rules": {
+    "import-notation": null,
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["mixin", "define-mixin"]
+      }
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global", "readonly", "deep"]
+      }
+    ],
+    "nesting-selector-no-missing-scoping-root": null,
+    "property-no-deprecated": [true, { "ignoreProperties": ["clip"] }]
+  }
+}

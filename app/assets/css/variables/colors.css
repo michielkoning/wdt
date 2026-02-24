@@ -1,0 +1,55 @@
+:root {
+  /* Light theme */
+  --color-dominant-theme-light: oklch(55.13% 0.1407 245.66deg);
+  --color-secondary-theme-light: oklch(35.73% 0.087 243.3936deg);
+  --color-accent-theme-light: oklch(55.12% 0.1407 245.66deg);
+  --text-on-dominant-theme-light: oklch(35.73% 0.087 243.3936deg);
+  --text-on-secondary-theme-light: oklch(93.2% 0.0375 237.0489deg);
+  --text-on-accent-theme-light: oklch(93.2% 0.0375 237.0489deg);
+
+  /* Dark theme */
+
+  /* #22262A */
+
+  /* #22262A */
+
+  /* #22262A */
+  --color-dominant-theme-dark: oklch(31.82% 0.0113 248.18deg);
+  --color-secondary-theme-dark: oklch(26.62% 0.0095 248.18deg);
+  --color-accent-theme-dark: oklch(45.78% 0.1729 15.42deg);
+  --text-on-dominant-theme-dark: oklch(100% 0 0deg);
+  --text-on-secondary-theme-dark: oklch(100% 0 0deg);
+  --text-on-accent-theme-dark: oklch(0% 0 0deg);
+
+  /* Set colors */
+  --color-dominant:
+    light-dark(
+      var(--color-dominant-theme-light),
+      var(--color-dominant-theme-dark)
+    );
+  --color-secondary:
+    light-dark(
+      var(--color-secondary-theme-light),
+      var(--color-secondary-theme-dark)
+    );
+  --color-accent:
+    light-dark(
+      var(--color-accent-theme-light),
+      var(--color-accent-theme-dark)
+    );
+  --text-on-dominant:
+    light-dark(
+      var(--text-on-dominant-theme-light),
+      var(--text-on-dominant-theme-dark)
+    );
+  --text-on-secondary:
+    light-dark(
+      var(--text-on-secondary-theme-light),
+      var(--text-on-secondary-theme-dark)
+    );
+  --text-on-accent:
+    light-dark(
+      var(--text-on-accent-theme-light),
+      var(--text-on-accent-theme-dark)
+    );
+}
