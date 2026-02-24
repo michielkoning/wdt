@@ -1,7 +1,0 @@
-.content {
-  padding-block: var(--spacing-8) var(--spacing-12);
-
-  p::first-letter {
-    initial-letter: 3;
-  }
-}
