@@ -1,31 +1,27 @@
 <script lang="ts" setup>
 definePageMeta({
-  name: 'home',
+  name: 'post',
   i18n: {
     paths: {
-      nl: '/',
+      nl: '/nieuws/[slug]',
     },
   },
 })
 
-const { data } = useFetch('/api/page', {
+const route = useRoute()
+
+const { data } = useFetch('/api/post', {
   query: {
-    slug: 'home',
+    slug: route.params.slug,
   },
 })
 </script>
 
 <template>
-  <div>
-    <upcoming-show />
-    <center-wrapper
-      v-if="data"
-      size="md"
-    >
+  <div v-if="data">
+    <center-wrapper>
       <h1>{{ data.title }}</h1>
       <div v-html="data.content" />
     </center-wrapper>
-    <post-list />
-    <activity-list />
   </div>
 </template>
