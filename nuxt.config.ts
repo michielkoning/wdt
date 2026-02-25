@@ -8,9 +8,11 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
+    '@vee-validate/nuxt',
   ],
   components: [
     '~/components/Activities',
+    '~/components/Comments',
     '~/components/Forms',
     '~/components/Layout',
     '~/components/Posts',
@@ -25,6 +27,11 @@ export default defineNuxtConfig({
       isCustomElement: (tag: string) =>
         ['search', 'selectedcontent'].includes(tag),
     },
+  },
+  runtimeConfig: {
+    user: '',
+    password: '',
+    apiUrl: '',
   },
   experimental: {
     viewTransition: true,

@@ -53,10 +53,8 @@ export const getUrl = ({
   order?: 'asc' | 'desc'
   locale?: string
 }) => {
-  // const { apiUrl } = useAppConfig()
-  const apiUrl = 'http://wdt.local/wp-json/'
-
-  const baseUrl = `${apiUrl}wp/v2/${type}/`
+  const { apiUrl } = useRuntimeConfig()
+  const baseUrl = `${apiUrl}${type}/`
 
   const url = new URL(baseUrl)
   if (image) {

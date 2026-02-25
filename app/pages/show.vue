@@ -41,6 +41,13 @@ useSeoMeta({
     v-if="data"
     class="test"
   >
+    <comments-list
+      v-if="data.comments.length"
+      :id="data.id"
+      :title="data.title"
+      :comments="data.comments"
+    />
+
     <center-wrapper>
       <div
         class="show"
@@ -78,10 +85,6 @@ useSeoMeta({
     <app-gallery
       v-if="data.gallery.length"
       :images="data.gallery"
-    />
-    <show-comments
-      v-if="data.comments.length"
-      :comments="data.comments"
     />
   </div>
 </template>
