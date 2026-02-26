@@ -3,33 +3,41 @@ const { data } = useFetch('/api/upcomingShow')
 </script>
 
 <template>
-  <div
+  <clickable-wrapper
     v-if="data"
+    :to="$localePath({
+      name: 'show',
+      params: {
+        slug: data.slug,
+      },
+    })"
   >
-    <center-wrapper>
-      <div class="upcoming-show">
-        <app-image
-          v-if="data.image"
-          :image="data.image"
-        />
-        <div>
-          <h1>
-            <nuxt-link-locale
-              :to="{
-                name: 'show',
-                params: {
-                  slug: data.slug,
-                },
-              }"
-            >
-              {{ data.title }}
-            </nuxt-link-locale>
-          </h1>
-          <div v-html="data.excerpt" />
+    <block-wrapper>
+      <center-wrapper>
+        <div class="upcoming-show">
+          <app-image
+            v-if="data.image"
+            :image="data.image"
+          />
+          <div>
+            <h1>
+              <nuxt-link-locale
+                :to="{
+                  name: 'show',
+                  params: {
+                    slug: data.slug,
+                  },
+                }"
+              >
+                {{ data.title }}
+              </nuxt-link-locale>
+            </h1>
+            <div v-html="data.excerpt" />
+          </div>
         </div>
-      </div>
-    </center-wrapper>
-  </div>
+      </center-wrapper>
+    </block-wrapper>
+  </clickable-wrapper>
 </template>
 
 <style lang="css" scoped>

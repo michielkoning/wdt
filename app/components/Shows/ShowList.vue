@@ -6,9 +6,15 @@ defineProps<{
 
 <template>
   <ul v-if="shows.length">
-    <li
+    <clickable-wrapper
       v-for="item in shows"
       :key="item.id"
+      :to="$localePath({
+        name: 'show',
+        params: {
+          slug: item.slug,
+        },
+      })"
     >
       <app-image
         v-if="item.image"
@@ -28,7 +34,7 @@ defineProps<{
           <span v-html="item.title" />
         </nuxt-link-locale>
       </h2>
-    </li>
+    </clickable-wrapper>
   </ul>
 </template>
 
@@ -42,9 +48,20 @@ ul {
   list-style: none outside;
 }
 
+a {
+  text-decoration: none;
+}
+
 li {
   position: relative;
   aspect-ratio: 3 / 4;
+
+  &:hover,
+  &:focus-within {
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 h2 {
@@ -53,10 +70,6 @@ h2 {
   padding: var(--spacing-2);
   margin-bottom: 0;
   background-color: rgb(0 0 0 / 50%);
-}
-
-a {
-  text-decoration: none;
 }
 
 .image {

@@ -40,39 +40,40 @@ useSeoMeta({
   <div
     v-if="data"
   >
-    <center-wrapper>
-      <h1 v-html="data.title" />
-      <div
-        class="show"
-      >
-        <div class="meta-data">
-          <app-image
-            v-if="data.image"
-            :image="data.image"
-          />
+    <block-wrapper>
+      <center-wrapper>
+        <h1 v-html="data.title" />
+        <div
+          class="show"
+        >
+          <div class="meta-data">
+            <app-image
+              v-if="data.image"
+              :image="data.image"
+            />
+          </div>
+          <div class="content">
+            <div v-html="data.excerpt" />
+            <dl>
+              <template v-if="directors.length">
+                <dt>{{ $t('director', directors.length) }}</dt>
+                <dd>{{ directors.join(', ') }}</dd>
+              </template>
+
+              <template v-if="authors.length">
+                <dt>{{ $t('authors', authors.length) }}</dt>
+                <dd>{{ authors.join(', ') }}</dd>
+              </template>
+            </dl>
+
+            <show-dates
+              v-if="data.dates.length"
+              :dates="data.dates"
+            />
+          </div>
         </div>
-        <div class="content">
-          <div v-html="data.excerpt" />
-          <dl>
-            <template v-if="directors.length">
-              <dt>{{ $t('director', directors.length) }}</dt>
-              <dd>{{ directors.join(', ') }}</dd>
-            </template>
-
-            <template v-if="authors.length">
-              <dt>{{ $t('authors', authors.length) }}</dt>
-              <dd>{{ authors.join(', ') }}</dd>
-            </template>
-          </dl>
-
-          <show-dates
-            v-if="data.dates.length"
-            :dates="data.dates"
-          />
-        </div>
-      </div>
-    </center-wrapper>
-
+      </center-wrapper>
+    </block-wrapper>
     <center-wrapper size="md">
       <div
         class="text"

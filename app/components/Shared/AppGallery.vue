@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div class="gallery">
+  <block-wrapper>
     <center-wrapper>
       <ul>
         <li
@@ -33,7 +33,7 @@ defineProps<{
         :image="image"
       />
     </app-modal>
-  </div>
+  </block-wrapper>
 </template>
 
 <style lang="css" scoped>

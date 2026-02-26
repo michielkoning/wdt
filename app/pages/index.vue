@@ -18,13 +18,15 @@ const { data } = useFetch('/api/page', {
 <template>
   <div>
     <upcoming-show />
-    <center-wrapper
-      v-if="data"
-      size="md"
-    >
-      <h1>{{ data.title }}</h1>
-      <div v-html="data.content" />
-    </center-wrapper>
+    <block-wrapper>
+      <center-wrapper
+        v-if="data"
+        size="md"
+      >
+        <h1>{{ data.title }}</h1>
+        <div v-html="data.content" />
+      </center-wrapper>
+    </block-wrapper>
     <post-list />
     <activity-list />
   </div>

@@ -51,7 +51,7 @@ h1 {
 
 nav {
   padding-block: var(--spacing-2);
-  margin-bottom: var(--spacing-8);
+  margin-bottom: var(--spacing-4);
   font-size: var(--font-size-h3);
   background-color: var(--color-secondary);
 }

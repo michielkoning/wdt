@@ -1,13 +1,9 @@
 <script lang="ts" setup>
-const props = withDefaults(
-  defineProps<{
-    to: string
-    external?: boolean
-  }>(),
-  {
-    external: false,
-  },
-)
+import type { RouteLocationRaw } from 'vue-router'
+
+const props = defineProps<{
+  to: RouteLocationRaw
+}>()
 
 const down: Ref<number | null> = ref(null)
 
@@ -29,9 +25,7 @@ const mouseUp = async () => {
   }
   const up = +new Date()
   if (up - down.value < 200) {
-    await navigateTo(props.to, {
-      external: props.external,
-    })
+    await navigateTo(props.to)
   }
 }
 </script>

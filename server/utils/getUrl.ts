@@ -33,7 +33,7 @@ export const getUrl = ({
   locale,
 }: {
   fields: string[]
-  type: 'posts' | 'pages' | 'shows' | 'directors' | 'authors' | 'activities'
+  type: 'posts' | 'pages' | 'shows' | 'directors' | 'authors'
   id?: string
   slug?: string
   page?: number

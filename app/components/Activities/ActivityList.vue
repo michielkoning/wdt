@@ -3,7 +3,7 @@ const { data } = useFetch('/api/activities')
 </script>
 
 <template>
-  <div
+  <block-wrapper
     v-if="data"
     class="activities"
   >
@@ -31,5 +31,5 @@ const { data } = useFetch('/api/activities')
         Geen activiteit gevonden
       </p>
     </center-wrapper>
-  </div>
+  </block-wrapper>
 </template>
