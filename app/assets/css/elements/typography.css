@@ -19,7 +19,8 @@ p {
 h1,
 h2,
 h3 {
-  font-family: var(--font-family-headings);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-normal);
   line-height: var(--line-height-heading);
   text-wrap: balance;
   overflow-wrap: break-word;
@@ -40,11 +41,12 @@ h3 {
   font-size: var(--font-size-h3);
 }
 
+pre,
 blockquote {
   position: relative;
   padding-inline-start: var(--spacing-6);
   margin: var(--spacing-4) var(--spacing-4) var(--spacing-6);
-  font-family: var(--font-family-headings);
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-h2);
   line-height: var(--line-height-heading);
 

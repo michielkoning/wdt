@@ -7,7 +7,7 @@
   --line-height: 1.6;
   --line-height-heading: 1.2;
   --font-family-base: "Bitter", arial, helvetica, sans-serif;
-  --font-family-heading: var(--font-family-base);
+  --font-family-heading: "Cinzel", var(--font-family-base);
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 }

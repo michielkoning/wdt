@@ -12,11 +12,16 @@ const search = ref('')
 const directors: Ref<number[]> = ref([])
 const authors: Ref<number[]> = ref([])
 
+const route = useRoute()
+
+const page = computed(() => route.query.page)
+
 const { data } = useFetch('/api/shows', {
   query: {
     search,
     directors,
     authors,
+    page,
   },
 })
 </script>
@@ -30,9 +35,10 @@ const { data } = useFetch('/api/shows', {
     />
     <div v-if="data">
       <show-list
-        v-if="data.length"
-        :shows="data"
+        v-if="data.items.length"
+        :shows="data.items"
       />
+      <app-pagination :total-pages="data.totalPages" />
     </div>
   </center-wrapper>
 </template>

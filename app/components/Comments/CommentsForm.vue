@@ -10,9 +10,9 @@ const { t } = useI18n()
 
 const validationSchema = toTypedSchema(
   z.object({
-    name: z.string().min(1, { error: t('form.error.required') }).default('Michiel'),
-    email: z.email({ error: t('form.error.email.incorrect') }).default('mail@michielkoning.nl'),
-    comment: z.string().default('Wat een fantastische show'),
+    name: z.string().min(1, { error: t('form.error.required') }).default(''),
+    email: z.email({ error: t('form.error.email.incorrect') }).default(''),
+    comment: z.string().min(1, { error: t('form.error.required') }).default(''),
   }),
 )
 

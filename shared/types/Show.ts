@@ -5,6 +5,7 @@ import type { Comment } from './Comment'
 export type Show = {
   id: number
   title: string
+  excerpt: string
   content: string
   image?: Image
   directors: Taxonomy[]

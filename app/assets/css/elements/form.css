@@ -10,8 +10,9 @@ fieldset {
 legend {
   display: block;
   margin-block-end: var(--spacing-2);
-  font-family: var(--font-family-headings);
+  font-family: var(--font-family-heading);
   font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-normal);
   line-height: var(--line-height-heading);
 }
 
@@ -41,7 +42,7 @@ textarea {
   font-size: var(--font-size-base);
   color: currentcolor;
   background: transparent;
-  border: 3px solid var(--color-accent);
+  border: 3px solid currentcolor;
   transition: border-color var(--transition);
 
   &:focus {

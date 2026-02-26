@@ -10,6 +10,9 @@ export const ShowSchema = z.array(
     content: z.object({
       rendered: z.string(),
     }),
+    excerpt: z.object({
+      rendered: z.string(),
+    }),
     _embedded: z.object({
       'wp:featuredmedia': z.array(ImageSchema).default([]),
       'wp:term': z.array(
@@ -65,6 +68,7 @@ export const ShowSchema = z.array(
     return {
       id: item.id,
       title: item.title.rendered,
+      excerpt: item.excerpt.rendered,
       content: item.content.rendered,
       image: getFeaturedImage(item._embedded['wp:featuredmedia']),
       directors: item._embedded['wp:term'].filter(item => item.taxonomy === 'director').map((taxonomy) => {

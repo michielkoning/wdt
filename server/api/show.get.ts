@@ -18,7 +18,7 @@ export default defineEventHandler(async (event): Promise<Show> => {
     slug: query.data.slug,
     image: true,
     type: 'shows',
-    fields: ['title', 'content', 'acf'],
+    fields: ['title', 'content', 'acf', 'excerpt'],
   })
 
   const response = await $fetch(url)

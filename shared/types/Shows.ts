@@ -6,3 +6,8 @@ export type Shows = {
   image?: Image
   slug: string
 }[]
+
+export type ShowList = {
+  items: Shows
+  totalPages: number
+}

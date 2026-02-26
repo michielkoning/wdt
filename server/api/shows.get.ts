@@ -8,7 +8,7 @@ const querySchema = z.object({
   authors: z.coerce.number().transform(val => [val]).or(z.array(z.coerce.number())).optional(),
 })
 
-export default defineEventHandler(async (event): Promise<Shows> => {
+export default defineCachedEventHandler(async (event): Promise<ShowList> => {
   const query = await getValidatedQuery(event, body => safeParse(querySchema, body))
 
   if (!query.success) {
@@ -22,13 +22,16 @@ export default defineEventHandler(async (event): Promise<Shows> => {
     search: query.data.search,
     directors: query.data.directors,
     authors: query.data.authors,
-    pageSize: 12,
+    pageSize: 6,
     image: true,
     type: 'shows',
     fields: ['title', 'slug', 'excerpt'],
   })
 
-  const response = await $fetch(url)
+  const response = await $fetch.raw(url)
 
-  return parseData(response, ShowsSchema)
+  return parseData({
+    items: response._data,
+    totalPages: response.headers.get('X-WP-TotalPages'),
+  }, ShowsSchema)
 })

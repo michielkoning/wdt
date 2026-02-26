@@ -39,16 +39,9 @@ useSeoMeta({
 <template>
   <div
     v-if="data"
-    class="test"
   >
-    <comments-list
-      v-if="data.comments.length"
-      :id="data.id"
-      :title="data.title"
-      :comments="data.comments"
-    />
-
     <center-wrapper>
+      <h1 v-html="data.title" />
       <div
         class="show"
       >
@@ -57,6 +50,9 @@ useSeoMeta({
             v-if="data.image"
             :image="data.image"
           />
+        </div>
+        <div class="content">
+          <div v-html="data.excerpt" />
           <dl>
             <template v-if="directors.length">
               <dt>{{ $t('director', directors.length) }}</dt>
@@ -68,23 +64,30 @@ useSeoMeta({
               <dd>{{ authors.join(', ') }}</dd>
             </template>
           </dl>
-        </div>
-        <div class="content">
-          <h1 v-html="data.title" />
-          <div
-            class="text"
-            v-html="data.content"
+
+          <show-dates
+            v-if="data.dates.length"
+            :dates="data.dates"
           />
         </div>
       </div>
     </center-wrapper>
-    <show-dates
-      v-if="data.dates.length"
-      :dates="data.dates"
-    />
+
+    <center-wrapper size="md">
+      <div
+        class="text"
+        v-html="data.content"
+      />
+    </center-wrapper>
     <app-gallery
       v-if="data.gallery.length"
       :images="data.gallery"
+    />
+    <comments-list
+      v-if="data.comments.length"
+      :id="data.id"
+      :title="data.title"
+      :comments="data.comments"
     />
   </div>
 </template>
@@ -93,11 +96,12 @@ useSeoMeta({
 .show {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: var(--spacing-4);
+  gap: var(--spacing-8);
 }
 
 .text::first-letter {
   margin-right: 0.25em;
+  font-family: var(--font-family-heading);
   initial-letter: 2;
 }
 </style>
