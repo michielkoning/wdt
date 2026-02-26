@@ -2,7 +2,7 @@ import { UpcomingActivitiesSchema } from '../schemas/UpcomingActivitiesSchema'
 
 export default defineEventHandler(async () => {
   const url = getUrl({
-    type: 'activities',
+    type: 'posts',
     fields: ['title', 'acf', 'slug'],
     dateAfter: new Date(),
   })

@@ -3,5 +3,5 @@ export type Activity = {
   title: string
   id: number
   slug: string
-  type: 'show' | 'activity'
+  type: 'show' | 'post'
 }

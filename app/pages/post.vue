@@ -21,7 +21,11 @@ const { data } = useFetch('/api/post', {
   <div v-if="data">
     <center-wrapper>
       <h1>{{ data.title }}</h1>
-      <div v-html="data.content" />
+      <div
+        :exclude-id="data.id"
+        v-html="data.content"
+      />
     </center-wrapper>
+    <post-list />
   </div>
 </template>

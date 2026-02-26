@@ -17,7 +17,7 @@ export const UpcomingActivitiesSchema = z.array(
       id: item.id,
       title: item.title.rendered,
       date: item.acf.date,
-      type: 'activity',
+      type: 'post',
     }
   }),
 )
