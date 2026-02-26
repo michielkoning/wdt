@@ -51,6 +51,7 @@ useSeoMeta({
               v-if="data.image"
               :image="data.image"
             />
+            <app-button title="Koop kaarten" />
           </div>
           <div class="content">
             <div v-html="data.excerpt" />
@@ -74,12 +75,14 @@ useSeoMeta({
         </div>
       </center-wrapper>
     </block-wrapper>
-    <center-wrapper size="md">
-      <div
-        class="text"
-        v-html="data.content"
-      />
-    </center-wrapper>
+    <block-wrapper>
+      <center-wrapper size="md">
+        <div
+          class="text"
+          v-html="data.content"
+        />
+      </center-wrapper>
+    </block-wrapper>
     <app-gallery
       v-if="data.gallery.length"
       :images="data.gallery"

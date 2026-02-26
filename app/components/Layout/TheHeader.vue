@@ -28,6 +28,15 @@
           <li>
             <nuxt-link-locale
               :to="{
+                name: 'posts',
+              }"
+            >
+              Berichten
+            </nuxt-link-locale>
+          </li>
+          <li>
+            <nuxt-link-locale
+              :to="{
                 name: 'page',
                 params: {
                   slug: 'over-wdt',

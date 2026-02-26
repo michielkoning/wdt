@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '~/components/Posts',
     '~/components/Shows',
     '~/components/Shared',
+    '~/components/Wrappers',
   ],
   devtools: { enabled: true },
 

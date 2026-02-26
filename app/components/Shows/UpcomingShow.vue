@@ -29,7 +29,7 @@ const { data } = useFetch('/api/upcomingShow')
                   },
                 }"
               >
-                {{ data.title }}
+                <span v-html="data.title" />
               </nuxt-link-locale>
             </h1>
             <div v-html="data.excerpt" />

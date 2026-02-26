@@ -22,10 +22,12 @@ const { data } = useFetch('/api/post', {
     <center-wrapper>
       <h1>{{ data.title }}</h1>
       <div
-        :exclude-id="data.id"
         v-html="data.content"
       />
     </center-wrapper>
-    <post-list />
+    <post-list
+      :exclude-id="data.id"
+      variant="latest"
+    />
   </div>
 </template>

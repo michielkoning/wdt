@@ -1,16 +1,48 @@
 <script lang="ts" setup>
-const { data } = useFetch('/api/posts')
+import AppButton from '../Shared/AppButton.vue'
+import AppPagination from '../Shared/AppPagination.vue'
+
+const props = withDefaults(defineProps<{
+  variant?: 'all' | 'latest'
+  excludeId?: number
+}>(), {
+  variant: 'all',
+  excludeId: undefined,
+})
+
+const route = useRoute()
+const page = computed(() => route.query.page)
+
+const { data } = useFetch('/api/posts', {
+  query: {
+    pageSize: props.variant === 'all' ? 6 : 3,
+    page,
+    excludeId: props.excludeId,
+  },
+})
+
+const title = computed(() => {
+  if (props.excludeId) {
+    return 'Overige berichten'
+  }
+  else if (props.variant === 'latest') {
+    return 'Laatste berichten'
+  }
+  else {
+    return 'Alle berichten'
+  }
+})
 </script>
 
 <template>
   <block-wrapper v-if="data">
     <center-wrapper>
       <h2>
-        Laatste berichten
+        {{ title }}
       </h2>
-      <ul v-if="data.length">
+      <ul v-if="data.items.length">
         <clickable-wrapper
-          v-for="item in data"
+          v-for="item in data.items"
           :key="item.id"
           :to="$localePath({
             name: 'post',
@@ -43,6 +75,17 @@ const { data } = useFetch('/api/posts')
           </div>
         </clickable-wrapper>
       </ul>
+      <app-pagination
+        v-if="variant==='all'"
+        :total-pages="data.totalPages"
+      />
+      <app-button
+        v-else
+        title="Alle berichten"
+        :to="{
+          name: 'posts',
+        }"
+      />
     </center-wrapper>
   </block-wrapper>
 </template>

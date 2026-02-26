@@ -27,7 +27,7 @@ const { data } = useFetch('/api/page', {
         <div v-html="data.content" />
       </center-wrapper>
     </block-wrapper>
-    <post-list />
+    <post-list variant="latest" />
     <activity-list />
   </div>
 </template>

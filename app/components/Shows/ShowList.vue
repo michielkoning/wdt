@@ -73,13 +73,11 @@ h2 {
 }
 
 .image {
-  display: block;
-  width: 100%;
   height: 100%;
-  object-fit: cover;
 
   &:deep(img) {
     height: 100%;
+    object-fit: cover;
   }
 }
 </style>

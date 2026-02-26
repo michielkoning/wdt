@@ -23,7 +23,7 @@ const { data } = useFetch('/api/activities')
               },
             }"
           >
-            {{ item.title }}
+            <span v-html="item.title" />
           </nuxt-link-locale>
         </li>
       </ul>

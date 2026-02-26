@@ -10,7 +10,7 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
 
 <template>
   <div
-    v-if="totalPages > 0"
+    v-if="totalPages > 1"
     class="paging"
   >
     <nuxt-link-locale
