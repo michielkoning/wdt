@@ -23,6 +23,10 @@ export default defineNuxtModule({
         return
       }
 
+      // if (true) {
+      return
+      // }
+
       const baseURL = 'https://test.wdttoneel.nl/'
 
       addPrerenderRoutes(defaultRoutes)

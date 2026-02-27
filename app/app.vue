@@ -9,9 +9,20 @@ useHead({
 </script>
 
 <template>
-  <nuxt-layout>
-    <nuxt-page />
-  </nuxt-layout>
+  <div class="page">
+    <nuxt-route-announcer />
+    <nuxt-loading-indicator color="var(--color-accent)" />
+    <slot />
+    <the-header />
+
+    <main
+      id="content"
+      class="main"
+      tabindex="-1"
+    >
+      <nuxt-page />
+    </main>
+  </div>
 </template>
 
 <style lang="css" scoped>
