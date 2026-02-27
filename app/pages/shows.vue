@@ -27,6 +27,11 @@ const { data } = useFetch('/api/shows', {
   onRequest: start,
   onResponse: finish,
 })
+
+useSeoMeta({
+  title: () => 'Voorstellingen',
+  ogTitle: () => 'Voorstellingen',
+})
 </script>
 
 <template>

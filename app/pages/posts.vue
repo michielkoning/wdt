@@ -7,6 +7,11 @@ definePageMeta({
     },
   },
 })
+
+useSeoMeta({
+  title: () => 'Nieuws',
+  ogTitle: () => 'Nieuws',
+})
 </script>
 
 <template>

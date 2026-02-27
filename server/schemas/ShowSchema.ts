@@ -6,7 +6,7 @@ export const ShowSchema = z.array(
     id: z.number(),
     title: z.object({
       rendered: z.string(),
-    }),
+    }).transform(val => val.rendered.replaceAll('&#038;', '&')),
     content: z.object({
       rendered: z.string(),
     }),
@@ -67,7 +67,7 @@ export const ShowSchema = z.array(
   }).transform((item) => {
     return {
       id: item.id,
-      title: item.title.rendered,
+      title: item.title,
       excerpt: item.excerpt.rendered,
       content: item.content.rendered,
       image: getFeaturedImage(item._embedded['wp:featuredmedia']),

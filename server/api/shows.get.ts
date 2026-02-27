@@ -22,7 +22,7 @@ export default defineCachedEventHandler(async (event): Promise<ShowList> => {
     search: query.data.search,
     directors: query.data.directors,
     authors: query.data.authors,
-    pageSize: 6,
+    pageSize: 12,
     image: true,
     type: 'shows',
     fields: ['title', 'slug', 'excerpt'],

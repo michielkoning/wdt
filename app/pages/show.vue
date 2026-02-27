@@ -42,7 +42,7 @@ useSeoMeta({
   >
     <block-wrapper>
       <center-wrapper>
-        <h1 v-html="data.title" />
+        <h1>{{ data.title }}</h1>
         <div
           class="show"
         >

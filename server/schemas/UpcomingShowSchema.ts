@@ -6,7 +6,7 @@ export const UpcomingShowSchema = z.array(
     id: z.number(),
     title: z.object({
       rendered: z.string(),
-    }),
+    }).transform(val => val.rendered.replaceAll('&#038;', '&')),
     excerpt: z.object({
       rendered: z.string(),
     }),
@@ -31,7 +31,7 @@ export const UpcomingShowSchema = z.array(
     return {
       excerpt: item.excerpt.rendered,
       id: item.id,
-      title: item.title.rendered,
+      title: item.title,
       dates: item.acf.dates.map(item => item.date),
       slug: item.slug,
       image: getFeaturedImage(item._embedded['wp:featuredmedia']),

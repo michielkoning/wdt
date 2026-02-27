@@ -31,7 +31,7 @@ defineProps<{
             },
           }"
         >
-          <span v-html="item.title" />
+          {{ item.title }}
         </nuxt-link-locale>
       </h2>
     </clickable-wrapper>

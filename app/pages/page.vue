@@ -15,6 +15,11 @@ const { data } = useFetch('/api/page', {
     slug: route.params.slug,
   },
 })
+
+useSeoMeta({
+  title: () => data.value?.title,
+  ogTitle: () => data.value?.title,
+})
 </script>
 
 <template>
