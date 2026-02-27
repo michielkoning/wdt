@@ -40,12 +40,19 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-07-15',
   nitro: {
-    storage: {
+    devStorage: {
       cache: {
         driver: 'fs',
         base: './.nuxt/cache',
       },
     },
+    storage: {
+      cache: {
+        driver: 'netlify-blobs',
+        name: 'cache',
+      },
+    },
+
   },
   typescript: {
     typeCheck: true,
@@ -117,7 +124,8 @@ export default defineNuxtConfig({
     ],
   },
   image: {
-    domains: ['wdt.local'],
+    provider: 'netlify',
+    domains: ['wdt.local', 'test.wdttoneel.nl'],
   },
   stylelint: {
     lintOnStart: true,
