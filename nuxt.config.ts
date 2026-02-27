@@ -40,6 +40,9 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-07-15',
   nitro: {
+    routeRules: {
+      '/voorstellingen/**': { swr: true },
+    },
     preset: 'netlify',
     prerender: {
       interval: 3000,
@@ -53,9 +56,9 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
-        driver: 'null',
-        // driver: 'netlify-blobs',
-        // name: 'cache',
+        // driver: 'null',
+        driver: 'netlify-blobs',
+        name: 'cache',
       },
     },
 

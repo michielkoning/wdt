@@ -14,7 +14,7 @@ const pauseFetching = () => {
 
 const defaultRoutes = [
   '/',
-  '/voorstellingen',
+  '/nieuws',
 ]
 export default defineNuxtModule({
   hooks: {
@@ -23,13 +23,10 @@ export default defineNuxtModule({
         return
       }
 
-      // if (true) {
-      return
-      // }
-
       const baseURL = 'https://test.wdttoneel.nl/'
 
       addPrerenderRoutes(defaultRoutes)
+      return
 
       const fetchPagesByType = async (
         type: 'posts' | 'shows' | 'pages',
