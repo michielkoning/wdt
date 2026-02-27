@@ -3,7 +3,7 @@ definePageMeta({
   name: 'posts',
   i18n: {
     paths: {
-      nl: '/berichten',
+      nl: '/nieuws',
     },
   },
 })

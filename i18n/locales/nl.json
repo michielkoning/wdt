@@ -1,5 +1,16 @@
 {
   "director": "Regiseur | Regiseurs",
   "authors": "Auteur | Auteurs",
-  "comments": "Geen reacties | Eén reactie | {count} reacties"
+  "comments": "Geen reacties | Eén reactie | {count} reacties",
+  "form": {
+    "comment": "Reactie",
+    "email": "E-mailadres",
+    "name": "Naam",
+    "error": {
+      "required": "Dit is een verplicht veld.",
+      "email": {
+        "incorrect": "Vul een geldige e-mailadres in."
+      }
+    }
+  }
 }

@@ -35,12 +35,12 @@ export default defineNuxtConfig({
     apiUrl: '',
   },
   experimental: {
-    viewTransition: true,
+    // viewTransition: true,
   },
 
   compatibilityDate: '2025-07-15',
   nitro: {
-    // preset: 'netlify',
+    preset: 'netlify',
     prerender: {
       interval: 3000,
       concurrency: 5,
@@ -130,7 +130,6 @@ export default defineNuxtConfig({
     ],
   },
   image: {
-    provider: 'netlify',
     domains: ['wdt.local', 'test.wdttoneel.nl'],
   },
   stylelint: {
