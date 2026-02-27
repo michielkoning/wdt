@@ -14,7 +14,7 @@ const authors = defineModel<number[]>('authors', {
 
 <template>
   <search>
-    <form>
+    <form @submit.prevent>
       <div class="search">
         <search-field
           v-model="search"
