@@ -40,6 +40,11 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-07-15',
   nitro: {
+    // preset: 'netlify',
+    prerender: {
+      interval: 3000,
+      concurrency: 5,
+    },
     devStorage: {
       cache: {
         driver: 'fs',
