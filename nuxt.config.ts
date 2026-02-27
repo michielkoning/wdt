@@ -20,7 +20,9 @@ export default defineNuxtConfig({
     '~/components/Shared',
     '~/components/Wrappers',
   ],
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+  },
 
   css: ['~/assets/css/base.css'],
   vue: {
@@ -41,8 +43,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   nitro: {
     routeRules: {
-      '/voorstellingen/**': {
-        isr: true,
+      '/**/*': {
+        isr: 60 * 60,
+      },
+      '/**/api': {
+        isr: false,
       },
     },
     preset: 'netlify',
