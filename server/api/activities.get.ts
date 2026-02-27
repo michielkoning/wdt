@@ -1,4 +1,4 @@
-export default defineEventHandler(async () => {
+export default defineCachedEventHandler(async () => {
   const upcomingActivitiesResponse = async () => await $fetch('/api/upcomingActivities')
   const upcomingShowsResponse = async () => await $fetch('/api/upcomingShows')
 

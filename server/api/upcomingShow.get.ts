@@ -1,6 +1,6 @@
 import { UpcomingShowSchema } from '../schemas/UpcomingShowSchema'
 
-export default defineEventHandler(async (event) => {
+export default defineCachedEventHandler(async (event) => {
   const url = getUrl({
     image: true,
     type: 'shows',

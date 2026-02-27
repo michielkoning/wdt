@@ -1,6 +1,6 @@
 import { UpcomingActivitiesSchema } from '../schemas/UpcomingActivitiesSchema'
 
-export default defineEventHandler(async () => {
+export default defineCachedEventHandler(async () => {
   const url = getUrl({
     type: 'posts',
     fields: ['title', 'acf', 'slug'],

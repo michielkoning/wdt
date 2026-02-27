@@ -5,7 +5,7 @@ const querySchema = z.object({
   type: z.literal(['authors', 'directors']),
 })
 
-export default defineEventHandler(async (event): Promise<Taxonomy[]> => {
+export default defineCachedEventHandler(async (event): Promise<Taxonomy[]> => {
   const query = await getValidatedQuery(event, input => safeParse(querySchema, input))
 
   if (!query.success) {

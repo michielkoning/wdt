@@ -11,6 +11,7 @@ definePageMeta({
 const search = ref('')
 const directors: Ref<number[]> = ref([])
 const authors: Ref<number[]> = ref([])
+const { start, finish } = useLoadingIndicator()
 
 const route = useRoute()
 
@@ -23,6 +24,8 @@ const { data } = useFetch('/api/shows', {
     authors,
     page,
   },
+  onRequest: start,
+  onResponse: finish,
 })
 </script>
 

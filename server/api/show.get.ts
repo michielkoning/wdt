@@ -5,7 +5,7 @@ const querySchema = z.object({
   slug: z.string(),
 })
 
-export default defineEventHandler(async (event): Promise<Show> => {
+export default defineCachedEventHandler(async (event): Promise<Show> => {
   const query = await getValidatedQuery(event, input => safeParse(querySchema, input))
 
   if (!query.success) {

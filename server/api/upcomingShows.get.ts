@@ -1,6 +1,6 @@
 import { UpcomingShowsSchema } from '../schemas/UpcomingShowsSchema'
 
-export default defineEventHandler(async () => {
+export default defineCachedEventHandler(async () => {
   const url = getUrl({
     type: 'shows',
     fields: ['title', 'acf', 'slug'],

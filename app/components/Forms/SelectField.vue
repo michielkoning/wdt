@@ -20,13 +20,15 @@ const model = defineModel<number[]>({
     v-model="model"
     :name="type"
   >
-    <button>
-      <selectedcontent />
-      <icon
-        name="solar:alt-arrow-down-outline"
-        class="icon"
-      />
-    </button>
+    <client-only>
+      <button>
+        <selectedcontent />
+        <icon
+          name="solar:alt-arrow-down-outline"
+          class="icon"
+        />
+      </button>
+    </client-only>
     <option />
     <option
       v-for="item in data"
