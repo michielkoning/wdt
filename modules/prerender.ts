@@ -56,7 +56,7 @@ export default defineNuxtModule({
         }
       }
       await fetchPagesByType('shows')
-      await fetchPagesByType('posts')
+      // await fetchPagesByType('posts')
       await fetchPagesByType('pages')
     },
 
