@@ -1,9 +1,12 @@
 <script lang="ts" setup>
 import type { RouteLocationRaw } from 'vue-router'
 
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   to: RouteLocationRaw
-}>()
+  tag?: 'div' | 'li'
+}>(), {
+  tag: 'li',
+})
 
 const down: Ref<number | null> = ref(null)
 
@@ -31,13 +34,14 @@ const mouseUp = async () => {
 </script>
 
 <template>
-  <li
+  <component
+    :is="tag"
     class="item"
     @mousedown.left="mouseDown"
     @mouseup.left="mouseUp"
   >
     <slot />
-  </li>
+  </component>
 </template>
 
 <style lang="css" scoped>

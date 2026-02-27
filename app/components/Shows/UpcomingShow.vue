@@ -5,6 +5,7 @@ const { data } = useFetch('/api/upcomingShow')
 <template>
   <clickable-wrapper
     v-if="data"
+    tag="div"
     :to="$localePath({
       name: 'show',
       params: {
