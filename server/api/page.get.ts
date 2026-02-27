@@ -6,7 +6,7 @@ const querySchema = z.object({
 })
 
 export default defineCachedEventHandler(async (event): Promise<Page> => {
-  const query = await getValidatedQuery(event, body => safeParse(querySchema, body))
+  const query = await getValidatedQuery(event, input => safeParse(querySchema, input))
 
   if (!query.success) {
     throw createError({

@@ -9,7 +9,7 @@ const querySchema = z.object({
 })
 
 export default defineCachedEventHandler(async (event): Promise<ShowList> => {
-  const query = await getValidatedQuery(event, body => safeParse(querySchema, body))
+  const query = await getValidatedQuery(event, input => safeParse(querySchema, input))
 
   if (!query.success) {
     throw createError({
@@ -34,4 +34,21 @@ export default defineCachedEventHandler(async (event): Promise<ShowList> => {
     items: response._data,
     totalPages: response.headers.get('X-WP-TotalPages'),
   }, ShowsSchema)
+}, {
+  shouldBypassCache: async (event) => {
+    const query = await getValidatedQuery(event, input => safeParse(querySchema, input))
+    if (!query.success) {
+      return true
+    }
+    if (query.data.authors) {
+      return true
+    }
+    if (query.data.directors) {
+      return true
+    }
+    if (query.data.search) {
+      return true
+    }
+    return false
+  },
 })

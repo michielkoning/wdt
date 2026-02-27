@@ -41,7 +41,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   nitro: {
     routeRules: {
-      '/voorstellingen/**': { swr: true },
+      '/voorstellingen/**': {
+        isr: true,
+      },
     },
     preset: 'netlify',
     prerender: {

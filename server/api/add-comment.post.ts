@@ -8,7 +8,7 @@ const bodySchema = z.object({
 })
 
 export default defineEventHandler(async (event) => {
-  const body = await readValidatedBody(event, data => z.safeParse(bodySchema, data))
+  const body = await readValidatedBody(event, input => z.safeParse(bodySchema, input))
   const ip = getRequestIP(event)
 
   if (!body.success) {
