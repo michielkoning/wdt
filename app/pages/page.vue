@@ -24,7 +24,7 @@ useSeoMeta({
 
 <template>
   <div v-if="data">
-    <center-wrapper>
+    <center-wrapper size="md">
       <h1>{{ data.title }}</h1>
       <div v-html="data.content" />
     </center-wrapper>

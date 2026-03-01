@@ -12,27 +12,21 @@ defineProps<{
           v-for="image in images"
           :key="image.id"
         >
-          <app-image :image="image" />
+          <button
+            commandfor="gallery"
+            command="show-modal"
+            type="button"
+          >
+            <app-image :image="image" />
+          </button>
         </li>
       </ul>
     </center-wrapper>
 
-    <button
-      commandfor="gallery"
-      command="show-modal"
-    >
-      show-modal
-    </button>
-
-    <app-modal
+    <gallery-modal
       id="gallery"
-    >
-      <app-image
-        v-for="image in images"
-        :key="image.id"
-        :image="image"
-      />
-    </app-modal>
+      :images="images"
+    />
   </block-wrapper>
 </template>
 
@@ -72,6 +66,12 @@ li {
   &:nth-child(8n + 8) {
     grid-column: span 3;
   }
+}
+
+button {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .image :deep(img) {

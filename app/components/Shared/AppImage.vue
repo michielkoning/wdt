@@ -19,22 +19,18 @@ const loading = computed(() => {
 </script>
 
 <template>
-  <div
-    :id="`image-${image.id}`"
+  <nuxt-picture
+    :sizes="sizes"
+    :alt="image.alt ? image.alt : ''"
+    :loading="loading"
+    :src="image.src"
+    :preload="loading === 'eager'"
+    :width="image.width"
+    :quality="100"
+    :height="image.height"
+    format="avif,webp"
     class="image"
-  >
-    <nuxt-picture
-      :sizes="sizes"
-      :alt="image.alt ? image.alt : ''"
-      :loading="loading"
-      :src="image.src"
-      :preload="loading === 'eager'"
-      :width="image.width"
-      :quality="100"
-      :height="image.height"
-      format="avif,webp"
-    />
-  </div>
+  />
 </template>
 
 <style lang="css" scoped>
@@ -42,10 +38,5 @@ const loading = computed(() => {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.image[id] {
-  view-transition-name: attr(id type(<custom-ident>), none); /* card-1, card-2, card-3, … */
-  view-transition-class: image;
 }
 </style>

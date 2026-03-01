@@ -2,13 +2,25 @@
 defineProps<{
   id: string
 }>()
+
+const emit = defineEmits(['open'])
+const dialog = useTemplateRef('dialog')
+
+const afterOpen = () => {
+  if (!dialog.value) {
+    return
+  }
+  emit('open')
+}
 </script>
 
 <template>
   <dialog
     :id="id"
+    ref="dialog"
     class="gallery-dialog"
     closedby="any"
+    @toggle="afterOpen"
   >
     <div class="header">
       <button
