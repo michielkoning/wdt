@@ -42,14 +42,14 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2025-07-15',
   nitro: {
-    routeRules: {
-      '/**': {
-        isr: 60 * 60,
-      },
-      '/api': {
-        isr: false,
-      },
-    },
+    // routeRules: {
+    //   '/**': {
+    //     isr: 60 * 60,
+    //   },
+    //   '/api': {
+    //     isr: false,
+    //   },
+    // },
     preset: 'netlify',
     prerender: {
       interval: 3000,
@@ -63,8 +63,8 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
-        // driver: 'null',
-        driver: 'netlify-blobs',
+        driver: 'null',
+        // driver: 'netlify-blobs',
         name: 'cache',
       },
     },
