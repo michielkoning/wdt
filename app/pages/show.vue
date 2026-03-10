@@ -40,7 +40,7 @@ useSeoMeta({
   <div
     v-if="data"
   >
-    <block-wrapper>
+    <theme-wrapper variant="dominant">
       <center-wrapper>
         <h1>{{ data.title }}</h1>
         <div
@@ -50,43 +50,49 @@ useSeoMeta({
             <app-image
               v-if="data.image"
               :image="data.image"
+              class="featured-image"
             />
-            <app-button title="Koop kaarten" />
+            <app-button
+              title="Koop kaarten"
+              class="btn"
+            />
           </div>
           <div class="content">
-            <div v-html="data.excerpt" />
-            <dl>
-              <template v-if="directors.length">
-                <dt>{{ $t('director', directors.length) }}</dt>
-                <dd>{{ directors.join(', ') }}</dd>
-              </template>
+            <theme-wrapper variant="white">
+              <div v-html="data.excerpt" />
+              <dl>
+                <template v-if="directors.length">
+                  <dt>{{ $t('director', directors.length) }}</dt>
+                  <dd>{{ directors.join(', ') }}</dd>
+                </template>
 
-              <template v-if="authors.length">
-                <dt>{{ $t('authors', authors.length) }}</dt>
-                <dd>{{ authors.join(', ') }}</dd>
-              </template>
-            </dl>
+                <template v-if="authors.length">
+                  <dt>{{ $t('authors', authors.length) }}</dt>
+                  <dd>{{ authors.join(', ') }}</dd>
+                </template>
+              </dl>
 
-            <show-dates
-              v-if="data.dates.length"
-              :dates="data.dates"
-            />
+              <show-dates
+                v-if="data.dates.length"
+                :dates="data.dates"
+              />
+            </theme-wrapper>
           </div>
         </div>
       </center-wrapper>
-    </block-wrapper>
-    <block-wrapper>
+
       <center-wrapper size="md">
         <div
           class="text"
           v-html="data.content"
         />
       </center-wrapper>
-    </block-wrapper>
+    </theme-wrapper>
     <app-gallery
       v-if="data.gallery.length"
       :images="data.gallery"
     />
+
     <comments-list
       v-if="data.comments.length"
       :id="data.id"
@@ -101,11 +107,20 @@ useSeoMeta({
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
 }
 
 .text::first-letter {
   margin-right: 0.25em;
   font-family: var(--font-family-heading);
   initial-letter: 2;
+}
+
+.btn {
+  width: 100%;
+}
+
+.featured-image {
+  margin-bottom: var(--spacing-4);
 }
 </style>

@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <block-wrapper>
-    <center-wrapper>
+    <center-wrapper size="full">
       <ul>
         <li
           v-for="image in images"
@@ -32,12 +32,11 @@ defineProps<{
 
 <style lang="css" scoped>
 ul {
+  @mixin list-reset;
+
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: var(--spacing-2);
-  padding: 0;
-  margin: var(--spacing-4) calc(var(--spacing-2) * -1);
-  list-style: none outside;
 }
 
 img {

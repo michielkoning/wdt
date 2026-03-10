@@ -18,13 +18,12 @@
 
 html {
   text-size-adjust: 100%;
-  scrollbar-gutter: stable;
 }
 
 body {
   margin: 0;
-  color: var(--text-on-dominant);
-  background: var(--color-dominant);
+  color: var(--text-on-secondary);
+  background: var(--color-secondary);
 }
 
 ul,
@@ -45,7 +44,7 @@ img {
 }
 
 dl {
-  margin-bottom: var(--spacing-4);
+  margin: 0 0 var(--spacing-4);
 }
 
 dt {

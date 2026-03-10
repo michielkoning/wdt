@@ -51,10 +51,11 @@ const cssClasses = computed(() => {
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-heading);
+  color: var(--text-on-secondary);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  background-color: var(--color-accent);
+  background-color: var(--color-secondary);
   border: 2px solid transparent;
   transition: background-color var(--transition);
 

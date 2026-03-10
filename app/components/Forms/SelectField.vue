@@ -29,7 +29,6 @@ const model = defineModel<number[]>({
         />
       </button>
     </client-only>
-    <option />
     <option
       v-for="item in data"
       :key="item.id"
@@ -46,7 +45,6 @@ const model = defineModel<number[]>({
 }
 
 select {
-  padding: var(--spacing-2) var(--spacing-4);
   appearance: base-select;
   cursor: pointer;
 
@@ -61,6 +59,8 @@ button {
   display: flex;
   gap: var(--spacing-2);
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 ::picker-icon,
@@ -69,20 +69,31 @@ button {
 }
 
 ::picker(select) {
+  margin-top: var(--spacing-1);
   appearance: base-select;
+  border: 2px solid var(--text-on-dominant);
 }
 
 option {
   padding: var(--spacing-2);
-  border-left: 2px solid transparent;
+  color: var(--text-on-dominant);
+  background-color: var(--color-dominant);
+  border-left: 3px solid transparent;
 
   &:hover {
-    background-color: grey;
+    color: var(--text-on-secondary);
+    background-color: var(--color-secondary);
   }
 
   &:checked {
-    background-color: lightgreen;
-    border-left-color: green;
+    color: var(--text-on-dominant);
+    background-color: var(--color-dominant);
+    border-left-color: var(--text-on-dominant);
+
+    &:hover {
+      color: var(--text-on-secondary);
+      background-color: var(--color-secondary);
+    }
   }
 }
 </style>

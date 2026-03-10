@@ -35,7 +35,10 @@ const title = computed(() => {
 </script>
 
 <template>
-  <block-wrapper v-if="data">
+  <theme-wrapper
+    v-if="data"
+    variant="dominant"
+  >
     <center-wrapper>
       <h2>
         {{ title }}
@@ -87,7 +90,7 @@ const title = computed(() => {
         }"
       />
     </center-wrapper>
-  </block-wrapper>
+  </theme-wrapper>
 </template>
 
 <style lang="css" scoped>

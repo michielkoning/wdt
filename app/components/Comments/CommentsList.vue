@@ -35,9 +35,7 @@ defineProps<{
 
 <style lang="css" scoped>
 ul {
-  padding-inline-start: 0;
-  margin-bottom: var(--spacing-4);
-  list-style: none outside;
+  @mixin list-reset;
 }
 
 .date {

@@ -6,7 +6,7 @@ export const UpcomingShowsSchema = z.array(
     id: z.number(),
     title: z.object({
       rendered: z.string(),
-    }).transform(val => val.rendered.replaceAll('&#038;', '&')),
+    }).transform(val => parseTitle(val.rendered)),
     acf: z.object({
       dates: z.literal(false).or(z.array(z.object({
         date: z.string(),

@@ -14,11 +14,11 @@
   /* #22262A */
 
   /* #22262A */
-  --color-dominant-theme-dark: oklch(31.82% 0.0113 248.18deg);
-  --color-secondary-theme-dark: oklch(26.62% 0.0095 248.18deg);
+  --color-dominant-theme-dark: #f7f2eb;
+  --color-secondary-theme-dark: #ac4747;
   --color-accent-theme-dark: oklch(45.78% 0.1729 15.42deg);
-  --text-on-dominant-theme-dark: oklch(100% 0 0deg);
-  --text-on-secondary-theme-dark: oklch(100% 0 0deg);
+  --text-on-dominant-theme-dark: #ac4747;
+  --text-on-secondary-theme-dark: #f7f2eb;
   --text-on-accent-theme-dark: oklch(0% 0 0deg);
 
   /* Set colors */

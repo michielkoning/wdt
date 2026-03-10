@@ -17,3 +17,9 @@ defineProps<{
     </ul>
   </div>
 </template>
+
+<style lang="css" scoped>
+ul {
+  @mixin list-reset;
+}
+</style>

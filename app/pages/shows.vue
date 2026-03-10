@@ -35,18 +35,20 @@ useSeoMeta({
 </script>
 
 <template>
-  <center-wrapper>
-    <shows-filter
-      v-model:authors="authors"
-      v-model:directors="directors"
-      v-model:search="search"
-    />
-    <div v-if="data">
-      <show-list
-        v-if="data.items.length"
-        :shows="data.items"
+  <theme-wrapper variant="dominant">
+    <center-wrapper>
+      <shows-filter
+        v-model:authors="authors"
+        v-model:directors="directors"
+        v-model:search="search"
       />
-      <app-pagination :total-pages="data.totalPages" />
-    </div>
-  </center-wrapper>
+      <div v-if="data">
+        <show-list
+          v-if="data.items.length"
+          :shows="data.items"
+        />
+        <app-pagination :total-pages="data.totalPages" />
+      </div>
+    </center-wrapper>
+  </theme-wrapper>
 </template>

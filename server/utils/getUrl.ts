@@ -84,7 +84,7 @@ export const getUrl = ({
   if (search) {
     url.searchParams.set('search', search)
   }
-  if (parent) {
+  if (parent !== undefined) {
     url.searchParams.set('parent', parent.toString())
   }
   if (exclude) {

@@ -18,7 +18,7 @@ const { data } = useFetch('/api/page', {
 <template>
   <div>
     <upcoming-show />
-    <block-wrapper>
+    <theme-wrapper variant="secondary">
       <center-wrapper
         v-if="data"
         size="md"
@@ -26,8 +26,7 @@ const { data } = useFetch('/api/page', {
         <h1>{{ data.title }}</h1>
         <div v-html="data.content" />
       </center-wrapper>
-    </block-wrapper>
+    </theme-wrapper>
     <post-list variant="latest" />
-    <activity-list />
   </div>
 </template>

@@ -8,7 +8,7 @@ export const ShowsSchema = z.object({
       id: z.number(),
       title: z.object({
         rendered: z.string(),
-      }).transform(val => val.rendered.replaceAll('&#038;', '&')),
+      }).transform(val => parseTitle(val.rendered)),
       slug: z.string(),
       _embedded: z.object({
         'wp:featuredmedia': z.array(ImageSchema).default([]),

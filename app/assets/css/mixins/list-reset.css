@@ -1,0 +1,9 @@
+@define-mixin list-reset {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: 0;
+  }
+}

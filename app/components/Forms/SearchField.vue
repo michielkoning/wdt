@@ -12,11 +12,12 @@ const model = defineModel<string>({
   <div class="field">
     <input
       v-model="model"
+      name="search"
       type="search"
       v-bind="$attrs"
     >
     <icon
-      name="solar:close-circle-bold"
+      name="solar:minimalistic-magnifer-outline"
       class="icon"
     />
   </div>
@@ -27,9 +28,17 @@ const model = defineModel<string>({
   position: relative;
 }
 
+input {
+  padding-right: 3rem;
+}
+
 .icon {
   position: absolute;
   top: 50%;
   right: var(--spacing-4);
+  width: 1.5rem;
+  height: auto;
+  aspect-ratio: 1;
+  translate: 0 -0.75rem;
 }
 </style>

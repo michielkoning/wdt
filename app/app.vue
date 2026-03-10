@@ -22,6 +22,7 @@ useHead({
     >
       <nuxt-page />
     </main>
+    <the-footer />
   </div>
 </template>
 

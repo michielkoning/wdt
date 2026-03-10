@@ -8,6 +8,7 @@ export type Show = {
   excerpt: string
   content: string
   image?: Image
+  banner?: Image
   directors: Taxonomy[]
   authors: Taxonomy[]
   gallery: Image[]

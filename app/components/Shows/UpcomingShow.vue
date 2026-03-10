@@ -3,18 +3,18 @@ const { data } = useFetch('/api/upcomingShow')
 </script>
 
 <template>
-  <clickable-wrapper
-    v-if="data"
-    tag="div"
-    :to="$localePath({
-      name: 'show',
-      params: {
-        slug: data.slug,
-      },
-    })"
-  >
-    <block-wrapper>
-      <center-wrapper>
+  <theme-wrapper variant="dominant">
+    <center-wrapper>
+      <clickable-wrapper
+        v-if="data"
+        tag="div"
+        :to="$localePath({
+          name: 'show',
+          params: {
+            slug: data.slug,
+          },
+        })"
+      >
         <div class="upcoming-show">
           <app-image
             v-if="data.image"
@@ -36,9 +36,9 @@ const { data } = useFetch('/api/upcomingShow')
             <div v-html="data.excerpt" />
           </div>
         </div>
-      </center-wrapper>
-    </block-wrapper>
-  </clickable-wrapper>
+      </clickable-wrapper>
+    </center-wrapper>
+  </theme-wrapper>
 </template>
 
 <style lang="css" scoped>

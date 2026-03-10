@@ -6,7 +6,7 @@ export const UpcomingShowSchema = z.array(
     id: z.number(),
     title: z.object({
       rendered: z.string(),
-    }).transform(val => val.rendered.replaceAll('&#038;', '&')),
+    }).transform(val => parseTitle(val.rendered)),
     excerpt: z.object({
       rendered: z.string(),
     }),
