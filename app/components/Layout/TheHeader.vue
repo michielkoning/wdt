@@ -1,60 +1,62 @@
 <template>
-  <theme-wrapper variant="secondary">
-    <header>
-      <center-wrapper>
-        <h1>Toneelvereniging WDT Wageningen</h1>
-      </center-wrapper>
+  <header>
+    <center-wrapper>
+      <h1>Toneelvereniging WDT Wageningen</h1>
+    </center-wrapper>
 
-      <nav>
-        <center-wrapper size="lg">
-          <ol>
-            <li>
-              <nuxt-link-locale
-                :to="{
-                  name: 'home',
-                }"
-              >
-                Home
-              </nuxt-link-locale>
-            </li>
-            <li>
-              <nuxt-link-locale
-                :to="{
-                  name: 'shows',
-                }"
-              >
-                Voorstellingen
-              </nuxt-link-locale>
-            </li>
-            <li>
-              <nuxt-link-locale
-                :to="{
-                  name: 'posts',
-                }"
-              >
-                Berichten
-              </nuxt-link-locale>
-            </li>
-            <li>
-              <nuxt-link-locale
-                :to="{
-                  name: 'page',
-                  params: {
-                    slug: 'over-wdt',
-                  },
-                }"
-              >
-                Over WDT
-              </nuxt-link-locale>
-            </li>
-          </ol>
-        </center-wrapper>
-      </nav>
-    </header>
-  </theme-wrapper>
+    <nav>
+      <center-wrapper size="lg">
+        <ol>
+          <li>
+            <nuxt-link-locale
+              :to="{
+                name: 'home',
+              }"
+            >
+              Home
+            </nuxt-link-locale>
+          </li>
+          <li>
+            <nuxt-link-locale
+              :to="{
+                name: 'shows',
+              }"
+            >
+              Voorstellingen
+            </nuxt-link-locale>
+          </li>
+          <li>
+            <nuxt-link-locale
+              :to="{
+                name: 'posts',
+              }"
+            >
+              Berichten
+            </nuxt-link-locale>
+          </li>
+          <li>
+            <nuxt-link-locale
+              :to="{
+                name: 'page',
+                params: {
+                  slug: 'over-wdt',
+                },
+              }"
+            >
+              Over WDT
+            </nuxt-link-locale>
+          </li>
+        </ol>
+      </center-wrapper>
+    </nav>
+  </header>
 </template>
 
 <style lang="css" scoped>
+header {
+  padding-block: var(--spacing-4);
+}
+
 h1 {
   text-align: center;
 }

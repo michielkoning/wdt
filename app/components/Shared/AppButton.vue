@@ -57,7 +57,16 @@ const cssClasses = computed(() => {
   cursor: pointer;
   background-color: var(--color-secondary);
   border: 2px solid transparent;
+  border-radius: var(--spacing-1);
+
+  /* stylelint-disable-next-line property-no-unknown */
+  corner-shape: scoop;
   transition: background-color var(--transition);
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 
   &:disabled {
     color: var(--text-on-accent);

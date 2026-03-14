@@ -27,9 +27,7 @@ useSeoMeta({
     v-if="data"
     variant="dominant"
   >
-    <center-wrapper size="md">
-      <h1>{{ data.title }}</h1>
-      <div v-html="data.content" />
-    </center-wrapper>
+    <h1>{{ data.title }}</h1>
+    <div v-html="data.content" />
   </theme-wrapper>
 </template>

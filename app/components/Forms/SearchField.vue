@@ -12,6 +12,7 @@ const model = defineModel<string>({
   <div class="field">
     <input
       v-model="model"
+      placeholder="Zoeken naar voorstellingen"
       name="search"
       type="search"
       v-bind="$attrs"

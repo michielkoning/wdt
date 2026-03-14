@@ -21,5 +21,7 @@ defineProps<{
 <style lang="css" scoped>
 ul {
   @mixin list-reset;
+
+  margin-bottom: var(--spacing-4);
 }
 </style>

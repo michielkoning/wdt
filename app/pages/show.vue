@@ -52,41 +52,40 @@ useSeoMeta({
               :image="data.image"
               class="featured-image"
             />
+          </div>
+          <theme-wrapper
+            variant="white"
+            class="content"
+          >
+            <div v-html="data.excerpt" />
+            <dl>
+              <template v-if="directors.length">
+                <dt>{{ $t('director', directors.length) }}</dt>
+                <dd>{{ directors.join(', ') }}</dd>
+              </template>
+
+              <template v-if="authors.length">
+                <dt>{{ $t('authors', authors.length) }}</dt>
+                <dd>{{ authors.join(', ') }}</dd>
+              </template>
+            </dl>
+
+            <show-dates
+              v-if="data.dates.length"
+              :dates="data.dates"
+            />
             <app-button
               title="Koop kaarten"
               class="btn"
             />
-          </div>
-          <div class="content">
-            <theme-wrapper variant="white">
-              <div v-html="data.excerpt" />
-              <dl>
-                <template v-if="directors.length">
-                  <dt>{{ $t('director', directors.length) }}</dt>
-                  <dd>{{ directors.join(', ') }}</dd>
-                </template>
-
-                <template v-if="authors.length">
-                  <dt>{{ $t('authors', authors.length) }}</dt>
-                  <dd>{{ authors.join(', ') }}</dd>
-                </template>
-              </dl>
-
-              <show-dates
-                v-if="data.dates.length"
-                :dates="data.dates"
-              />
-            </theme-wrapper>
-          </div>
+          </theme-wrapper>
         </div>
       </center-wrapper>
 
-      <center-wrapper size="md">
-        <div
-          class="text"
-          v-html="data.content"
-        />
-      </center-wrapper>
+      <div
+        class="text"
+        v-html="data.content"
+      />
     </theme-wrapper>
     <app-gallery
       v-if="data.gallery.length"
@@ -117,10 +116,6 @@ useSeoMeta({
 }
 
 .btn {
-  width: 100%;
-}
-
-.featured-image {
-  margin-bottom: var(--spacing-4);
+  margin-top: auto;
 }
 </style>

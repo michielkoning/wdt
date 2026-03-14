@@ -16,13 +16,15 @@ defineProps<{
         },
       })"
     >
-      <app-image
-        v-if="item.image"
-        class="image"
-        :image="item.image"
-      />
+      <div class="image-wrapper">
+        <app-image
+          v-if="item.image"
+          class="image"
+          :image="item.image"
+        />
+      </div>
 
-      <h2>
+      <h3>
         <nuxt-link-locale
           :to="{
             name: 'show',
@@ -33,7 +35,7 @@ defineProps<{
         >
           {{ item.title }}
         </nuxt-link-locale>
-      </h2>
+      </h3>
     </clickable-wrapper>
   </ul>
 </template>
@@ -41,7 +43,7 @@ defineProps<{
 <style lang="css" scoped>
 ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14em, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
   gap: var(--spacing-4);
   padding-inline-start: 0;
   margin-bottom: var(--spacing-4);
@@ -54,7 +56,7 @@ a {
 
 li {
   position: relative;
-  aspect-ratio: 3 / 4;
+  border-bottom: 3px solid var(--color-secondary);
 
   &:hover,
   &:focus-within {
@@ -64,12 +66,23 @@ li {
   }
 }
 
-h2 {
+/* h2 {
   position: absolute;
   inset: auto 0 0;
   padding: var(--spacing-2);
   margin-bottom: 0;
   background-color: rgb(0 0 0 / 50%);
+} */
+
+.image-wrapper {
+  aspect-ratio: 3 / 4;
+  margin-bottom: var(--spacing-2);
+  border: 3px solid var(--color-secondary);
+
+  &:deep(img) {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .image {

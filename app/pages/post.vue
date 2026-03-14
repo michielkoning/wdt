@@ -24,15 +24,22 @@ useSeoMeta({
 
 <template>
   <div v-if="data">
-    <center-wrapper>
-      <h1>{{ data.title }}</h1>
-      <div
-        v-html="data.content"
-      />
-    </center-wrapper>
+    <h1>{{ data.title }}</h1>
+    <div
+      class="text"
+      v-html="data.content"
+    />
     <post-list
       :exclude-id="data.id"
       variant="latest"
     />
   </div>
 </template>
+
+<style lang="css" scoped>
+.text::first-letter {
+  margin-right: 0.25em;
+  font-family: var(--font-family-heading);
+  initial-letter: 2;
+}
+</style>

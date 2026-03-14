@@ -5,10 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <div
-    class="theme-wrapper"
-    :class="variant"
-  >
+  <div>
     <div class="content">
       <slot />
     </div>
@@ -24,7 +21,9 @@ defineProps<{
   margin-inline: var(--gutter);
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
-  border-radius: var(--spacing-4);
+  border-radius: var(--spacing-6);
+  /* stylelint-disable-next-line property-no-unknown */
+  corner-shape: scoop;
 }
 
 .secondary {
@@ -33,9 +32,11 @@ defineProps<{
 }
 
 .white {
-  padding: var(--spacing-4);
+  padding: var(--spacing-8);
   color: var(--text-on-dominant);
   background-color: #fff;
   border-radius: var(--spacing-4);
+  /* stylelint-disable-next-line property-no-unknown */
+  corner-shape: scoop;
 }
 </style>

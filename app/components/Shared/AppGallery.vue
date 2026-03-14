@@ -6,22 +6,20 @@ defineProps<{
 
 <template>
   <block-wrapper>
-    <center-wrapper size="full">
-      <ul>
-        <li
-          v-for="image in images"
-          :key="image.id"
+    <ul>
+      <li
+        v-for="image in images"
+        :key="image.id"
+      >
+        <button
+          commandfor="gallery"
+          command="show-modal"
+          type="button"
         >
-          <button
-            commandfor="gallery"
-            command="show-modal"
-            type="button"
-          >
-            <app-image :image="image" />
-          </button>
-        </li>
-      </ul>
-    </center-wrapper>
+          <app-image :image="image" />
+        </button>
+      </li>
+    </ul>
 
     <gallery-modal
       id="gallery"

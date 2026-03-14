@@ -120,7 +120,15 @@ export default defineNuxtConfig({
       name: 'Cinzel',
       provider: 'google',
       global: true,
+    },
+    {
+      weights: [400],
+      styles: ['normal'],
+      name: 'Milonga',
+      provider: 'google',
+      global: true,
     }],
+
   },
   i18n: {
     strategy: 'prefix_except_default',

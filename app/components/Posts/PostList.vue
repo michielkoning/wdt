@@ -35,62 +35,59 @@ const title = computed(() => {
 </script>
 
 <template>
-  <theme-wrapper
+  <div
     v-if="data"
-    variant="dominant"
   >
-    <center-wrapper>
-      <h2>
-        {{ title }}
-      </h2>
-      <ul v-if="data.items.length">
-        <clickable-wrapper
-          v-for="item in data.items"
-          :key="item.id"
-          :to="$localePath({
-            name: 'post',
-            params: {
-              slug: item.slug,
-            },
-          })"
-        >
-          <div>
-            <app-image
-              v-if="item.image"
-              :image="item.image"
-            />
-          </div>
-          <div>
-            <h3>
-              <nuxt-link-locale
-                :to="{
-                  name: 'post',
-                  params: {
-                    slug: item.slug,
-                  },
-                }"
-              >
-                {{ item.title }}
-              </nuxt-link-locale>
-            </h3>
-            {{ $d(new Date(item.date), 'short') }}
-            <div v-html="item.excerpt" />
-          </div>
-        </clickable-wrapper>
-      </ul>
-      <app-pagination
-        v-if="variant==='all'"
-        :total-pages="data.totalPages"
-      />
-      <app-button
-        v-else
-        title="Alle berichten"
-        :to="{
-          name: 'posts',
-        }"
-      />
-    </center-wrapper>
-  </theme-wrapper>
+    <h2>
+      {{ title }}
+    </h2>
+    <ul v-if="data.items.length">
+      <clickable-wrapper
+        v-for="item in data.items"
+        :key="item.id"
+        :to="$localePath({
+          name: 'post',
+          params: {
+            slug: item.slug,
+          },
+        })"
+      >
+        <div>
+          <app-image
+            v-if="item.image"
+            :image="item.image"
+          />
+        </div>
+        <div>
+          <h3>
+            <nuxt-link-locale
+              :to="{
+                name: 'post',
+                params: {
+                  slug: item.slug,
+                },
+              }"
+            >
+              {{ item.title }}
+            </nuxt-link-locale>
+          </h3>
+          {{ $d(new Date(item.date), 'short') }}
+          <div v-html="item.excerpt" />
+        </div>
+      </clickable-wrapper>
+    </ul>
+    <app-pagination
+      v-if="variant==='all'"
+      :total-pages="data.totalPages"
+    />
+    <app-button
+      v-else
+      title="Alle berichten"
+      :to="{
+        name: 'posts',
+      }"
+    />
+  </div>
 </template>
 
 <style lang="css" scoped>
