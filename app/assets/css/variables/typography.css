@@ -1,7 +1,13 @@
 :root {
   --font-size-base: clamp(18px, 2.75vw, 20px);
-  --font-size-h1: 2.5rem;
-  --font-size-h2: 1.75rem;
+  --font-size-h1: 1.75rem;
+  --font-size-h2: 1.5rem;
+
+  @media (--viewport-md) {
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 1.75rem;
+  }
+
   --font-size-h3: 1.25rem;
   --font-size-sm: 0.8rem;
   --line-height: 1.6;

@@ -9,24 +9,27 @@ defineProps<{
 </script>
 
 <template>
-  <comments-form :id="id" />
-  <h2>{{ $t('comments', comments.length) }} op {{ title }}</h2>
-  <ul v-if="comments.length">
-    <li
-      v-for="item in comments"
-      :key="item.id"
-    >
-      <div class="meta">
-        <h3>
-          {{ item.author }}
-        </h3>
-        <div class="date">
-          {{ $d(new Date(item.date), 'short') }}
+  <block-wrapper>
+    <h1>Reacties</h1>
+    <h2>{{ $t('comments', comments.length) }} op {{ title }}</h2>
+    <ul v-if="comments.length">
+      <li
+        v-for="item in comments"
+        :key="item.id"
+      >
+        <div class="meta">
+          <h3>
+            {{ item.author }}
+          </h3>
+          <div class="date">
+            {{ $d(new Date(item.date), 'short') }}
+          </div>
         </div>
-      </div>
-      <div v-html="item.content" />
-    </li>
-  </ul>
+        <div v-html="item.content" />
+      </li>
+    </ul>
+    <comments-form :id="id" />
+  </block-wrapper>
 </template>
 
 <style lang="css" scoped>

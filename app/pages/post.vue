@@ -23,7 +23,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div v-if="data">
+  <block-wrapper v-if="data">
     <h1>{{ data.title }}</h1>
     <div
       class="text"
@@ -31,9 +31,8 @@ useSeoMeta({
     />
     <post-list
       :exclude-id="data.id"
-      variant="latest"
     />
-  </div>
+  </block-wrapper>
 </template>
 
 <style lang="css" scoped>

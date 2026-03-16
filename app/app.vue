@@ -9,24 +9,22 @@ useHead({
 </script>
 
 <template>
-  <div class="page">
-    <nuxt-route-announcer />
-    <nuxt-loading-indicator color="var(--color-accent)" />
-    <slot />
-    <the-header />
-    <center-wrapper>
+  <nuxt-route-announcer />
+  <nuxt-loading-indicator color="var(--color-secondary)" />
+  <slot />
+  <center-wrapper>
+    <div class="page">
+      <the-header />
       <main
-        id="content"
-        class="main"
         tabindex="-1"
       >
         <div class="content">
           <nuxt-page />
         </div>
       </main>
-    </center-wrapper>
-    <the-footer />
-  </div>
+      <the-footer />
+    </div>
+  </center-wrapper>
 </template>
 
 <style lang="css" scoped>
@@ -40,11 +38,10 @@ useHead({
     );
 }
 
-.main {
-  flex: 1 1 auto;
-}
-
 main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
   padding: var(--spacing-2);
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
@@ -56,7 +53,8 @@ main {
 
 /* stylelint-disable */
 .content {
-  padding: var(--spacing-8);
+   flex: 1 1 auto;
+  padding: var(--spacing-4)  var(--gutter);
   background:
     radial-gradient(circle var(--width) at 0 70%, var(--l) 5%, var(--bg) 5% 12%, var(--l) 12% 13%, transparent 13%),
     radial-gradient(circle var(--width) at 100% 70%, var(--l) 5%, var(--bg) 5% 12%, var(--l) 12% 13%, transparent 13%),

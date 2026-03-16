@@ -23,24 +23,24 @@ const { data } = useFetch('/api/posts', {
 
 const title = computed(() => {
   if (props.excludeId) {
-    return 'Overige berichten'
+    return 'Overig nieuws'
   }
   else if (props.variant === 'latest') {
-    return 'Laatste berichten'
+    return 'Laatste nieuws'
   }
   else {
-    return 'Alle berichten'
+    return 'Nieuws'
   }
 })
 </script>
 
 <template>
-  <div
+  <block-wrapper
     v-if="data"
   >
-    <h2>
+    <h1>
       {{ title }}
-    </h2>
+    </h1>
     <ul
       v-if="data.items.length"
       :class="variant === 'latest' ? 'highlights' : undefined"
@@ -100,7 +100,7 @@ const title = computed(() => {
         }"
       />
     </div>
-  </div>
+  </block-wrapper>
 </template>
 
 <style lang="css" scoped>
@@ -113,7 +113,7 @@ ul {
 
   &.highlights {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
     gap: var(--gutter);
   }
 }

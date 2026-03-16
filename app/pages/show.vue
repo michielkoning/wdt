@@ -39,59 +39,57 @@ useSeoMeta({
 </script>
 
 <template>
-  <div
+  <block-wrapper
     v-if="data"
   >
-    <theme-wrapper variant="dominant">
-      <h1>{{ data.title }}</h1>
-      <div
-        class="show"
-      >
-        <div class="meta-data">
-          <app-image
-            v-if="data.banner"
-            :image="data.banner"
-            class="banner"
-          />
-          <app-image
-            v-if="data.image"
-            :image="data.image"
-            class="featured-image"
-          />
-        </div>
-        <theme-wrapper
-          variant="white"
-          class="content"
-        >
-          <div v-html="data.excerpt" />
-          <dl>
-            <template v-if="directors.length">
-              <dt>{{ $t('director', directors.length) }}</dt>
-              <dd>{{ directors.join(', ') }}</dd>
-            </template>
-
-            <template v-if="authors.length">
-              <dt>{{ $t('authors', authors.length) }}</dt>
-              <dd>{{ authors.join(', ') }}</dd>
-            </template>
-          </dl>
-
-          <show-dates
-            v-if="data.dates.length"
-            :dates="data.dates"
-          />
-          <app-button
-            title="Koop kaarten"
-            class="btn"
-          />
-        </theme-wrapper>
+    <h1>{{ data.title }}</h1>
+    <div
+      class="show"
+    >
+      <div class="meta-data">
+        <app-image
+          v-if="data.banner"
+          :image="data.banner"
+          class="banner"
+        />
+        <app-image
+          v-if="data.image"
+          :image="data.image"
+          class="featured-image"
+        />
       </div>
+      <theme-wrapper
+        variant="white"
+        class="content"
+      >
+        <div v-html="data.excerpt" />
+        <dl>
+          <template v-if="directors.length">
+            <dt>{{ $t('director', directors.length) }}</dt>
+            <dd>{{ directors.join(', ') }}</dd>
+          </template>
 
-      <div
-        class="text"
-        v-html="data.content"
-      />
-    </theme-wrapper>
+          <template v-if="authors.length">
+            <dt>{{ $t('authors', authors.length) }}</dt>
+            <dd>{{ authors.join(', ') }}</dd>
+          </template>
+        </dl>
+
+        <show-dates
+          v-if="data.dates.length"
+          :dates="data.dates"
+        />
+        <app-button
+          title="Koop kaarten"
+          class="btn"
+        />
+      </theme-wrapper>
+    </div>
+
+    <div
+      class="text"
+      v-html="data.content"
+    />
     <app-divider />
     <app-gallery
       v-if="data.gallery.length"
@@ -104,7 +102,7 @@ useSeoMeta({
       :title="data.title"
       :comments="data.comments"
     />
-  </div>
+  </block-wrapper>
 </template>
 
 <style lang="css" scoped>

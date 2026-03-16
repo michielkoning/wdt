@@ -29,8 +29,30 @@ h3 {
 }
 
 h1 {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: center;
+  justify-content: center;
   margin: var(--spacing-1) 0 var(--spacing-4);
+  margin-inline: calc(-1 * var(--spacing-4));
   font-size: var(--font-size-h1);
+  text-align: center;
+
+  &::before {
+    --direction: right;
+  }
+
+  &::after {
+    --direction: left;
+  }
+
+  &::before,
+  &::after {
+    flex: 1 0 2em;
+    height: 2px;
+    content: "";
+    background-image: linear-gradient(to var(--direction), currentcolor, currentcolor 4em);
+  }
 }
 
 h2 {

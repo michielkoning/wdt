@@ -20,6 +20,20 @@ export const UpcomingShowSchema = z.array(
           }
           return val
         }),
+      banner: z.literal(false).or(
+        z.object({
+          id: z.number(),
+          width: z.number(),
+          height: z.number(),
+          alt: z.string(),
+          url: z.url(),
+        }))
+        .transform((val) => {
+          if (val === false) {
+            return undefined
+          }
+          return val
+        }),
     }),
     slug: z.string(),
     _embedded: z.object({
@@ -35,6 +49,16 @@ export const UpcomingShowSchema = z.array(
       dates: item.acf.dates.map(item => item.date),
       slug: item.slug,
       image: getFeaturedImage(item._embedded['wp:featuredmedia']),
+      banner: item.acf.banner
+        ? {
+            id: item.acf.banner.id,
+            alt: item.acf.banner.alt,
+            width: item.acf.banner.width,
+            height: item.acf.banner.height,
+            src: item.acf.banner.url,
+
+          }
+        : undefined,
 
     }
   }),

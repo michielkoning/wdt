@@ -23,11 +23,10 @@ useSeoMeta({
 </script>
 
 <template>
-  <theme-wrapper
+  <block-wrapper
     v-if="data"
-    variant="dominant"
   >
     <h1>{{ data.title }}</h1>
     <div v-html="data.content" />
-  </theme-wrapper>
+  </block-wrapper>
 </template>
