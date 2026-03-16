@@ -63,8 +63,8 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
-        driver: 'null',
-        // driver: 'netlify-blobs',
+        // driver: 'null',
+        driver: 'netlify-blobs',
         name: 'cache',
       },
     },
