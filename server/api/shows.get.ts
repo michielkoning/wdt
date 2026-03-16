@@ -8,7 +8,7 @@ const querySchema = z.object({
   authors: z.coerce.number().transform(val => [val]).or(z.array(z.coerce.number())).optional(),
 })
 
-export default defineEventHandler(async (event): Promise<ShowList> => {
+export default defineCachedEventHandler(async (event): Promise<ShowList> => {
   const query = await getValidatedQuery(event, input => safeParse(querySchema, input))
 
   if (!query.success) {
@@ -35,4 +35,7 @@ export default defineEventHandler(async (event): Promise<ShowList> => {
     items: response._data,
     totalPages: response.headers.get('X-WP-TotalPages'),
   }, ShowsSchema)
+}, {
+  maxAge: 60 * 60,
+  staleMaxAge: 60 * 60 * 24,
 })

@@ -31,4 +31,7 @@ export default defineCachedEventHandler(async (event): Promise<Page> => {
   }
 
   return data
+}, {
+  maxAge: 60 * 60,
+  staleMaxAge: 60 * 60 * 24,
 })

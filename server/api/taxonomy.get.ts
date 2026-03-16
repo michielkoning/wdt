@@ -21,4 +21,7 @@ export default defineCachedEventHandler(async (event): Promise<Taxonomy[]> => {
   const response = await $fetch(url)
 
   return parseData(response, TaxonomySchema)
+}, {
+  maxAge: 60 * 60,
+  staleMaxAge: 60 * 60 * 24,
 })

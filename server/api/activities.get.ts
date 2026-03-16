@@ -6,4 +6,7 @@ export default defineCachedEventHandler(async () => {
   const activities = [...upcomingShows, ...upcomingActivities]
 
   return activities.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+}, {
+  maxAge: 60 * 60,
+  staleMaxAge: 60 * 60 * 24,
 })

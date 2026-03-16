@@ -31,4 +31,7 @@ export default defineCachedEventHandler(async (event) => {
     items: response._data,
     totalPages: response.headers.get('X-WP-TotalPages'),
   }, PostsSchema)
+}, {
+  maxAge: 60 * 60,
+  staleMaxAge: 60 * 60 * 24,
 })
