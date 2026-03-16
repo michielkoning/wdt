@@ -57,7 +57,7 @@ export default defineNuxtConfig({
     },
     devStorage: {
       cache: {
-        driver: 'null',
+        driver: 'fs',
         base: './.nuxt/cache',
       },
     },
@@ -124,7 +124,7 @@ export default defineNuxtConfig({
     {
       weights: [400],
       styles: ['normal'],
-      name: 'Milonga',
+      name: 'Limelight',
       provider: 'google',
       global: true,
     }],

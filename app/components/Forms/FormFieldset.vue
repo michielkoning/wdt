@@ -19,12 +19,14 @@ defineProps<{
 fieldset {
   min-width: 0;
   padding: 0;
-  margin: 0 0 var(--spacing-m);
+  margin: 0 0 var(--spacing-2);
   border: 0;
+
+  --columns: 1;
 }
 
 fieldset + fieldset {
-  padding-top: var(--spacing-m);
+  padding-top: var(--spacing-2);
   border-top: 1px solid var(--color-gray);
 }
 

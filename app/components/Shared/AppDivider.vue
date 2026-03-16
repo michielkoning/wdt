@@ -27,7 +27,7 @@ defineProps<
     width: 90%;
     height: 2px;
     content: "";
-    background-image: linear-gradient(to right, transparent, var(--color-secondary), transparent);
+    background-image: linear-gradient(to right, transparent, currentcolor, transparent);
   }
 }
 
@@ -40,8 +40,8 @@ defineProps<
   height: 14px;
   content: "";
   background-color: white;
-  border-right: 2px solid var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary);
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
   transform: rotate(45deg);
 }
 
@@ -54,9 +54,9 @@ defineProps<
   height: 14px;
   content: "";
   background-color: white;
-  border-right: 2px solid var(--color-secondary);
-  border-bottom: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
+  border-right: 2px solid currentcolor;
+  border-bottom: 2px solid currentcolor;
+  border-left: 2px solid currentcolor;
   border-radius: 0 0 8px 8px;
 }
 
@@ -69,8 +69,8 @@ defineProps<
   height: 12px;
   content: "";
   background-color: white;
-  border-right: 2px solid var(--color-secondary);
-  border-left: 2px solid var(--color-secondary);
+  border-right: 2px solid currentcolor;
+  border-left: 2px solid currentcolor;
 }
 
 .dot::after {
@@ -81,8 +81,8 @@ defineProps<
   width: 18px;
   height: 18px;
   content: "";
-  background-color: goldenrod;
-  border: 2px solid var(--color-secondary);
+  background-color: var(--color-secondary);
+  border: 2px solid currentcolor;
   border-radius: 50%;
   box-shadow:
     inset 0 0 0 2px white,

@@ -55,7 +55,7 @@ const cssClasses = computed(() => {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  background-color: var(--color-secondary);
+  background-color: var(--color-accent);
   border: 2px solid transparent;
   border-radius: var(--spacing-1);
 

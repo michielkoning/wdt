@@ -43,7 +43,7 @@ textarea {
   font-size: var(--font-size-base);
   color: currentcolor;
   background: var(--color-dominant);
-  border: 3px solid currentcolor;
+  border: 2px solid currentcolor;
   border-radius: 0;
   transition: border-color var(--transition);
 

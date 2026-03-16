@@ -41,7 +41,10 @@ const title = computed(() => {
     <h2>
       {{ title }}
     </h2>
-    <ul v-if="data.items.length">
+    <ul
+      v-if="data.items.length"
+      :class="variant === 'latest' ? 'highlights' : undefined"
+    >
       <clickable-wrapper
         v-for="item in data.items"
         :key="item.id"
@@ -52,27 +55,33 @@ const title = computed(() => {
           },
         })"
       >
-        <div>
-          <app-image
-            v-if="item.image"
-            :image="item.image"
-          />
-        </div>
-        <div>
-          <h3>
-            <nuxt-link-locale
-              :to="{
-                name: 'post',
-                params: {
-                  slug: item.slug,
-                },
-              }"
-            >
-              {{ item.title }}
-            </nuxt-link-locale>
-          </h3>
-          {{ $d(new Date(item.date), 'short') }}
-          <div v-html="item.excerpt" />
+        <div class="wrapper">
+          <div>
+            <app-image
+              v-if="item.image"
+              :image="item.image"
+              class="image"
+            />
+          </div>
+          <div>
+            <h3>
+              <nuxt-link-locale
+                :to="{
+                  name: 'post',
+                  params: {
+                    slug: item.slug,
+                  },
+                }"
+              >
+                {{ item.title }}
+              </nuxt-link-locale>
+            </h3>
+            {{ $d(new Date(item.date), 'short') }}
+            <div
+              class="text"
+              v-html="item.excerpt"
+            />
+          </div>
         </div>
       </clickable-wrapper>
     </ul>
@@ -80,21 +89,33 @@ const title = computed(() => {
       v-if="variant==='all'"
       :total-pages="data.totalPages"
     />
-    <app-button
+    <div
       v-else
-      title="Alle berichten"
-      :to="{
-        name: 'posts',
-      }"
-    />
+      class="btn-wrapper"
+    >
+      <app-button
+        title="Alle berichten"
+        :to="{
+          name: 'posts',
+        }"
+      />
+    </div>
   </div>
 </template>
 
 <style lang="css" scoped>
 ul {
+  @mixin list-reset;
+
   padding-left: 0;
   margin-bottom: 0;
   list-style: none outside;
+
+  &.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+    gap: var(--gutter);
+  }
 }
 
 a {
@@ -102,10 +123,9 @@ a {
 }
 
 li {
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  gap: var(--spacing-4);
   margin-bottom: var(--spacing-4);
+  container-name: achive-list;
+  container-type: inline-size;
 
   &:hover,
   &:focus-within {
@@ -113,5 +133,30 @@ li {
       text-decoration: underline;
     }
   }
+}
+
+.wrapper {
+  @container achive-list (width > 32em) {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    gap: var(--spacing-4);
+  }
+}
+
+.image {
+  margin-bottom: var(--spacing-4);
+}
+
+.text:deep(p) {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  line-clamp: 5;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
 }
 </style>

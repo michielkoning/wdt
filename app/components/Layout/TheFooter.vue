@@ -1,5 +1,6 @@
 <template>
   <center-wrapper>
+    <app-divider variant="dot" />
     <footer>
       <ol>
         <li>
@@ -9,7 +10,8 @@
         </li>
 
         <li>
-          <h2>Theater De Wilde Wereld</h2>
+          <h2>Adres</h2>
+          Theater De Wilde Wereld<br>
           Burgtstraat 1<br>
           6701 DA Wageningen<br>
         </li>
@@ -22,12 +24,6 @@
 </template>
 
 <style lang="css" scoped>
-footer {
-  padding-block: var(--spacing-6);
-  margin-top: var(--spacing-6);
-  border-top: 2px solid currentcolor;
-}
-
 ol {
   @mixin list-reset;
 

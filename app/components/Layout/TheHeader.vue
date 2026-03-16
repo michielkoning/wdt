@@ -31,7 +31,7 @@
                 name: 'posts',
               }"
             >
-              Berichten
+              Nieuws
             </nuxt-link-locale>
           </li>
           <li>
@@ -77,7 +77,7 @@ ol {
 
 a {
   text-decoration: none;
-  text-underline-offset: 0.5em;
+  text-underline-offset: 0.35em;
 
   &:hover,
   &.router-link-exact-active {

@@ -5,27 +5,25 @@ defineProps<{
 </script>
 
 <template>
-  <block-wrapper>
-    <ul>
-      <li
-        v-for="image in images"
-        :key="image.id"
+  <ul>
+    <li
+      v-for="image in images"
+      :key="image.id"
+    >
+      <button
+        commandfor="gallery"
+        command="show-modal"
+        type="button"
       >
-        <button
-          commandfor="gallery"
-          command="show-modal"
-          type="button"
-        >
-          <app-image :image="image" />
-        </button>
-      </li>
-    </ul>
+        <app-image :image="image" />
+      </button>
+    </li>
+  </ul>
 
-    <gallery-modal
-      id="gallery"
-      :images="images"
-    />
-  </block-wrapper>
+  <gallery-modal
+    id="gallery"
+    :images="images"
+  />
 </template>
 
 <style lang="css" scoped>

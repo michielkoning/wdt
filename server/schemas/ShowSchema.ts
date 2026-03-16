@@ -64,6 +64,21 @@ export const ShowSchema = z.array(
           }
           return val
         }),
+      banner: z.literal(false).or(
+        z.object({
+          id: z.number(),
+          width: z.number(),
+          height: z.number(),
+          alt: z.string(),
+          url: z.url(),
+        }))
+        .transform((val) => {
+          if (val === false) {
+            return undefined
+          }
+          return val
+        }),
+
     }),
   }).transform((item) => {
     return {
@@ -93,6 +108,16 @@ export const ShowSchema = z.array(
           src: item.url,
         }
       }),
+      banner: item.acf.banner
+        ? {
+            id: item.acf.banner.id,
+            alt: item.acf.banner.alt,
+            width: item.acf.banner.width,
+            height: item.acf.banner.height,
+            src: item.acf.banner.url,
+
+          }
+        : undefined,
       comments: item._embedded.replies.map((item) => {
         return {
           id: item.id,

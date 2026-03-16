@@ -54,43 +54,53 @@ const onSubmit = handleSubmit(() => {
     novalidate
     @submit="onSubmit"
   >
-    <form-fieldset title="Geef een reactie">
-      <text-field
-        name="name"
-        class="name"
-        autocomplete="name"
-        :title="$t('form.name')"
-      />
-      <text-field
-        name="email"
-        type="email"
-        class="email"
-        autocomplete="email"
-        :title="$t('form.email')"
-      />
-      <textarea-field
-        name="comment"
-        type="comment"
-        class="comment"
-        :title="$t('form.comment')"
-      />
+    <form-fieldset
+      title="Geef een reactie"
+      class="fieldset"
+    >
+      <div class="name">
+        <text-field
+          name="name"
+          autocomplete="name"
+          :title="$t('form.name')"
+        />
+      </div>
+      <div class="email">
+        <text-field
+          name="email"
+          type="email"
+          autocomplete="email"
+          :title="$t('form.email')"
+        />
+      </div>
+      <div class="comment">
+        <textarea-field
+          name="comment"
+          type="comment"
+          rows="4"
+          :title="$t('form.comment')"
+        />
+      </div>
     </form-fieldset>
     <form-error-message
       v-if="error"
       :error-message="error.statusText"
     />
 
-    <button
+    <app-button
+      title="Reactie plaatsen"
       type="submit"
-    >
-      Reactie plaatsen
-    </button>
+    />
   </form>
 </template>
 
 <style lang="css" scoped>
-form {
-  --columns: 2;
+@import "~/assets/css/media-queries/media-queries.css";
+
+.fieldset {
+  @media (--viewport-md) {
+    --columns: 2;
+  }
 }
 
 ul {
@@ -98,6 +108,6 @@ ul {
 }
 
 .comment {
-  grid-column: span 2;
+  grid-column: span var(--columns);
 }
 </style>

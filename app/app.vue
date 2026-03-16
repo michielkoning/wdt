@@ -34,6 +34,10 @@ useHead({
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-bottom:
+    var(
+      --spacing-12
+    );
 }
 
 .main {
