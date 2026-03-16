@@ -14,20 +14,33 @@ const closePopover = () => {
     <h1>Toneelvereniging WDT Wageningen</h1>
 
     <button
+      class="btn-open"
       popovertarget="menu"
     >
-      Menu
       <icon
-        name="solar:hamburger-menu-linear"
         class="icon"
+        name="solar:hamburger-menu-linear"
       />
+      Menu
     </button>
-    <nav>
-      <ol
-        id="menu"
-        ref="menu"
-        popover
-      >
+    <nav
+      id="menu"
+      ref="menu"
+      popover
+    >
+      <div class="btn-wrapper">
+        <button
+          popovertarget="menu"
+          class="btn-close"
+        >
+          <icon
+
+            name="solar:close-circle-bold"
+            class="icon"
+          />
+        </button>
+      </div>
+      <ol>
         <li>
           <nuxt-link-locale
             :to="{
@@ -47,6 +60,19 @@ const closePopover = () => {
             @click="closePopover"
           >
             Voorstellingen
+          </nuxt-link-locale>
+        </li>
+        <li>
+          <nuxt-link-locale
+            :to="{
+              name: 'page',
+              params: {
+                slug: 'geschiedenis',
+              },
+            }"
+            @click="closePopover"
+          >
+            Geschiedenis
           </nuxt-link-locale>
         </li>
         <li>
@@ -84,64 +110,115 @@ header {
   padding-block: var(--spacing-4);
 }
 
-h1 {
-  font-size: var(--font-size-h2);
-
-  @media (--viewport-md) {
-    font-size: var(--font-size-h1);
-  }
-}
-
-::backdrop {
-  background-color: rgb(0 0 0 / 50%);
-  backdrop-filter: blur(3px);
-}
-
-button {
+.btn-open {
   display: flex;
   gap: var(--spacing-2);
   align-items: center;
   padding: var(--spacing-2) var(--spacing-4);
+  color: currentcolor;
   border: 2px solid currentcolor;
+  border-radius: var(--spacing-1);
+
+  /* stylelint-disable-next-line property-no-unknown */
+  corner-shape: scoop;
 
   @media (--viewport-md) {
     display: none;
   }
 }
 
+.btn-wrapper {
+  display: flex;
+  justify-content: end;
+
+  @media (--viewport-md) {
+    display: none;
+  }
+}
+
+.btn-close {
+  color: currentcolor;
+
+  @media (--viewport-md) {
+    display: none;
+  }
+}
+
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+}
+
 nav {
-  position: relative;
+  inset: 0;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  justify-content: space-between;
+  width: 70vw;
+  height: 100%;
+  padding: var(--spacing-4) var(--gutter);
+  margin: 0;
   font-family: var(--font-family-heading);
   font-size: var(--font-size-h3);
+  color: var(--text-on-dominant);
+  background-color: var(--color-dominant);
+  border: 0;
+  border-right: 2px solid var(--color-secondary);
+  translate: -100% 0;
+  transition:
+    translate var(--transition),
+    overlay var(--transition) allow-discrete,
+    display var(--transition) allow-discrete;
+
+  @media (--viewport-md) {
+    position: static;
+    display: block;
+    width: auto;
+    padding: 0;
+    color: var(--text-on-secondary);
+    background-color: transparent;
+    border: 0;
+    translate: 0 0;
+  }
+
+  &:popover-open {
+    translate: 0 0;
+
+    &::backdrop {
+      animation: show-backdrop var(--transition);
+    }
+  }
 }
 
 ol {
   @mixin list-reset;
 
-  inset: auto 0;
-  flex-direction: column;
-  gap: var(--spacing-2);
-  justify-content: space-between;
-  width: 100%;
-  padding: var(--spacing-4) var(--gutter);
-  position-area: bottom;
-  background-color: var(--color-secondary);
-  border: 0;
-  transition: opacity 0.2s, overlay 0.2s allow-discrete;
-  transition-behavior: allow-discrete;
-
   @media (--viewport-md) {
-    position: static;
     display: flex;
     flex-direction: row;
     gap: var(--spacing-4);
-    padding-block: 0;
-    background-color: transparent;
+    justify-content: space-between;
+  }
+}
+
+::backdrop {
+  background-color: rgb(0 0 0 / 50%);
+  animation: hide-backdrop var(--transition);
+
+  @media (--viewport-md) {
+    display: none;
+  }
+}
+
+@starting-style {
+  nav:popover-open {
+    translate: -100% 0;
   }
 }
 
 a {
   display: block;
+  padding-block: var(--spacing-1);
   text-decoration: none;
   text-underline-offset: 0.35em;
 
@@ -152,6 +229,30 @@ a {
 
   &.router-link-exact-active {
     text-decoration-thickness: 2px;
+  }
+}
+
+@keyframes show-backdrop {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0);
+  }
+
+  to {
+    opacity: 1;
+    backdrop-filter: blur(3px);
+  }
+}
+
+@keyframes hide-backdrop {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(3px);
+  }
+
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0);
   }
 }
 </style>

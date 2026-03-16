@@ -95,7 +95,6 @@ useSeoMeta({
       v-if="data.gallery.length"
       :images="data.gallery"
     />
-    <app-divider />
     <comments-list
       v-if="data.comments.length"
       :id="data.id"
@@ -118,7 +117,6 @@ useSeoMeta({
   }
 
   @media (--viewport-lg) {
-    gap: var(--spacing-8);
     margin-bottom: var(--spacing-8);
   }
 }
@@ -140,6 +138,8 @@ useSeoMeta({
 .text::first-letter {
   margin-right: 0.25em;
   font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
   initial-letter: 2;
 }
 

@@ -49,7 +49,14 @@ li {
   &:not(:first-child) {
     padding-top: var(--spacing-4);
     margin-bottom: var(--spacing-4);
-    border-top: 2px solid currentcolor;
+  }
+
+  &::after {
+    display: block;
+    height: 2px;
+    content: "";
+    /* stylelint-disable-next-line @stylistic/max-line-length */
+    background-image: linear-gradient(to right, transparent, currentcolor 4em, currentcolor calc(100% - 4em), transparent);
   }
 }
 </style>

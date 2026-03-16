@@ -22,7 +22,7 @@ h1,
 h2,
 h3 {
   font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-heading);
   text-wrap: balance;
   overflow-wrap: break-word;
@@ -34,7 +34,6 @@ h1 {
   align-items: center;
   justify-content: center;
   margin: var(--spacing-1) 0 var(--spacing-4);
-  margin-inline: calc(-1 * var(--spacing-4));
   font-size: var(--font-size-h1);
   text-align: center;
 
@@ -51,7 +50,7 @@ h1 {
     flex: 1 0 2em;
     height: 2px;
     content: "";
-    background-image: linear-gradient(to var(--direction), currentcolor, currentcolor 4em);
+    background-image: linear-gradient(to var(--direction), transparent, currentcolor 4em);
   }
 }
 
@@ -68,6 +67,7 @@ h3 {
 pre,
 blockquote {
   font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-heading);
 }
 

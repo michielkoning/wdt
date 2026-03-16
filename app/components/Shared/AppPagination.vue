@@ -65,6 +65,8 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
   align-items: start;
   justify-content: space-between;
   font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-heading);
 }
 
 ul {

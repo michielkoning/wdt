@@ -115,7 +115,7 @@ export default defineNuxtConfig({
       global: true,
     },
     {
-      weights: [400],
+      weights: [500],
       styles: ['normal'],
       name: 'Cinzel',
       provider: 'google',

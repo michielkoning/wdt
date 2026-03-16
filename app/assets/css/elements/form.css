@@ -12,7 +12,7 @@ legend {
   margin-block-end: var(--spacing-2);
   font-family: var(--font-family-heading);
   font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-heading);
 }
 

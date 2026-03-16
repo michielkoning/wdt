@@ -1,25 +1,33 @@
 <script lang="ts" setup>
+import AppButton from './AppButton.vue'
+
 defineProps<{
   images: Image[]
 }>()
 </script>
 
 <template>
-  <ul>
-    <li
-      v-for="image in images"
-      :key="image.id"
-    >
-      <button
+  <block-wrapper>
+    <ul>
+      <li
+        v-for="image in images"
+        :key="image.id"
+      >
+        <app-image
+          :image="image"
+          class="image"
+        />
+      </li>
+    </ul>
+    <div class="btn-wrapper">
+      <app-button
         commandfor="gallery"
         command="show-modal"
-        type="button"
-      >
-        <app-image :image="image" />
-      </button>
-    </li>
-  </ul>
 
+        title="Bekijk alle foto's"
+      />
+    </div>
+  </block-wrapper>
   <gallery-modal
     id="gallery"
     :images="images"
@@ -31,47 +39,33 @@ ul {
   @mixin list-reset;
 
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(15, 1fr);
   gap: var(--spacing-2);
+  padding-bottom: var(--spacing-1);
+  margin-bottom: var(--spacing-2);
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--color-secondary) transparent;
+  scrollbar-width: thin;
 }
 
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 li {
-  margin: 0;
-
-  &:nth-child(8n + 1),
-  &:nth-child(8n + 5) {
-    grid-row: span 2;
-    grid-column: span 4;
-  }
-
-  &:nth-child(8n + 2),
-  &:nth-child(8n + 3),
-  &:nth-child(8n + 4),
-  &:nth-child(8n + 6) {
-    grid-column: span 2;
-  }
-
-  &:nth-child(8n + 7),
-  &:nth-child(8n + 8) {
-    grid-column: span 3;
-  }
+  /* stylelint-disable-next-line declaration-property-value-no-unknown */
+  width: min(75vw, 40em);
+  scroll-snap-align: center;
 }
 
-button {
-  display: block;
-  width: 100%;
+.image {
   height: 100%;
-}
 
-.image :deep(img) {
-  display: block;
-  width: 100%;
-  height: auto;
+  :deep(img) {
+    height: 100%;
+    object-fit: cover;
+  }
 }
 </style>

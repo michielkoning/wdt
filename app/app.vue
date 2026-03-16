@@ -11,7 +11,6 @@ useHead({
 <template>
   <nuxt-route-announcer />
   <nuxt-loading-indicator color="var(--color-secondary)" />
-  <slot />
   <center-wrapper>
     <div class="page">
       <the-header />

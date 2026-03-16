@@ -1,5 +1,5 @@
 :root {
-  --font-size-base: clamp(18px, 2.75vw, 20px);
+  --font-size-base: clamp(16px, 2.75vw, 20px);
   --font-size-h1: 1.75rem;
   --font-size-h2: 1.5rem;
 
@@ -15,5 +15,6 @@
   --font-family-base: "Bitter", arial, helvetica, sans-serif;
   --font-family-heading: "Cinzel", var(--font-family-base);
   --font-weight-normal: 400;
+  --font-weight-medium: 500;
   --font-weight-bold: 700;
 }
