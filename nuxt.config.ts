@@ -23,6 +23,25 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  app: {
+    head: {
+      meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width,initial-scale=1,viewport-fit=cover',
+        },
+
+        { name: 'mobile-web-app-capable', content: 'yes' },
+        { name: 'apple-mobile-web-app-capable', content: 'yes' },
+        {
+          name: 'apple-mobile-web-app-status-bar-style',
+          content: 'black',
+        },
+        { name: 'apple-mobile-web-app-title', content: 'title' },
+        { name: 'theme-color', content: '#ac4747' },
+      ],
+    },
+  },
 
   css: ['~/assets/css/base.css'],
   vue: {
@@ -73,6 +92,7 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: true,
   },
+
   postcss: {
     plugins: {
       'postcss-mixins': {
