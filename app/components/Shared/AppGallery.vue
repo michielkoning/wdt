@@ -3,6 +3,7 @@ import AppButton from './AppButton.vue'
 
 defineProps<{
   images: Image[]
+  title: string
 }>()
 </script>
 
@@ -30,7 +31,8 @@ defineProps<{
   </block-wrapper>
   <gallery-modal
     id="gallery"
-    :images="images"
+    :title
+    :images
   />
 </template>
 

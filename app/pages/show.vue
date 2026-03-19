@@ -42,6 +42,19 @@ useSeoMeta({
   <block-wrapper
     v-if="data"
   >
+    <app-modal
+      v-if="data.ticketsUrl"
+      id="tickets"
+      :title="`Tickets voor ${data.title}`"
+    >
+      <iframe
+        title="Ik Ben Aanwezig Shop"
+        :src="data.ticketsUrl"
+        width="100%"
+        height="1400"
+        frameborder="0"
+      />
+    </app-modal>
     <h1>{{ data.title }}</h1>
     <div
       class="show"
@@ -58,8 +71,7 @@ useSeoMeta({
           class="featured-image"
         />
       </div>
-      <theme-wrapper
-        variant="white"
+      <div
         class="content"
       >
         <div v-html="data.excerpt" />
@@ -80,10 +92,13 @@ useSeoMeta({
           :dates="data.dates"
         />
         <app-button
+          v-if="data.ticketsUrl"
           title="Koop kaarten"
           class="btn"
+          commandfor="tickets"
+          command="show-modal"
         />
-      </theme-wrapper>
+      </div>
     </div>
 
     <div
@@ -93,6 +108,7 @@ useSeoMeta({
     <app-divider />
     <app-gallery
       v-if="data.gallery.length"
+      :title="data.title"
       :images="data.gallery"
     />
     <comments-list

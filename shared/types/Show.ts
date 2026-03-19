@@ -14,4 +14,5 @@ export type Show = {
   gallery: Image[]
   comments: Comment[]
   dates: string[]
+  ticketsUrl?: string
 }

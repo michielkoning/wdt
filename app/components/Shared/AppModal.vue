@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 defineProps<{
   id: string
+  title: string
 }>()
 
 const emit = defineEmits(['open'])
@@ -23,8 +24,9 @@ const afterOpen = () => {
     @toggle="afterOpen"
   >
     <div class="header">
+      <h2>{{ title }}</h2>
       <button
-        commandfor="gallery"
+        :commandfor="id"
         command="close"
         class="btn-close"
       >
@@ -51,7 +53,7 @@ dialog {
     animation: show-dialog var(--transition);
 
     &::backdrop {
-      animation: show-backdrop var(--transition);
+      animation: backdrop-show var(--transition);
     }
   }
 }
@@ -63,15 +65,18 @@ dialog {
 
 ::backdrop {
   background-color: rgb(0 0 0 / 50%);
-  backdrop-filter: blur(3px);
+  animation: backdrop-hide var(--transition);
 }
 
 .header {
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: end;
-  padding: var(--spacing-2) var(--spacing-4);
+  gap: var(--spacing-2);
+  justify-content: space-between;
+  padding: var(--spacing-2) var(--spacing-4) 0;
+  color: var(--text-on-secondary);
+  background-color: var(--color-secondary);
 }
 
 @keyframes show-dialog {
@@ -88,13 +93,27 @@ dialog {
   }
 }
 
-@keyframes show-backdrop {
+@keyframes backdrop-show {
   from {
     opacity: 0;
+    backdrop-filter: blur(0);
   }
 
   to {
     opacity: 1;
+    backdrop-filter: blur(0.5em);
+  }
+}
+
+@keyframes backdrop-hide {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(0.5em);
+  }
+
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0);
   }
 }
 </style>

@@ -1,6 +1,5 @@
 import { ofetch } from 'ofetch'
 import { defineNuxtModule, addPrerenderRoutes } from 'nuxt/kit'
-import { S } from 'vue-router/dist/options-D40y7AuF.mjs'
 
 const PAGESIZE = 20
 // const PAGESIZE = 99

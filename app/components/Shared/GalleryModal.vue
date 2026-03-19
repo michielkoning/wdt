@@ -2,12 +2,14 @@
 defineProps<{
   images: Image[]
   id: string
+  title: string
 }>()
 </script>
 
 <template>
   <app-modal
     :id="id"
+    :title="`Foto's van ${title}`"
   >
     <ul>
       <li

@@ -78,7 +78,14 @@ export const ShowSchema = z.array(
           }
           return val
         }),
-
+      tickets_url: z.literal('').or(
+        z.url())
+        .transform((val) => {
+          if (val === '') {
+            return undefined
+          }
+          return val
+        }),
     }),
   }).transform((item) => {
     return {
@@ -126,6 +133,7 @@ export const ShowSchema = z.array(
           date: item.date,
         }
       }),
+      ticketsUrl: item.acf.tickets_url,
       dates: item.acf.dates.map(item => item.date),
     }
   }),

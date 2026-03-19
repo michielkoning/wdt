@@ -54,6 +54,19 @@ const closePopover = () => {
         <li>
           <nuxt-link-locale
             :to="{
+              name: 'page',
+              params: {
+                slug: 'over-wdt',
+              },
+            }"
+            @click="closePopover"
+          >
+            Over WDT
+          </nuxt-link-locale>
+        </li>
+        <li>
+          <nuxt-link-locale
+            :to="{
               name:
                 'shows',
             }"
@@ -83,19 +96,6 @@ const closePopover = () => {
             @click="closePopover"
           >
             Nieuws
-          </nuxt-link-locale>
-        </li>
-        <li>
-          <nuxt-link-locale
-            :to="{
-              name: 'page',
-              params: {
-                slug: 'over-wdt',
-              },
-            }"
-            @click="closePopover"
-          >
-            Over WDT
           </nuxt-link-locale>
         </li>
       </ol>
