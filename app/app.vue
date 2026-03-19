@@ -10,7 +10,9 @@ useHead({
 
 <template>
   <nuxt-route-announcer />
-  <nuxt-loading-indicator color="var(--color-secondary)" />
+  <nuxt-loading-indicator
+    color="#f7f2eb"
+  />
   <center-wrapper>
     <div class="page">
       <the-header />
