@@ -59,8 +59,11 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
 </template>
 
 <style lang="css" scoped>
+@import "~/assets/css/media-queries/media-queries.css";
+
 .paging {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--spacing-2);
   align-items: start;
   justify-content: space-between;
@@ -74,6 +77,7 @@ ul {
 
   display: flex;
   gap: var(--spacing-2);
+  align-items: center;
   justify-content: center;
 }
 
@@ -110,7 +114,16 @@ a {
 }
 
 span {
+  display: none;
   visibility: hidden;
+
+  @media (--viewport-md) {
+    display: block;
+  }
+}
+
+a {
+  display: block;
 }
 
 .current a {
