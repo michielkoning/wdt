@@ -45,8 +45,13 @@ dialog {
   width: calc(100vw - (var(--spacing-4) * 2));
   max-width: 1280px;
   padding: 0;
-  background-color: rgb(0 0 0 / 100%);
+  background-color: var(--color-secondary);
   border: 0;
+  border-radius: 1rem;
+
+  /* stylelint-disable-next-line property-no-unknown */
+  corner-shape: scoop;
+  box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 3px var(--color-dominant);
   transition: opacity var(--transition);
 
   &[open] {
@@ -73,6 +78,7 @@ dialog {
   top: 0;
   display: flex;
   gap: var(--spacing-2);
+  align-items: start;
   justify-content: space-between;
   padding: var(--spacing-2) var(--spacing-4) 0;
   color: var(--text-on-secondary);

@@ -19,7 +19,7 @@ defineProps<{
       <div class="image-wrapper">
         <app-image
           v-if="item.image"
-          class="image"
+          class="image featured-image"
           :image="item.image"
         />
       </div>
@@ -56,13 +56,21 @@ a {
 
 li {
   position: relative;
-  border-bottom: 3px solid var(--color-secondary);
 
   &:hover,
   &:focus-within {
     a {
       text-decoration: underline;
     }
+  }
+
+  &::after {
+    position: absolute;
+    inset: auto 0 0;
+    display: block;
+    height: 2px;
+    content: "";
+    background-image: linear-gradient(to left, transparent, currentcolor, transparent);
   }
 }
 
@@ -77,7 +85,6 @@ li {
 .image-wrapper {
   aspect-ratio: 3 / 4;
   margin-bottom: var(--spacing-2);
-  border: 3px solid var(--color-secondary);
 
   &:deep(img) {
     height: 100%;

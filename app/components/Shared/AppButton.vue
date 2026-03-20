@@ -46,7 +46,8 @@ const cssClasses = computed(() => {
 .btn {
   display: inline-block;
   width: auto;
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: var(--spacing-2) var(--spacing-3);
+  margin-inline: var(--spacing-1);
   font-family: var(--font-family-heading);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-normal);
@@ -56,11 +57,12 @@ const cssClasses = computed(() => {
   text-decoration: none;
   cursor: pointer;
   background-color: var(--color-accent);
-  border: 2px solid transparent;
+  border: 1px solid currentcolor;
   border-radius: var(--spacing-1);
 
   /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
+  box-shadow: 0 0 0 calc(var(--spacing-1) / 2) var(--color-accent);
   transition: background-color var(--transition);
 
   &:hover {

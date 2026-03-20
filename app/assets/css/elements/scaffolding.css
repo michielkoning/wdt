@@ -54,3 +54,12 @@ dt {
 dd {
   margin: 0 0 var(--spacing-2);
 }
+
+.featured-image {
+  overflow: hidden;
+  border: 2px solid var(--color-secondary);
+  border-radius: 0.25rem;
+
+  /* stylelint-disable-next-line property-no-unknown */
+  corner-shape: scoop;
+}

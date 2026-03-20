@@ -28,10 +28,13 @@ defineProps<{
 <style lang="css" scoped>
 ul {
   padding: 0;
+  margin-bottom: 0;
   list-style: none outside;
 }
 
 li {
-  margin: 0 0 var(--spacing-4);
+  &:not(:last-child) {
+    margin-bottom: var(--spacing-2);
+  }
 }
 </style>

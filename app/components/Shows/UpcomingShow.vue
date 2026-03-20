@@ -21,12 +21,12 @@ const { data } = useFetch('/api/upcomingShow')
         <app-image
           v-if="data.banner"
           :image="data.banner"
-          class="banner"
+          class="image-sm featured-image"
         />
         <app-image
           v-if="data.image"
           :image="data.image"
-          class="featured-image"
+          class="image-md featured-image"
         />
         <div>
           <h2>
@@ -69,13 +69,13 @@ const { data } = useFetch('/api/upcomingShow')
   }
 }
 
-.banner {
+.image-sm {
   @media (--viewport-md) {
     display: none;
   }
 }
 
-.featured-image {
+.image-md {
   display: none;
 
   @media (--viewport-md) {

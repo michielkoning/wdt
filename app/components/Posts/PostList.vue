@@ -60,7 +60,7 @@ const title = computed(() => {
             <app-image
               v-if="item.image"
               :image="item.image"
-              class="image"
+              class="image featured-image"
             />
           </div>
           <div>
@@ -81,6 +81,7 @@ const title = computed(() => {
               class="text"
               v-html="item.excerpt"
             />
+            <read-more />
           </div>
         </div>
       </clickable-wrapper>
@@ -122,10 +123,22 @@ a {
   text-decoration: none;
 }
 
+:deep(p) {
+  margin-bottom: var(--spacing-2);
+}
+
 li {
   margin-bottom: var(--spacing-4);
   container-name: achive-list;
   container-type: inline-size;
+
+  &::after {
+    display: block;
+    height: 2px;
+    margin-top: var(--spacing-4);
+    content: "";
+    background-image: linear-gradient(to left, transparent, currentcolor, transparent);
+  }
 
   &:hover,
   &:focus-within {

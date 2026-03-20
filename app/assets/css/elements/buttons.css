@@ -1,6 +1,7 @@
 button {
   font-family: var(--font-family-base);
   font-size: 1em;
+  color: currentcolor;
   background-color: transparent;
   border: 0;
 }

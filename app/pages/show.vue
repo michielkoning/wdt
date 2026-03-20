@@ -126,7 +126,7 @@ useSeoMeta({
 .show {
   display: grid;
   gap: var(--spacing-4);
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-8);
 
   @media (--viewport-md) {
     grid-template-columns: 1fr 2fr;
