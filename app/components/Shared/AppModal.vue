@@ -52,10 +52,11 @@ dialog {
   /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
   box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 3px var(--color-dominant);
-  transition: opacity var(--transition);
+  transition: display var(--transition) allow-discrete, overlay var(--transition) allow-discrete;
+  animation: dialog-hide var(--transition);
 
   &[open] {
-    animation: show-dialog var(--transition);
+    animation: dialog-show var(--transition);
 
     &::backdrop {
       animation: backdrop-show var(--transition);
@@ -70,6 +71,7 @@ dialog {
 
 ::backdrop {
   background-color: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(0.5em);
   animation: backdrop-hide var(--transition);
 }
 
@@ -85,7 +87,21 @@ dialog {
   background-color: var(--color-secondary);
 }
 
-@keyframes show-dialog {
+@keyframes dialog-hide {
+  from {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+  }
+
+  to {
+    opacity: 0;
+    scale: 0.99;
+    translate: 0 -1em;
+  }
+}
+
+@keyframes dialog-show {
   from {
     opacity: 0;
     scale: 0.99;
