@@ -5,7 +5,7 @@
       <li>
         <h2>Contact</h2>
         Els Ausema<br>
-        M: <a href="mailto:info@wdttoneel.nl">mailto:info@wdttoneel.nl</a>
+        M: <a href="mailto:info@wdttoneel.nl">info@wdttoneel.nl</a>
       </li>
 
       <li>
