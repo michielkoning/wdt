@@ -151,7 +151,7 @@ header {
 
 li {
   transition: opacity var(--transition), translate 0.25s var(--transition);
-  transition-delay: calc(0.1s * (sibling-index() - 1) + var(--transition-duration));
+  transition-delay: calc(0.1s * (sibling-index() - 1) + calc(var(--transition-duration) / 2));
 }
 
 nav {
