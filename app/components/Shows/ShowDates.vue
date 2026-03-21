@@ -37,6 +37,6 @@ li {
 
 .icon {
   width: 1em;
-  translate: 0 0.3rem;
+  translate: 0 0.25rem;
 }
 </style>

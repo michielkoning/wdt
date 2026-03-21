@@ -25,7 +25,6 @@ useSeoMeta({
 <template>
   <block-wrapper
     v-if="data"
-    class="content"
   >
     <div>
       <h1>
