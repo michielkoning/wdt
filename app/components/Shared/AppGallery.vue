@@ -1,10 +1,12 @@
 <script lang="ts" setup>
 import AppButton from './AppButton.vue'
 
-defineProps<{
+const props = defineProps<{
   images: Image[]
   title: string
 }>()
+
+const totalImages = computed(() => props.images.length)
 </script>
 
 <template>
@@ -41,7 +43,7 @@ ul {
   @mixin list-reset;
 
   display: grid;
-  grid-template-columns: repeat(15, 1fr);
+  grid-template-columns: repeat(v-bind(totalImages), 1fr);
   gap: var(--spacing-2);
   padding-bottom: var(--spacing-1);
   margin-bottom: var(--spacing-2);

@@ -149,6 +149,11 @@ header {
   height: 1.5em;
 }
 
+li {
+  transition: opacity var(--transition), translate 0.25s var(--transition);
+  transition-delay: calc(0.1s * (sibling-index() - 1) + var(--transition-duration));
+}
+
 nav {
   inset: 0;
   flex-direction: column;
@@ -187,6 +192,11 @@ nav {
     &::backdrop {
       animation: show-backdrop var(--transition);
     }
+
+    li {
+      opacity: 1;
+      translate: 0 0;
+    }
   }
 }
 
@@ -213,6 +223,11 @@ ol {
 @starting-style {
   nav:popover-open {
     translate: -100% 0;
+
+    li {
+      opacity: 0;
+      translate: -1rem 0;
+    }
   }
 }
 

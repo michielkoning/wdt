@@ -44,6 +44,8 @@ const cssClasses = computed(() => {
 
 <style lang="css" scoped>
 .btn {
+  --color: var(--color-accent);
+
   display: inline-block;
   width: auto;
   padding: var(--spacing-2) var(--spacing-3);
@@ -56,18 +58,17 @@ const cssClasses = computed(() => {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  background-color: var(--color-accent);
+  background-color: var(--color);
   border: 1px solid currentcolor;
   border-radius: var(--spacing-1);
 
   /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
-  box-shadow: 0 0 0 calc(var(--spacing-1) / 2) var(--color-accent);
-  transition: background-color var(--transition);
+  box-shadow: 0 0 0 calc(var(--spacing-1) / 2) var(--color);
+  transition: background-color var(--transition), box-shadow  var(--transition);
 
   &:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    --color: var(--color-accent-300);
   }
 
   &:disabled {

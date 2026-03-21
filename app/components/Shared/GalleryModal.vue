@@ -27,12 +27,17 @@ defineProps<{
 
 <style lang="css" scoped>
 ul {
+  height: 90vh;
   padding: 0;
   margin-bottom: 0;
+  overflow-y: scroll;
   list-style: none outside;
+  scroll-snap-type: y mandatory;
 }
 
 li {
+  scroll-snap-align: center;
+
   &:not(:last-child) {
     margin-bottom: var(--spacing-2);
   }

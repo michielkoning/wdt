@@ -8,17 +8,11 @@
   --text-on-accent-theme-light: oklch(93.2% 0.0375 237.0489deg);
 
   /* Dark theme */
-
-  /* #22262A */
-
-  /* #22262A */
-
-  /* #22262A */
-  --color-dominant-theme-dark: #f7f2eb;
-  --color-secondary-theme-dark: #ac4747;
+  --color-dominant-theme-dark: oklch(96.31% 0.0108 76.6deg);
+  --color-secondary-theme-dark: oklch(53.19% 0.1332 22.71deg);
   --color-accent-theme-dark: oklch(45.78% 0.1729 15.42deg);
-  --text-on-dominant-theme-dark: #ac4747;
-  --text-on-secondary-theme-dark: #f7f2eb;
+  --text-on-dominant-theme-dark: oklch(53.19% 0.1332 22.71deg);
+  --text-on-secondary-theme-dark: oklch(96.31% 0.0108 76.6deg);
   --text-on-accent-theme-dark: oklch(0% 0 0deg);
 
   /* Set colors */
@@ -52,4 +46,31 @@
       var(--text-on-accent-theme-light),
       var(--text-on-accent-theme-dark)
     );
+  --color-dominant-100: oklch(from var(--color-dominant) calc(l + 0.2) c h);
+  --color-dominant-200: oklch(from var(--color-dominant) calc(l + 0.15) c h);
+  --color-dominant-300: oklch(from var(--color-dominant) calc(l + 0.1) c h);
+  --color-dominant-400: oklch(from var(--color-dominant) calc(l + 0.05) c h);
+  --color-dominant-500: var(--color-dominant);
+  --color-dominant-600: oklch(from var(--color-dominant) calc(l - 0.05) c h);
+  --color-dominant-700: oklch(from var(--color-dominant) calc(l - 0.1) c h);
+  --color-dominant-800: oklch(from var(--color-dominant) calc(l - 0.15) c h);
+  --color-dominant-900: oklch(from var(--color-dominant) calc(l - 0.2) c h);
+  --color-secondary-100: oklch(from var(--color-secondary) calc(l + 0.2) c h);
+  --color-secondary-200: oklch(from var(--color-secondary) calc(l + 0.15) c h);
+  --color-secondary-300: oklch(from var(--color-secondary) calc(l + 0.1) c h);
+  --color-secondary-400: oklch(from var(--color-secondary) calc(l + 0.05) c h);
+  --color-secondary-500: var(--color-secondary);
+  --color-secondary-600: oklch(from var(--color-secondary) calc(l - 0.05) c h);
+  --color-secondary-700: oklch(from var(--color-secondary) calc(l - 0.1) c h);
+  --color-secondary-800: oklch(from var(--color-secondary) calc(l - 0.15) c h);
+  --color-secondary-900: oklch(from var(--color-secondary) calc(l - 0.2) c h);
+  --color-accent-100: oklch(from var(--color-accent) calc(l + 0.2) c h);
+  --color-accent-200: oklch(from var(--color-accent) calc(l + 0.15) c h);
+  --color-accent-300: oklch(from var(--color-accent) calc(l + 0.1) c h);
+  --color-accent-400: oklch(from var(--color-accent) calc(l + 0.05) c h);
+  --color-accent-500: var(--color-accent);
+  --color-accent-600: oklch(from var(--color-accent) calc(l - 0.05) c h);
+  --color-accent-700: oklch(from var(--color-accent) calc(l - 0.1) c h);
+  --color-accent-800: oklch(from var(--color-accent) calc(l - 0.15) c h);
+  --color-accent-900: oklch(from var(--color-accent) calc(l - 0.2) c h);
 }

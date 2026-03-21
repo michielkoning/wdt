@@ -6,7 +6,7 @@ const props = withDefaults(
     lazy?: boolean
   }>(),
   {
-    sizes: 'sm:300px sm:300px md:300px lg:300px xl:300px 2xl:300px"',
+    sizes: 'sm:100vw sm:100vw md:100vw lg:100vw xl:100vw 2xl:100vw"',
     lazy: true,
   },
 )
@@ -30,12 +30,14 @@ const loading = computed(() => {
     :height="image.height"
     format="avif,webp"
     class="image"
+    :placeholder="[image.width / 10, image.height / 10, 75, 5]"
   />
 </template>
 
 <style lang="css" scoped>
 picture {
   display: block;
+  background-color: var(--color-secondary-100);
 }
 
 .image :deep(img) {

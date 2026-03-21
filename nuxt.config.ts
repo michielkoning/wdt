@@ -77,7 +77,7 @@ export default defineNuxtConfig({
     devStorage: {
       cache: {
         driver: 'null',
-        // base: './.nuxt/cache',
+        base: './.nuxt/cache',
       },
     },
     storage: {
@@ -110,7 +110,14 @@ export default defineNuxtConfig({
         },
       },
       'autoprefixer': {},
-      'cssnano': {},
+      'cssnano': {
+        preset: [
+          'default',
+          {
+            calc: false,
+          },
+        ],
+      },
     },
   },
   telemetry: false,
