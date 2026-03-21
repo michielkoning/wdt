@@ -25,8 +25,16 @@ useSeoMeta({
 <template>
   <block-wrapper
     v-if="data"
+    class="content"
   >
-    <h1>{{ data.title }}</h1>
-    <div v-html="data.content" />
+    <div>
+      <h1>
+        {{ data.title }}
+      </h1>
+      <div
+        v-html="data.content"
+      />
+      <app-pages :parent-id="data.id" />
+    </div>
   </block-wrapper>
 </template>

@@ -56,7 +56,7 @@ const title = computed(() => {
         })"
       >
         <div class="wrapper">
-          <div>
+          <div class="image-wrapper">
             <app-image
               v-if="item.image"
               :image="item.image"
@@ -108,14 +108,14 @@ const title = computed(() => {
 ul {
   @mixin list-reset;
 
+  display: grid;
+  gap: var(--gutter);
   padding-left: 0;
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-4);
   list-style: none outside;
 
   &.highlights {
-    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
-    gap: var(--gutter);
   }
 }
 
@@ -128,14 +128,15 @@ a {
 }
 
 li {
-  margin-bottom: var(--spacing-4);
+  position: relative;
+  padding-bottom: var(--spacing-2);
   container-name: achive-list;
   container-type: inline-size;
 
   &::after {
     display: block;
     height: 2px;
-    margin-top: var(--spacing-4);
+    margin-top: var(--spacing-2);
     content: "";
     background-image: linear-gradient(to left, transparent, currentcolor, transparent);
   }
@@ -149,6 +150,8 @@ li {
 }
 
 .wrapper {
+  height: 100%;
+
   @container achive-list (width > 32em) {
     display: grid;
     grid-template-columns: 1fr 4fr;

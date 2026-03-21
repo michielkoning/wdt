@@ -118,8 +118,6 @@ header {
   color: currentcolor;
   border: 2px solid currentcolor;
   border-radius: var(--spacing-1);
-
-  /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
 
   @media (--viewport-md) {

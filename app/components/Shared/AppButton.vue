@@ -61,8 +61,6 @@ const cssClasses = computed(() => {
   background-color: var(--color);
   border: 1px solid currentcolor;
   border-radius: var(--spacing-1);
-
-  /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
   box-shadow: 0 0 0 calc(var(--spacing-1) / 2) var(--color);
   transition: background-color var(--transition), box-shadow  var(--transition);

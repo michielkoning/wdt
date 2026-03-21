@@ -25,10 +25,16 @@ useSeoMeta({
 <template>
   <block-wrapper v-if="data">
     <h1>{{ data.title }}</h1>
-    <div
-      class="text"
-      v-html="data.content"
-    />
+    <div class="content">
+      <app-image
+        v-if="data.image"
+        :image="data.image"
+        class="featured-image"
+      />    <div
+        class="text"
+        v-html="data.content"
+      />
+    </div>
     <post-list
       :exclude-id="data.id"
     />
@@ -36,6 +42,19 @@ useSeoMeta({
 </template>
 
 <style lang="css" scoped>
+@import "~/assets/css/media-queries/media-queries.css";
+
+.content {
+  display: grid;
+  gap: var(--spacing-4);
+  align-items: start;
+  margin-bottom: var(--spacing-8);
+
+  @media (--viewport-md) {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
 .text::first-letter {
   margin-right: 0.25em;
   initial-letter: 2;

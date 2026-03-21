@@ -19,6 +19,7 @@ defineProps<{
         <app-image
           :id="`image-${image.id}`"
           :image="image"
+          :lazy="false"
         />
       </li>
     </ul>

@@ -20,6 +20,7 @@
       }
     ],
     "nesting-selector-no-missing-scoping-root": null,
-    "property-no-deprecated": [true, { "ignoreProperties": ["clip"] }]
+    "property-no-deprecated": [true, { "ignoreProperties": ["clip"] }],
+    "property-no-unknown": [true, { "ignoreProperties": ["corner-shape"] }]
   }
 }

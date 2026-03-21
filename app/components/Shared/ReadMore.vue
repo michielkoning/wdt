@@ -18,8 +18,6 @@ span {
   cursor: pointer;
   background-color: transparent;
   border-radius: 3px;
-
-  /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
   box-shadow: 0 0 0 1px var(--color-secondary);
   transition: background-color var(--transition);

@@ -60,7 +60,7 @@ ul {
 
 li {
   /* stylelint-disable-next-line declaration-property-value-no-unknown */
-  width: min(75vw, 40em);
+  width: min(65vw, 40em);
   scroll-snap-align: center;
 }
 

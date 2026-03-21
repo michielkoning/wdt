@@ -48,8 +48,6 @@ dialog {
   background-color: var(--color-secondary);
   border: 0;
   border-radius: 1rem;
-
-  /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
   box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 3px var(--color-dominant);
   transition: display var(--transition) allow-discrete, overlay var(--transition) allow-discrete;

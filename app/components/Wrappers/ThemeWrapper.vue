@@ -22,7 +22,6 @@ defineProps<{
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
   border-radius: var(--spacing-6);
-  /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
 }
 
@@ -36,7 +35,6 @@ defineProps<{
   color: var(--text-on-dominant);
   background-color: #fff;
   border-radius: var(--spacing-4);
-  /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
 }
 </style>

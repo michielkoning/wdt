@@ -47,15 +47,13 @@ main {
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
   border-radius: var(--spacing-6);
-
-  /* stylelint-disable-next-line property-no-unknown */
   corner-shape: scoop;
 }
 
-/* stylelint-disable */
 .content {
-   flex: 1 1 auto;
+  flex: 1 1 auto;
   padding: var(--spacing-4)  var(--gutter);
+/* stylelint-disable */
   background:
     radial-gradient(circle var(--width) at 0 70%, var(--l) 5%, var(--bg) 5% 12%, var(--l) 12% 13%, transparent 13%),
     radial-gradient(circle var(--width) at 100% 70%, var(--l) 5%, var(--bg) 5% 12%, var(--l) 12% 13%, transparent 13%),
@@ -68,10 +66,11 @@ main {
     radial-gradient(ellipse 5% 22% at 32% 20%, var(--bg) 100%, transparent 100%),
     radial-gradient(ellipse 5% 22% at 68% 20%, var(--bg) 100%, transparent 100%),
     linear-gradient(90deg, var(--l) 0.5%, var(--bg) 0.5% 8.5%, var(--l) 8.5% 9.5%, var(--bg) 9.5% 17.5%, var(--l) 17.5% 18.5%, var(--bg) 18.5% 31.5%, var(--l) 31.5% 32.5%, var(--bg) 32.5% 40.5%, var(--l) 40.5% 41.5%, var(--bg) 41.5% 49.5%, var(--l) 49.5% 50.5%, var(--bg) 50.5% 58.5%, var(--l) 58.5% 59.5%, var(--bg) 59.5% 67.5%, var(--l) 67.5% 68.5%, var(--bg) 68.5% 81.5%, var(--l) 81.5% 82.5%, var(--bg) 82.5% 90.5%, var(--l) 90.5% 91.5%, var(--bg) 91.5% 99.5%, var(--l) 99.5% 100%);
+/* stylelint-enable */
+
   background-size: var(--width) calc(var(--width) * 3);
   border: 2px solid var(--color-secondary);
   border-radius: var(--spacing-6);
-
   corner-shape: scoop;
 
   --l: #ac47470a;
