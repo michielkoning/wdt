@@ -36,7 +36,7 @@ ul {
 }
 
 li {
-  scroll-snap-align: center;
+  scroll-snap-align: start;
 
   &:not(:last-child) {
     margin-bottom: var(--spacing-2);
