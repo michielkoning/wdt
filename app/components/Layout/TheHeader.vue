@@ -154,9 +154,6 @@ li {
 
 nav {
   inset: 0;
-  flex-direction: column;
-  gap: var(--spacing-2);
-  justify-content: space-between;
   width: 70vw;
   height: 100%;
   padding: var(--spacing-4) var(--gutter);
@@ -167,6 +164,12 @@ nav {
   background-color: var(--color-dominant);
   border: 0;
   border-right: 2px solid var(--color-secondary);
+  corner-shape: scoop;
+
+  @supports (corner-shape: scoop) {
+    border-radius: 0 1rem 1rem 0;
+  }
+
   translate: -100% 0;
   transition:
     translate var(--transition),
@@ -181,6 +184,7 @@ nav {
     color: var(--text-on-secondary);
     background-color: transparent;
     border: 0;
+    corner-shape: scoop;
     translate: 0 0;
   }
 
