@@ -76,7 +76,7 @@ const title = computed(() => {
                 {{ item.title }}
               </nuxt-link-locale>
             </h3>
-            <!-- {{ $d(new Date(item.date), 'short') }} -->
+            {{ $d(new Date(item.date), 'short') }}
             <div
               class="text"
               v-html="item.excerpt"

@@ -10,7 +10,7 @@ const { data } = useFetch('/api/activities')
         v-for="item in data"
         :key="item.date"
       >
-        <!-- {{ $d(new Date(item.date), 'short') }} -->
+        {{ $d(new Date(item.date), 'short') }}
         <nuxt-link-locale
           :to="{
             name: item.type,
