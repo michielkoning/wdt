@@ -174,6 +174,9 @@ export default defineNuxtConfig({
       },
     ],
   },
+  icon: {
+    mode: 'svg',
+  },
   image: {
     domains: ['wdt.local', 'test.wdttoneel.nl'],
   },
