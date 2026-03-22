@@ -22,7 +22,7 @@ defineProps<{
             {{ item.author }}
           </h3>
           <div class="date">
-            {{ $d(new Date(item.date), 'short') }}
+            <!-- {{ $d(new Date(item.date), 'short') }} -->
           </div>
         </div>
         <div v-html="item.content" />

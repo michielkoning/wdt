@@ -16,7 +16,7 @@ defineProps<{
           name="solar:check-circle-linear"
           class="icon"
         />
-        {{ $d(new Date(date), 'short') }}
+        <!-- {{ $d(new Date(date), 'short') }} -->
       </li>
     </ul>
   </div>
