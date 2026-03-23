@@ -7,12 +7,6 @@ const closePopover = () => {
   }
   menu.value.hidePopover()
 }
-
-const storage = useStorage('cache')
-
-const clearCache = async () => {
-  await storage.clear()
-}
 </script>
 
 <template>
@@ -30,12 +24,6 @@ const clearCache = async () => {
       Menu
     </button>
 
-    <button
-      class="btn-open"
-      @click="clearCache"
-    >
-      clear cache
-    </button>
     <nav
       id="menu"
       ref="menu"
