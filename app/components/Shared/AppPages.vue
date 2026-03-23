@@ -124,6 +124,8 @@ nav {
 
 ol {
   @mixin list-reset;
+
+  padding-top: env(safe-area-inset-top);
 }
 
 li:not(:last-child) a::after {

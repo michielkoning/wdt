@@ -60,15 +60,10 @@ useSeoMeta({
       class="show"
     >
       <div class="meta-data">
-        <app-image
-          v-if="data.banner"
-          :image="data.banner"
-          class="banner"
-        />
-        <app-image
+        <image-card
           v-if="data.image"
           :image="data.image"
-          class="featured-image"
+          :banner="data.banner"
         />
       </div>
       <div
@@ -101,10 +96,8 @@ useSeoMeta({
       </div>
     </div>
 
-    <div
-      class="text"
-      v-html="data.content"
-    />
+    <body-text :text="data.content" />
+
     <app-divider />
     <app-gallery
       v-if="data.gallery.length"
@@ -135,28 +128,6 @@ useSeoMeta({
   @media (--viewport-lg) {
     margin-bottom: var(--spacing-8);
   }
-}
-
-.banner {
-  @media (--viewport-md) {
-    display: none;
-  }
-}
-
-.featured-image {
-  display: none;
-
-  @media (--viewport-md) {
-    display: block;
-  }
-}
-
-.text::first-letter {
-  margin-right: 0.25em;
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-heading);
-  initial-letter: 2;
 }
 
 .btn {

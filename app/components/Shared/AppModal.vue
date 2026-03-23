@@ -69,7 +69,7 @@ dialog {
 
 ::backdrop {
   background-color: rgb(0 0 0 / 50%);
-  backdrop-filter: blur(0.5em);
+  backdrop-filter: blur(0.25em);
   animation: backdrop-hide var(--transition);
 }
 
@@ -121,14 +121,14 @@ dialog {
 
   to {
     opacity: 1;
-    backdrop-filter: blur(0.5em);
+    backdrop-filter: blur(0.25em);
   }
 }
 
 @keyframes backdrop-hide {
   from {
     opacity: 1;
-    backdrop-filter: blur(0.5em);
+    backdrop-filter: blur(0.25em);
   }
 
   to {

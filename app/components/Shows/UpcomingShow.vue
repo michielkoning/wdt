@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import AppButton from '../Shared/AppButton.vue'
+import ImageCard from '../Shared/ImageCard.vue'
 
 const { data } = useFetch('/api/upcomingShow')
 </script>
@@ -18,16 +19,12 @@ const { data } = useFetch('/api/upcomingShow')
       })"
     >
       <div class="upcoming-show">
-        <app-image
-          v-if="data.banner"
-          :image="data.banner"
-          class="image-sm featured-image"
-        />
-        <app-image
+        <image-card
           v-if="data.image"
           :image="data.image"
-          class="image-md featured-image"
+          :banner="data.banner"
         />
+
         <div>
           <h2>
             <nuxt-link-locale
@@ -66,20 +63,6 @@ const { data } = useFetch('/api/upcomingShow')
 
   @media (--viewport-md) {
     grid-template-columns: 1fr 2fr;
-  }
-}
-
-.image-sm {
-  @media (--viewport-md) {
-    display: none;
-  }
-}
-
-.image-md {
-  display: none;
-
-  @media (--viewport-md) {
-    display: block;
   }
 }
 

@@ -30,7 +30,6 @@ const loading = computed(() => {
     :height="image.height"
     format="avif,webp"
     class="image"
-    :placeholder="[image.width / 10, image.height / 10, 75, 5]"
   />
 </template>
 

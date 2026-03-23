@@ -30,10 +30,8 @@ useSeoMeta({
         v-if="data.image"
         :image="data.image"
         class="featured-image"
-      />    <div
-        class="text"
-        v-html="data.content"
       />
+      <body-text :text="data.content" />
     </div>
     <post-list
       :exclude-id="data.id"
@@ -53,13 +51,5 @@ useSeoMeta({
   @media (--viewport-md) {
     grid-template-columns: 1fr 2fr;
   }
-}
-
-.text::first-letter {
-  margin-right: 0.25em;
-  initial-letter: 2;
-  font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-heading);
 }
 </style>

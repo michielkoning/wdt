@@ -56,9 +56,10 @@ export default defineNuxtConfig({
     apiUrl: '',
   },
   experimental: {
-    // viewTransition: true,
+    // inlineSSRStyles: false,
+    viewTransition: true,
+    renderJsonPayloads: true,
   },
-
   compatibilityDate: '2025-07-15',
   nitro: {
     routeRules: {

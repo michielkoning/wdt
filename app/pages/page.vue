@@ -30,9 +30,7 @@ useSeoMeta({
       <h1>
         {{ data.title }}
       </h1>
-      <div
-        v-html="data.content"
-      />
+      <body-text :text="data.content" />
       <app-pages :parent-id="data.id" />
     </div>
   </block-wrapper>

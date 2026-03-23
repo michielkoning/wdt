@@ -16,13 +16,10 @@ defineProps<{
         },
       })"
     >
-      <div class="image-wrapper">
-        <app-image
-          v-if="item.image"
-          class="image featured-image"
-          :image="item.image"
-        />
-      </div>
+      <image-card
+        class="image-wrapper"
+        :image="item.image"
+      />
 
       <h3>
         <nuxt-link-locale
@@ -86,14 +83,9 @@ li {
   aspect-ratio: 3 / 4;
   margin-bottom: var(--spacing-2);
 
-  &:deep(img) {
+  &:deep(picture) {
     height: 100%;
-    object-fit: cover;
   }
-}
-
-.image {
-  height: 100%;
 
   &:deep(img) {
     height: 100%;

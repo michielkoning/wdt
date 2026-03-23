@@ -7,6 +7,12 @@ const closePopover = () => {
   }
   menu.value.hidePopover()
 }
+
+const storage = useStorage('cache')
+
+const clearCache = async () => {
+  await storage.clear()
+}
 </script>
 
 <template>
@@ -22,6 +28,13 @@ const closePopover = () => {
         name="solar:hamburger-menu-linear"
       />
       Menu
+    </button>
+
+    <button
+      class="btn-open"
+      @click="clearCache"
+    >
+      clear cache
     </button>
     <nav
       id="menu"
@@ -163,18 +176,17 @@ nav {
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
   border: 0;
-  border-right: 2px solid var(--color-secondary);
   corner-shape: scoop;
-
-  @supports (corner-shape: scoop) {
-    border-radius: 0 1rem 1rem 0;
-  }
-
+  box-shadow: 0 0 0 2px var(--color-secondary);
   translate: -100% 0;
   transition:
     translate var(--transition),
     overlay var(--transition) allow-discrete,
     display var(--transition) allow-discrete;
+
+  @supports (corner-shape: scoop) {
+    border-radius: 0 1rem 1rem 0;
+  }
 
   @media (--viewport-md) {
     position: static;
@@ -184,6 +196,7 @@ nav {
     color: var(--text-on-secondary);
     background-color: transparent;
     border: 0;
+    border-radius: 0;
     corner-shape: scoop;
     translate: 0 0;
   }
@@ -215,6 +228,7 @@ ol {
 
 ::backdrop {
   background-color: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(0.25em);
   animation: hide-backdrop var(--transition);
 
   @media (--viewport-md) {
@@ -257,14 +271,14 @@ a {
 
   to {
     opacity: 1;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(0.25em);
   }
 }
 
 @keyframes hide-backdrop {
   from {
     opacity: 1;
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(0.25em);
   }
 
   to {
