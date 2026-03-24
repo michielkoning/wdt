@@ -114,7 +114,6 @@ nav {
   inset-block-start: 0;
   order: -1;
   padding-block: var(--spacing-2);
-  background-color: var(--color-dominant);
 
   @media (--viewport-md) {
     inset-block-start: var(--spacing-4);
@@ -126,6 +125,7 @@ ol {
   @mixin list-reset;
 
   padding-block-start: env(safe-area-inset-top);
+  background-color: var(--color-dominant);
 }
 
 li:not(:last-child) a::after {
