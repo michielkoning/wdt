@@ -1,0 +1,7 @@
+@define-mixin corners $radius {
+  @supports (corner-shape: scoop) {
+    /* stylelint-disable no-invalid-position-declaration */
+    border-radius: $radius;
+    corner-shape: scoop;
+  }
+}

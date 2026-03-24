@@ -4,6 +4,8 @@
 
 <style lang="css" scoped>
 span {
+  @mixin corners var(--spacing-1);
+
   display: inline-block;
   width: auto;
   padding: var(--spacing-1) var(--spacing-2);
@@ -17,8 +19,6 @@ span {
   text-decoration: none;
   cursor: pointer;
   background-color: transparent;
-  border-radius: 3px;
-  corner-shape: scoop;
   box-shadow: 0 0 0 1px var(--color-secondary);
   transition: background-color var(--transition);
 

@@ -46,6 +46,8 @@ const cssClasses = computed(() => {
 .btn {
   --color: var(--color-accent);
 
+  @mixin corners var(--spacing-1);
+
   display: inline-block;
   width: auto;
   padding: var(--spacing-2) var(--spacing-3);
@@ -60,8 +62,6 @@ const cssClasses = computed(() => {
   cursor: pointer;
   background-color: var(--color);
   border: 1px solid currentcolor;
-  border-radius: var(--spacing-1);
-  corner-shape: scoop;
   box-shadow: 0 0 0 calc(var(--spacing-1) / 2) var(--color);
   transition: background-color var(--transition), box-shadow  var(--transition);
 

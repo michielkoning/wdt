@@ -29,7 +29,7 @@ onMounted(() => {
         }
       })
     },
-    { rootMargin: '0px' },
+    { rootMargin: '0px 0px 0px 0px' },
   )
   console.log(wrappers.value)
 
@@ -114,7 +114,7 @@ nav {
   top: 0;
   order: -1;
   padding-block: var(--spacing-2);
-  background-color: var(--color-dominant);
+  container-type: scroll-state;
 
   @media (--viewport-md) {
     top: var(--spacing-4);
@@ -126,6 +126,13 @@ ol {
   @mixin list-reset;
 
   padding-top: env(safe-area-inset-top);
+  transition: background-color var(--transition);
+
+  @container scroll-state(
+    stuck: top
+  ) {
+    background-color: var(--color-dominant);
+  }
 }
 
 li:not(:last-child) a::after {

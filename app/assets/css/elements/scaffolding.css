@@ -57,8 +57,8 @@ dd {
 }
 
 .featured-image {
+  @mixin corners var(--spacing-1);
+
   overflow: hidden;
   border: 2px solid var(--color-secondary);
-  border-radius: 0.25rem;
-  corner-shape: scoop;
 }

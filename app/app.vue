@@ -46,8 +46,8 @@ main {
   padding: var(--spacing-2);
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
-  border-radius: var(--spacing-6);
-  corner-shape: scoop;
+
+  @mixin corners var(--spacing-6);
 }
 
 .content {
@@ -70,8 +70,8 @@ main {
 
   background-size: var(--width) calc(var(--width) * 3);
   border: 2px solid var(--color-secondary);
-  border-radius: var(--spacing-6);
-  corner-shape: scoop;
+
+  @mixin corners var(--spacing-6);
 
   --l: #ac47470a;
   --bg: var(--color-dominant);

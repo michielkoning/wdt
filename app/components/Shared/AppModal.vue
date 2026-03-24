@@ -42,13 +42,13 @@ const afterOpen = () => {
 
 <style lang="css" scoped>
 dialog {
+  @mixin corners var(--spacing-4);
+
   width: calc(100vw - (var(--spacing-4) * 2));
   max-width: 1280px;
   padding: 0;
   background-color: var(--color-secondary);
   border: 0;
-  border-radius: 1rem;
-  corner-shape: scoop;
   box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 3px var(--color-dominant);
   transition: display var(--transition) allow-discrete, overlay var(--transition) allow-discrete;
   animation: dialog-hide var(--transition);
@@ -88,13 +88,11 @@ dialog {
 @keyframes dialog-hide {
   from {
     opacity: 1;
-    scale: 1;
     translate: 0 0;
   }
 
   to {
     opacity: 0;
-    scale: 0.99;
     translate: 0 -1em;
   }
 }
@@ -102,13 +100,11 @@ dialog {
 @keyframes dialog-show {
   from {
     opacity: 0;
-    scale: 0.99;
     translate: 0 -1em;
   }
 
   to {
     opacity: 1;
-    scale: 1;
     translate: 0 0;
   }
 }

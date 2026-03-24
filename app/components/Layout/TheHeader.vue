@@ -112,14 +112,14 @@ header {
 }
 
 .btn-open {
+  @mixin corners var(--spacing-1);
+
   display: flex;
   gap: var(--spacing-2);
   align-items: center;
   padding: var(--spacing-2) var(--spacing-4);
   color: currentcolor;
   border: 2px solid currentcolor;
-  border-radius: var(--spacing-1);
-  corner-shape: scoop;
 
   @media (--viewport-md) {
     display: none;
@@ -154,6 +154,8 @@ li {
 }
 
 nav {
+  @mixin corners 0 var(--spacing-4) var(--spacing-4) 0;
+
   inset: 0;
   width: 70vw;
   height: 100%;
@@ -164,17 +166,12 @@ nav {
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
   border: 0;
-  corner-shape: scoop;
   box-shadow: 0 0 0 2px var(--color-secondary);
   translate: -100% 0;
   transition:
     translate var(--transition),
     overlay var(--transition) allow-discrete,
     display var(--transition) allow-discrete;
-
-  @supports (corner-shape: scoop) {
-    border-radius: 0 1rem 1rem 0;
-  }
 
   @media (--viewport-md) {
     position: static;
@@ -185,7 +182,6 @@ nav {
     background-color: transparent;
     border: 0;
     border-radius: 0;
-    corner-shape: scoop;
     translate: 0 0;
   }
 

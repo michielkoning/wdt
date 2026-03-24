@@ -18,11 +18,11 @@ defineProps<{
 }
 
 .dominant {
+  @mixin corners var(--spacing-6);
+
   margin-inline: var(--gutter);
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
-  border-radius: var(--spacing-6);
-  corner-shape: scoop;
 }
 
 .secondary {
@@ -31,10 +31,10 @@ defineProps<{
 }
 
 .white {
+  @mixin corners var(--spacing-4);
+
   padding: var(--spacing-8);
   color: var(--text-on-dominant);
   background-color: #fff;
-  border-radius: var(--spacing-4);
-  corner-shape: scoop;
 }
 </style>
