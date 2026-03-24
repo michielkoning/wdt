@@ -5,13 +5,9 @@
     "@stylistic/stylelint-config",
     "stylelint-config-recess-order"
   ],
-  "plugins": [
-    "stylelint-use-logical"
-  ],
 
   "rules": {
     "import-notation": null,
-    "csstools/use-logical": "always",
     "at-rule-no-unknown": [
       true,
       {

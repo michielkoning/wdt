@@ -24,7 +24,7 @@ html {
 body {
   margin: 0;
   color: var(--text-on-secondary);
-  background: url("/images/noise.svg") repeat;
+  background: url("/images/noise.svg") 200px 200px repeat var(--color-secondary);
 }
 
 ul,

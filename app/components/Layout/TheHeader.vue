@@ -5,8 +5,46 @@ const closePopover = () => {
   if (!menu.value) {
     return
   }
-  menu.value.hidePopover()
+  if (menu.value.hasAttribute('popover')) {
+    menu.value.hidePopover()
+  }
 }
+
+let observer: ResizeObserver | undefined
+
+onMounted(() => {
+  if (!menu.value) return
+
+  observer = new ResizeObserver(
+    (entries) => {
+      if (!entries.length || !menu.value) {
+        return
+      }
+
+      const entry = entries[0]
+      if (!entry) {
+        return
+      }
+
+      if (entry.contentRect.width >= 768) {
+        if (menu.value.checkVisibility()) {
+          menu.value.removeAttribute('popover')
+        }
+      }
+      else {
+        menu.value.setAttribute('popover', '')
+      }
+    },
+  )
+
+  if (observer) {
+    observer.observe(document.body)
+  }
+})
+onUnmounted(() => {
+  if (!menu.value || !observer) return
+  observer.unobserve(menu.value)
+})
 </script>
 
 <template>
@@ -174,7 +212,7 @@ nav {
     display var(--transition) allow-discrete;
 
   @media (--viewport-md) {
-    position: static;
+    position: relative;
     display: block;
     inline-size: auto;
     padding: 0;
@@ -182,6 +220,7 @@ nav {
     background-color: transparent;
     border: 0;
     border-radius: 0;
+    box-shadow: none;
     translate: 0 0;
   }
 

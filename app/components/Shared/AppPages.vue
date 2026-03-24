@@ -20,7 +20,6 @@ onMounted(() => {
   observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        console.log(entry)
         if (entry.isIntersecting) {
           activeLinks.value = [...activeLinks.value, entry.target.id]
         }
@@ -31,7 +30,6 @@ onMounted(() => {
     },
     { rootMargin: '0px 0px 0px 0px' },
   )
-  console.log(wrappers.value)
 
   wrappers.value.forEach((wrapper) => {
     if (observer) {
