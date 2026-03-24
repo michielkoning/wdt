@@ -114,7 +114,7 @@ nav {
   inset-block-start: 0;
   order: -1;
   padding-block: var(--spacing-2);
-  container-type: scroll-state;
+  background-color: var(--color-dominant);
 
   @media (--viewport-md) {
     inset-block-start: var(--spacing-4);
@@ -126,13 +126,6 @@ ol {
   @mixin list-reset;
 
   padding-block-start: env(safe-area-inset-top);
-  transition: background-color var(--transition);
-
-  @container scroll-state(
-    stuck: top
-  ) {
-    background-color: var(--color-dominant);
-  }
 }
 
 li:not(:last-child) a::after {
