@@ -45,8 +45,8 @@ ul {
   display: grid;
   grid-template-columns: repeat(v-bind(totalImages), 1fr);
   gap: var(--spacing-2);
-  padding-bottom: var(--spacing-1);
-  margin-bottom: var(--spacing-2);
+  padding-block-end: var(--spacing-1);
+  margin-block-end: var(--spacing-2);
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--color-secondary) transparent;
@@ -60,15 +60,15 @@ ul {
 
 li {
   /* stylelint-disable-next-line declaration-property-value-no-unknown */
-  width: min(65vw, 40em);
+  inline-size: min(65vw, 40em);
   scroll-snap-align: center;
 }
 
 .image {
-  height: 100%;
+  block-size: 100%;
 
   :deep(img) {
-    height: 100%;
+    block-size: 100%;
     object-fit: cover;
   }
 }

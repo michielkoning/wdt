@@ -119,18 +119,18 @@ useSeoMeta({
 .show {
   display: grid;
   gap: var(--spacing-4);
-  margin-bottom: var(--spacing-8);
+  margin-block-end: var(--spacing-8);
 
   @media (--viewport-md) {
     grid-template-columns: 1fr 2fr;
   }
 
   @media (--viewport-lg) {
-    margin-bottom: var(--spacing-8);
+    margin-block-end: var(--spacing-8);
   }
 }
 
 .btn {
-  margin-top: auto;
+  margin-block-start: auto;
 }
 </style>

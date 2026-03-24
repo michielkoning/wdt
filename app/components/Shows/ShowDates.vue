@@ -26,7 +26,7 @@ defineProps<{
 ul {
   @mixin list-reset;
 
-  margin-bottom: var(--spacing-4);
+  margin-block-end: var(--spacing-4);
 }
 
 li {
@@ -36,7 +36,7 @@ li {
 }
 
 .icon {
-  width: 1em;
+  inline-size: 1em;
   translate: 0 0.25rem;
 }
 </style>

@@ -16,16 +16,15 @@ defineProps<
 <style lang="css" scoped>
 .divider {
   position: relative;
-  height: 2px;
+  block-size: 2px;
   margin-block: var(--spacing-12);
 
   &::before {
     position: absolute;
-    top: 0;
-    right: 5%;
-    left: 5%;
-    width: 90%;
-    height: 2px;
+    inset-block-start: 0;
+    inset-inline: 5%;
+    inline-size: 90%;
+    block-size: 2px;
     content: "";
     background-image: linear-gradient(to right, transparent, currentcolor, transparent);
   }
@@ -33,53 +32,53 @@ defineProps<
 
 .arrow-down::after {
   position: absolute;
-  top: -7px;
-  left: calc(50% - 7px);
+  inset-block-start: -7px;
+  inset-inline-start: calc(50% - 7px);
   z-index: 1;
-  width: 14px;
-  height: 14px;
+  inline-size: 14px;
+  block-size: 14px;
   content: "";
   background-color: white;
-  border-right: 2px solid currentcolor;
-  border-bottom: 2px solid currentcolor;
+  border-block-end: 2px solid currentcolor;
+  border-inline-end: 2px solid currentcolor;
   transform: rotate(45deg);
 }
 
 .tab-down::after {
   position: absolute;
-  top: 0;
-  left: calc(50% - 10px);
+  inset-block-start: 0;
+  inset-inline-start: calc(50% - 10px);
   z-index: 1;
-  width: 20px;
-  height: 14px;
+  inline-size: 20px;
+  block-size: 14px;
   content: "";
   background-color: white;
-  border-right: 2px solid currentcolor;
-  border-bottom: 2px solid currentcolor;
-  border-left: 2px solid currentcolor;
+  border-block-end: 2px solid currentcolor;
+  border-inline-start: 2px solid currentcolor;
+  border-inline-end: 2px solid currentcolor;
   border-radius: 0 0 8px 8px;
 }
 
 .stopper::after {
   position: absolute;
-  top: -6px;
-  left: calc(50% - 7px);
+  inset-block-start: -6px;
+  inset-inline-start: calc(50% - 7px);
   z-index: 1;
-  width: 14px;
-  height: 12px;
+  inline-size: 14px;
+  block-size: 12px;
   content: "";
   background-color: white;
-  border-right: 2px solid currentcolor;
-  border-left: 2px solid currentcolor;
+  border-inline-start: 2px solid currentcolor;
+  border-inline-end: 2px solid currentcolor;
 }
 
 .dot::after {
   position: absolute;
-  top: -9px;
-  left: calc(50% - 9px);
+  inset-block-start: -9px;
+  inset-inline-start: calc(50% - 9px);
   z-index: 1;
-  width: 18px;
-  height: 18px;
+  inline-size: 18px;
+  block-size: 18px;
   content: "";
   background-color: var(--color-secondary);
   border: 2px solid currentcolor;

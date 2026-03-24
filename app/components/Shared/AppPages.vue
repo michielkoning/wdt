@@ -111,13 +111,13 @@ onUnmounted(() => {
 
 nav {
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
   order: -1;
   padding-block: var(--spacing-2);
   container-type: scroll-state;
 
   @media (--viewport-md) {
-    top: var(--spacing-4);
+    inset-block-start: var(--spacing-4);
     order: 1;
   }
 }
@@ -125,7 +125,7 @@ nav {
 ol {
   @mixin list-reset;
 
-  padding-top: env(safe-area-inset-top);
+  padding-block-start: env(safe-area-inset-top);
   transition: background-color var(--transition);
 
   @container scroll-state(
@@ -139,7 +139,7 @@ li:not(:last-child) a::after {
   position: absolute;
   inset: var(--spacing-3) auto calc(-1 * var(--spacing-2)) 0.325rem;
   display: block;
-  width: 2px;
+  inline-size: 2px;
   content: "";
   background-color: var(--color-accent);
 }
@@ -149,7 +149,7 @@ a {
   display: flex;
   gap: var(--spacing-2);
   align-items: start;
-  padding-bottom: var(--spacing-1);
+  padding-block-end: var(--spacing-1);
   text-decoration: none;
 
   &::before {
@@ -157,7 +157,7 @@ a {
     z-index: 1;
     display: block;
     flex: 0 0 auto;
-    width: var(--spacing-3);
+    inline-size: var(--spacing-3);
     aspect-ratio: 1;
     content: "";
     background-color: var(--color-dominant);

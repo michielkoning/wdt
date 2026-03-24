@@ -7,7 +7,7 @@ span {
   @mixin corners var(--spacing-1);
 
   display: inline-block;
-  width: auto;
+  inline-size: auto;
   padding: var(--spacing-1) var(--spacing-2);
   margin-inline: var(--spacing-1);
   font-family: var(--font-family-heading);

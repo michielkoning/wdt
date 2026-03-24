@@ -43,7 +43,7 @@ ul {
   grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
   gap: var(--spacing-4);
   padding-inline-start: 0;
-  margin-bottom: var(--spacing-4);
+  margin-block-end: var(--spacing-4);
   list-style: none outside;
 }
 
@@ -65,7 +65,7 @@ li {
     position: absolute;
     inset: auto 0 0;
     display: block;
-    height: 2px;
+    block-size: 2px;
     content: "";
     background-image: linear-gradient(to left, transparent, currentcolor, transparent);
   }
@@ -81,14 +81,14 @@ li {
 
 .image-wrapper {
   aspect-ratio: 3 / 4;
-  margin-bottom: var(--spacing-2);
+  margin-block-end: var(--spacing-2);
 
   &:deep(picture) {
-    height: 100%;
+    block-size: 100%;
   }
 
   &:deep(img) {
-    height: 100%;
+    block-size: 100%;
     object-fit: cover;
   }
 }

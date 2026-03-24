@@ -41,7 +41,7 @@ picture {
 
 .image :deep(img) {
   display: block;
-  width: 100%;
-  height: auto;
+  inline-size: 100%;
+  block-size: auto;
 }
 </style>

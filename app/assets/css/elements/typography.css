@@ -48,7 +48,7 @@ h1 {
   &::before,
   &::after {
     flex: 1 0 2em;
-    height: 2px;
+    block-size: 2px;
     content: "";
     background-image: linear-gradient(to var(--direction), transparent, currentcolor 4em);
   }

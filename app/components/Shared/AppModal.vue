@@ -44,8 +44,8 @@ const afterOpen = () => {
 dialog {
   @mixin corners var(--spacing-4);
 
-  width: calc(100vw - (var(--spacing-4) * 2));
-  max-width: 1280px;
+  inline-size: calc(100vw - (var(--spacing-4) * 2));
+  max-inline-size: 1280px;
   padding: 0;
   background-color: var(--color-secondary);
   border: 0;
@@ -75,7 +75,7 @@ dialog {
 
 .header {
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
   display: flex;
   gap: var(--spacing-2);
   align-items: start;

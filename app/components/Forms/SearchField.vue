@@ -30,15 +30,15 @@ const model = defineModel<string>({
 }
 
 input {
-  padding-right: 3rem;
+  padding-inline-end: 3rem;
 }
 
 .icon {
   position: absolute;
-  top: 50%;
-  right: var(--spacing-4);
-  width: 1.5rem;
-  height: auto;
+  inset-block-start: 50%;
+  inset-inline-end: var(--spacing-4);
+  inline-size: 1.5rem;
+  block-size: auto;
   aspect-ratio: 1;
   translate: 0 -0.75rem;
 }

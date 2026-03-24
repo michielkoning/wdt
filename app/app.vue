@@ -32,22 +32,19 @@ useHead({
 .page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  padding-bottom:
-    var(
-      --spacing-12
-    );
+  min-block-size: 100vh;
+  padding-block-end: var(--spacing-12);
 }
 
 main {
+  @mixin corners var(--spacing-6);
+
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
   padding: var(--spacing-2);
   color: var(--text-on-dominant);
   background-color: var(--color-dominant);
-
-  @mixin corners var(--spacing-6);
 }
 
 .content {

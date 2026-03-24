@@ -110,8 +110,8 @@ ul {
 
   display: grid;
   gap: var(--gutter);
-  padding-left: 0;
-  margin-bottom: var(--spacing-4);
+  padding-inline-start: 0;
+  margin-block-end: var(--spacing-4);
   list-style: none outside;
 
   &.highlights {
@@ -124,19 +124,19 @@ a {
 }
 
 :deep(p) {
-  margin-bottom: var(--spacing-2);
+  margin-block-end: var(--spacing-2);
 }
 
 li {
   position: relative;
-  padding-bottom: var(--spacing-2);
+  padding-block-end: var(--spacing-2);
   container-name: achive-list;
   container-type: inline-size;
 
   &::after {
     display: block;
-    height: 2px;
-    margin-top: var(--spacing-2);
+    block-size: 2px;
+    margin-block-start: var(--spacing-2);
     content: "";
     background-image: linear-gradient(to left, transparent, currentcolor, transparent);
   }
@@ -150,7 +150,7 @@ li {
 }
 
 .wrapper {
-  height: 100%;
+  block-size: 100%;
 
   @container achive-list (width > 32em) {
     display: grid;
@@ -160,7 +160,7 @@ li {
 }
 
 .image {
-  margin-bottom: var(--spacing-4);
+  margin-block-end: var(--spacing-4);
 }
 
 .text:deep(p) {

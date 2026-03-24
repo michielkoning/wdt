@@ -28,9 +28,9 @@ defineProps<{
 
 <style lang="css" scoped>
 ul {
-  height: 90vh;
+  block-size: 90vh;
   padding: 0;
-  margin-bottom: 0;
+  margin-block-end: 0;
   overflow-y: scroll;
   list-style: none outside;
   scroll-snap-type: y mandatory;
@@ -40,7 +40,7 @@ li {
   scroll-snap-align: start;
 
   &:not(:last-child) {
-    margin-bottom: var(--spacing-2);
+    margin-block-end: var(--spacing-2);
   }
 }
 </style>

@@ -144,8 +144,8 @@ header {
 }
 
 .icon {
-  width: 1.5em;
-  height: 1.5em;
+  inline-size: 1.5em;
+  block-size: 1.5em;
 }
 
 li {
@@ -157,8 +157,8 @@ nav {
   @mixin corners 0 var(--spacing-4) var(--spacing-4) 0;
 
   inset: 0;
-  width: 70vw;
-  height: 100%;
+  inline-size: 70vw;
+  block-size: 100%;
   padding: var(--spacing-4) var(--gutter);
   margin: 0;
   font-family: var(--font-family-heading);
@@ -176,7 +176,7 @@ nav {
   @media (--viewport-md) {
     position: static;
     display: block;
-    width: auto;
+    inline-size: auto;
     padding: 0;
     color: var(--text-on-secondary);
     background-color: transparent;

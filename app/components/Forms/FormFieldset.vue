@@ -17,7 +17,7 @@ defineProps<{
 
 <style lang="css" scoped>
 fieldset {
-  min-width: 0;
+  min-inline-size: 0;
   padding: 0;
   margin: 0 0 var(--spacing-2);
   border: 0;
@@ -26,8 +26,8 @@ fieldset {
 }
 
 fieldset + fieldset {
-  padding-top: var(--spacing-2);
-  border-top: 1px solid var(--color-gray);
+  padding-block-start: var(--spacing-2);
+  border-block-start: 1px solid var(--color-gray);
 }
 
 .fields {

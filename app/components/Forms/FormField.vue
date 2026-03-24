@@ -26,12 +26,12 @@ defineProps<{
 <style lang="css" scoped>
 .label {
   display: block;
-  margin-bottom: var(--spacing-xxs);
+  margin-block-end: var(--spacing-xxs);
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
 }
 
 .error-message {
-  margin-top: var(--spacing-xxs);
+  margin-block-start: var(--spacing-xxs);
 }
 </style>

@@ -46,7 +46,7 @@ useSeoMeta({
   display: grid;
   gap: var(--spacing-4);
   align-items: start;
-  margin-bottom: var(--spacing-8);
+  margin-block-end: var(--spacing-8);
 
   @media (--viewport-md) {
     grid-template-columns: 1fr 2fr;

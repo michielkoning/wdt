@@ -1,31 +1,29 @@
 img.alignright {
-  float: right;
+  float: inline-end;
   margin: 0 0 1em 1em;
 }
 
 img.alignleft {
-  float: left;
+  float: inline-start;
   margin: 0 1em 1em 0;
 }
 
 img.aligncenter {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
 }
 
 a img.alignright {
-  float: right;
+  float: inline-end;
   margin: 0 0 1em 1em;
 }
 
 a img.alignleft {
-  float: left;
+  float: inline-start;
   margin: 0 1em 1em 0;
 }
 
 a img.aligncenter {
   display: block;
-  margin-right: auto;
-  margin-left: auto;
+  margin-inline: auto;
 }
