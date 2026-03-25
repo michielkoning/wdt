@@ -5,7 +5,10 @@ defineProps<{
 </script>
 
 <template>
-  <div v-html="text" />
+  <div
+    class="text"
+    v-html="text"
+  />
 </template>
 
 <style lang="css" scoped>
