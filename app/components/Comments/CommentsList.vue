@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <block-wrapper>
+  <block-wrapper class="wrapper">
     <h1>Reacties</h1>
     <h2>{{ $t('comments', comments.length) }} op {{ title }}</h2>
     <ul v-if="comments.length">
@@ -33,6 +33,11 @@ defineProps<{
 </template>
 
 <style lang="css" scoped>
+.wrapper {
+  max-width: var(--container-size-md);
+  margin-inline: auto;
+}
+
 ul {
   @mixin list-reset;
 }
@@ -55,8 +60,14 @@ li {
     display: block;
     block-size: 2px;
     content: "";
-    /* stylelint-disable-next-line @stylistic/max-line-length */
-    background-image: linear-gradient(to right, transparent, currentcolor 4em, currentcolor calc(100% - 4em), transparent);
+    background-image:
+      linear-gradient(
+        to right,
+        transparent,
+        currentcolor 4em,
+        currentcolor calc(100% - 4em),
+        transparent
+      );
   }
 }
 </style>

@@ -111,10 +111,10 @@ nav {
   position: sticky;
   inset-block-start: 0;
   order: -1;
-  padding-block: var(--spacing-2);
+  padding-block: var(--spacing-4);
 
   @media (--viewport-md) {
-    inset-block-start: var(--spacing-4);
+    inset-block-start: var(--spacing-2);
     order: 1;
   }
 }
@@ -122,7 +122,6 @@ nav {
 ol {
   @mixin list-reset;
 
-  padding-block-start: env(safe-area-inset-top);
   background-color: var(--color-dominant);
 }
 
