@@ -88,8 +88,6 @@ onUnmounted(() => {
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 .content {
   position: relative;
   clear: both;
@@ -97,7 +95,7 @@ onUnmounted(() => {
   gap: var(--spacing-4);
   align-items: start;
 
-  @media (--viewport-md) {
+  @media (--md) {
     grid-template-columns: auto 12rem;
   }
 }
@@ -113,7 +111,7 @@ nav {
   order: -1;
   padding-block: var(--spacing-4);
 
-  @media (--viewport-md) {
+  @media (--md) {
     inset-block-start: var(--spacing-2);
     order: 1;
   }

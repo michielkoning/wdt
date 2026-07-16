@@ -42,8 +42,6 @@ const afterOpen = () => {
 
 <style lang="css" scoped>
 dialog {
-  @mixin corners var(--spacing-4);
-
   inline-size: calc(100vw - (var(--spacing-4) * 2));
   max-inline-size: 1280px;
   padding: 0;

@@ -26,8 +26,6 @@
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 .test {
   display: flex;
   gap: 5px;
@@ -46,8 +44,6 @@ header {
 }
 
 .btn-open {
-  @mixin corners var(--spacing-1);
-
   display: flex;
   gap: var(--spacing-2);
   align-items: center;
@@ -55,7 +51,7 @@ header {
   color: currentcolor;
   border: 2px solid currentcolor;
 
-  @media (--viewport-md) {
+  @media (--md) {
     display: none;
   }
 }
@@ -64,7 +60,7 @@ header {
   display: flex;
   justify-content: end;
 
-  @media (--viewport-md) {
+  @media (--md) {
     display: none;
   }
 }
@@ -72,7 +68,7 @@ header {
 .btn-close {
   color: currentcolor;
 
-  @media (--viewport-md) {
+  @media (--md) {
     display: none;
   }
 }
@@ -103,7 +99,7 @@ nav {
     overlay var(--transition) allow-discrete,
     display var(--transition) allow-discrete;
 
-  @media (--viewport-md) {
+  @media (--md) {
     position: static;
     display: block;
     inline-size: auto;
@@ -126,7 +122,7 @@ nav {
 ol {
   @mixin list-reset;
 
-  @media (--viewport-md) {
+  @media (--md) {
     display: flex;
     flex-direction: row;
     gap: var(--spacing-4);
@@ -138,7 +134,7 @@ ol {
   background-color: rgb(0 0 0 / 50%);
   animation: hide-backdrop var(--transition);
 
-  @media (--viewport-md) {
+  @media (--md) {
     display: none;
   }
 }

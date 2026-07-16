@@ -40,15 +40,13 @@ useSeoMeta({
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 .content {
   display: grid;
   gap: var(--spacing-4);
   align-items: start;
   margin-block-end: var(--spacing-8);
 
-  @media (--viewport-md) {
+  @media (--md) {
     grid-template-columns: 1fr 2fr;
   }
 }

@@ -22,10 +22,9 @@ export default defineNuxtModule({
         return
       }
 
-      const baseURL = 'https://test.wdttoneel.nl/'
+      const baseURL = 'http://wdt.local/'
 
       addPrerenderRoutes(defaultRoutes)
-      return
 
       const fetchPagesByType = async (
         type: 'posts' | 'shows' | 'pages',
@@ -47,7 +46,13 @@ export default defineNuxtModule({
             return r.link.replace(baseURL, '/')
           }) as string[]
 
-          addPrerenderRoutes(urls)
+          const prerenderRoutes = urls.filter((url) => {
+            const excludeUrls = ['/geschiedenis/2021-2030/', '/geschiedenis/1981-2008/', '/geschiedenis/1946-1980/',
+              '/geschiedenis/1908-1941/',
+            ]
+            return !excludeUrls.includes(url)
+          })
+          addPrerenderRoutes(prerenderRoutes)
           if (page >= totalPages) {
             hasNextPage = false
           }

@@ -46,8 +46,6 @@ const cssClasses = computed(() => {
 .btn {
   --color: var(--color-accent);
 
-  @mixin corners var(--spacing-1);
-
   display: inline-block;
   inline-size: auto;
   padding: var(--spacing-2) var(--spacing-3);
@@ -63,7 +61,7 @@ const cssClasses = computed(() => {
   background-color: var(--color);
   border: 1px solid currentcolor;
   box-shadow: 0 0 0 calc(var(--spacing-1) / 2) var(--color);
-  transition: background-color var(--transition), box-shadow  var(--transition);
+  transition: background-color var(--transition), box-shadow var(--transition);
 
   &:hover {
     --color: var(--color-accent-300);

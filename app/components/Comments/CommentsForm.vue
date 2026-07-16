@@ -95,10 +95,8 @@ const onSubmit = handleSubmit(() => {
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 .fieldset {
-  @media (--viewport-md) {
+  @media (--md) {
     --columns: 2;
   }
 }

@@ -25,14 +25,12 @@ const transitionName = computed(() => `image-${props.image?.id}`)
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 .card {
   view-transition-name: v-bind(transitionName);
 }
 
 .image-sm {
-  @media (--viewport-md) {
+  @media (--md) {
     display: none;
   }
 }
@@ -41,7 +39,7 @@ const transitionName = computed(() => `image-${props.image?.id}`)
   .image-md {
     display: none;
 
-    @media (--viewport-md) {
+    @media (--md) {
       display: block;
     }
   }

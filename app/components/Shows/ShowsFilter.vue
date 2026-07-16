@@ -34,19 +34,17 @@ const authors = defineModel<number[]>('authors', {
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 form {
   display: grid;
   gap: var(--spacing-2);
 
-  @media (--viewport-md) {
+  @media (--md) {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .search {
-  @media (--viewport-md) {
+  @media (--md) {
     grid-column: span 2;
   }
 }

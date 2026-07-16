@@ -26,7 +26,6 @@ const totalImages = computed(() => props.images.length)
       <app-button
         commandfor="gallery"
         command="show-modal"
-
         title="Bekijk alle foto's"
       />
     </div>
@@ -51,6 +50,23 @@ ul {
   scroll-snap-type: x mandatory;
   scrollbar-color: var(--color-secondary) transparent;
   scrollbar-width: thin;
+  scroll-marker-group: after;
+
+  /* stylelint-disable-next-line selector-type-no-unknown */
+  &::scroll-button(*) {
+    &:disabled {
+      color: green;
+    }
+  }
+
+  /* stylelint-disable-next-line selector-type-no-unknown */
+  &::scroll-button(right) {
+    content: "⬅" / "Scroll right";
+  }
+  /* stylelint-disable-next-line selector-type-no-unknown */
+  &::scroll-button(left) {
+    content: "---" / "Scroll left";
+  }
 }
 
 .btn-wrapper {
@@ -62,6 +78,20 @@ li {
   /* stylelint-disable-next-line declaration-property-value-no-unknown */
   inline-size: min(65vw, 40em);
   scroll-snap-align: center;
+
+  &::scroll-marker {
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-color: green;
+    border-radius: 50%;
+
+    /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+    &:target-current {
+      background: #7c3aed;
+      transform: scale(1.2);
+    }
+  }
 }
 
 .image {

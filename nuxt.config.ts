@@ -62,22 +62,22 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-07-15',
   nitro: {
-    routeRules: {
-      '/**': {
-        isr: 60 * 60,
-      },
-      '/api': {
-        isr: false,
-      },
-    },
-    preset: 'netlify',
-    prerender: {
-      interval: 3000,
-      concurrency: 5,
-    },
+    // routeRules: {
+    //   '/**': {
+    //     isr: 60 * 60,
+    //   },
+    //   '/api': {
+    //     isr: false,
+    //   },
+    // },
+    // preset: 'netlify',
+    // prerender: {
+    //   interval: 3000,
+    //   concurrency: 5,
+    // },
     devStorage: {
       cache: {
-        driver: 'null',
+        driver: 'fs',
         base: './.nuxt/cache',
       },
     },
@@ -96,6 +96,13 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
+      'postcss-custom-media-generator': {
+        xs: 480,
+        sm: 640,
+        md: 768,
+        lg: 1024,
+        xlg: 1240,
+      },
       'postcss-mixins': {
         mixinsDir: './app/assets/css/mixins/',
       },
@@ -136,27 +143,19 @@ export default defineNuxtConfig({
       ],
     },
     families: [{
-      weights: [400, 700],
-      styles: ['normal', 'italic'],
-      name: 'Bitter',
+      styles: ['normal'],
+      name: 'Sora',
       provider: 'google',
       global: true,
     },
     {
       weights: [500],
       styles: ['normal'],
-      name: 'Cinzel',
+      name: 'Domine',
       provider: 'google',
       global: true,
     },
-    {
-      weights: [400],
-      styles: ['normal'],
-      name: 'Limelight',
-      provider: 'google',
-      global: true,
-    }],
-
+    ],
   },
   i18n: {
     strategy: 'prefix_except_default',

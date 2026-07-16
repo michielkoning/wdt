@@ -59,8 +59,6 @@ const currentPage = computed(() => route.query.page ? Number(route.query.page) :
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 .paging {
   display: flex;
   flex-wrap: wrap;
@@ -117,7 +115,7 @@ span {
   display: none;
   visibility: hidden;
 
-  @media (--viewport-md) {
+  @media (--md) {
     display: block;
   }
 }

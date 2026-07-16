@@ -4,8 +4,6 @@
 
 <style lang="css" scoped>
 span {
-  @mixin corners var(--spacing-1);
-
   display: inline-block;
   inline-size: auto;
   padding: var(--spacing-1) var(--spacing-2);

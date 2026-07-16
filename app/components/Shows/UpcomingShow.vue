@@ -55,13 +55,11 @@ const { data } = useFetch('/api/upcomingShow')
 </template>
 
 <style lang="css" scoped>
-@import "~/assets/css/media-queries/media-queries.css";
-
 .upcoming-show {
   display: grid;
   gap: var(--spacing-4);
 
-  @media (--viewport-md) {
+  @media (--md) {
     grid-template-columns: 1fr 2fr;
   }
 }

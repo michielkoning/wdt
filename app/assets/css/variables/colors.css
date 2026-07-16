@@ -1,18 +1,18 @@
 :root {
   /* Light theme */
   --color-dominant-theme-light: oklch(96.31% 0.0108 76.6deg);
-  --color-secondary-theme-light: oklch(53.19% 0.1332 22.71deg);
-  --color-accent-theme-light: oklch(45.78% 0.1729 15.42deg);
-  --text-on-dominant-theme-light: oklch(53.19% 0.1332 22.71deg);
-  --text-on-secondary-theme-light: oklch(96.31% 0.0108 76.6deg);
+  --color-secondary-theme-light: oklch(92.5% 0.193 102.82deg);
+  --color-accent-theme-light: oklch(49.08% 0.1995 29.03deg);
+  --text-on-dominant-theme-light: oklch(32.11% 0 0deg);
+  --text-on-secondary-theme-light: oklch(32.11% 0 0deg);
   --text-on-accent-theme-light: oklch(0% 0 0deg);
 
   /* Dark theme */
   --color-dominant-theme-dark: oklch(96.31% 0.0108 76.6deg);
-  --color-secondary-theme-dark: oklch(53.19% 0.1332 22.71deg);
-  --color-accent-theme-dark: oklch(45.78% 0.1729 15.42deg);
-  --text-on-dominant-theme-dark: oklch(53.19% 0.1332 22.71deg);
-  --text-on-secondary-theme-dark: oklch(96.31% 0.0108 76.6deg);
+  --color-secondary-theme-dark: oklch(92.5% 0.193 102.82deg);
+  --color-accent-theme-dark: oklch(49.08% 0.1995 29.03deg);
+  --text-on-dominant-theme-dark: oklch(32.11% 0 0deg);
+  --text-on-secondary-theme-dark: oklch(32.11% 0 0deg);
   --text-on-accent-theme-dark: oklch(0% 0 0deg);
 
   /* Set colors */
