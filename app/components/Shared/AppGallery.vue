@@ -48,7 +48,7 @@ ul {
   margin-block-end: var(--spacing-2);
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
-  scrollbar-color: var(--color-secondary) transparent;
+  scrollbar-color: var(--color-black) transparent;
   scrollbar-width: thin;
   scroll-marker-group: after;
 

@@ -71,28 +71,28 @@ button {
 ::picker(select) {
   margin-block-start: var(--spacing-1);
   appearance: base-select;
-  border: 2px solid var(--text-on-dominant);
+  border: 2px solid var(--color-white);
 }
 
 option {
   padding: var(--spacing-2);
-  color: var(--text-on-dominant);
-  background-color: var(--color-dominant);
+  color: var(--color-white);
+  background-color: var(--color-black);
   border-inline-start: 3px solid transparent;
 
   &:hover {
-    color: var(--text-on-secondary);
-    background-color: var(--color-secondary);
+    color: var(--color-white);
+    background-color: var(--color-black);
   }
 
   &:checked {
-    color: var(--text-on-dominant);
-    background-color: var(--color-dominant);
-    border-inline-start-color: var(--text-on-dominant);
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-inline-start-color: var(--color-white);
 
     &:hover {
-      color: var(--text-on-secondary);
-      background-color: var(--color-secondary);
+      color: var(--color-white);
+      background-color: var(--color-black);
     }
   }
 }

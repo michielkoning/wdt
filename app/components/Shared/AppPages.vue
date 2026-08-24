@@ -120,7 +120,7 @@ nav {
 ol {
   @mixin list-reset;
 
-  background-color: var(--color-dominant);
+  background-color: var(--color-black);
 }
 
 li:not(:last-child) a::after {
@@ -129,7 +129,7 @@ li:not(:last-child) a::after {
   display: block;
   inline-size: 2px;
   content: "";
-  background-color: var(--color-accent);
+  background-color: var(--color-black);
 }
 
 a {
@@ -148,10 +148,10 @@ a {
     inline-size: var(--spacing-3);
     aspect-ratio: 1;
     content: "";
-    background-color: var(--color-dominant);
-    border: 2px solid var(--color-dominant);
+    background-color: var(--color-black);
+    border: 2px solid var(--color-black);
     border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--color-accent);
+    box-shadow: 0 0 0 2px var(--color-black);
     translate: 0 0.4rem;
     transition: background-color var(--transition);
   }
@@ -159,7 +159,7 @@ a {
   &.active,
   &:hover {
     &::before {
-      background-color: var(--color-accent);
+      background-color: var(--color-black);
     }
   }
 }

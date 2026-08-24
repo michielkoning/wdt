@@ -23,15 +23,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <block-wrapper
+  <center-wrapper
     v-if="data"
   >
-    <div>
-      <h1>
-        {{ data.title }}
-      </h1>
-      <body-text :text="data.content" />
-      <app-pages :parent-id="data.id" />
-    </div>
-  </block-wrapper>
+    <h1>
+      {{ data.title }}
+    </h1>
+    <body-text :text="data.content" />
+    <app-pages :parent-id="data.id" />
+  </center-wrapper>
 </template>

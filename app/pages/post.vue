@@ -23,20 +23,22 @@ useSeoMeta({
 </script>
 
 <template>
-  <block-wrapper v-if="data">
-    <h1>{{ data.title }}</h1>
-    <div class="content">
-      <app-image
-        v-if="data.image"
-        :image="data.image"
-        class="featured-image"
-      />
-      <body-text :text="data.content" />
-    </div>
+  <div v-if="data">
+    <center-wrapper>
+      <h1>{{ data.title }}</h1>
+      <div class="content">
+        <app-image
+          v-if="data.image"
+          :image="data.image"
+          class="featured-image"
+        />
+        <body-text :text="data.content" />
+      </div>
+    </center-wrapper>
     <post-list
       :exclude-id="data.id"
     />
-  </block-wrapper>
+  </div>
 </template>
 
 <style lang="css" scoped>

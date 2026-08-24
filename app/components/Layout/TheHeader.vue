@@ -51,96 +51,98 @@ onUnmounted(() => {
 <template>
   <header>
     <center-wrapper>
-      <h1>Toneelvereniging WDT Wageningen</h1>
+      <div class="wrapper">
+        <h1>Toneelvereniging WDT Wageningen</h1>
 
-      <button
-        class="btn-open"
-        popovertarget="menu"
-      >
-        <icon
-          class="icon"
-          name="solar:hamburger-menu-linear"
-        />
-        Menu
-      </button>
+        <button
+          class="btn-open"
+          popovertarget="menu"
+        >
+          <icon
+            class="icon"
+            name="solar:hamburger-menu-linear"
+          />
+          Menu
+        </button>
 
-      <nav
-        id="menu"
-        ref="menu"
-        popover
-      >
-        <div class="btn-wrapper">
-          <button
-            popovertarget="menu"
-            class="btn-close"
-          >
-            <icon
+        <nav
+          id="menu"
+          ref="menu"
+          popover
+        >
+          <div class="btn-wrapper">
+            <button
+              popovertarget="menu"
+              class="btn-close"
+            >
+              <icon
 
-              name="solar:close-circle-bold"
-              class="icon"
-            />
-          </button>
-        </div>
-        <ol>
-          <li>
-            <nuxt-link-locale
-              :to="{
-                name: 'home',
-              }"
-              @click="closePopover"
-            >
-              Home
-            </nuxt-link-locale>
-          </li>
-          <li>
-            <nuxt-link-locale
-              :to="{
-                name: 'page',
-                params: {
-                  slug: 'over-wdt',
-                },
-              }"
-              @click="closePopover"
-            >
-              Over WDT
-            </nuxt-link-locale>
-          </li>
-          <li>
-            <nuxt-link-locale
-              :to="{
-                name:
-                  'shows',
-              }"
-              @click="closePopover"
-            >
-              Voorstellingen
-            </nuxt-link-locale>
-          </li>
-          <li>
-            <nuxt-link-locale
-              :to="{
-                name: 'page',
-                params: {
-                  slug: 'geschiedenis',
-                },
-              }"
-              @click="closePopover"
-            >
-              Geschiedenis
-            </nuxt-link-locale>
-          </li>
-          <li>
-            <nuxt-link-locale
-              :to="{
-                name: 'posts',
-              }"
-              @click="closePopover"
-            >
-              Nieuws
-            </nuxt-link-locale>
-          </li>
-        </ol>
-      </nav>
+                name="solar:close-circle-bold"
+                class="icon"
+              />
+            </button>
+          </div>
+          <ol>
+            <li>
+              <nuxt-link-locale
+                :to="{
+                  name: 'home',
+                }"
+                @click="closePopover"
+              >
+                Home
+              </nuxt-link-locale>
+            </li>
+            <li>
+              <nuxt-link-locale
+                :to="{
+                  name: 'page',
+                  params: {
+                    slug: 'over-wdt',
+                  },
+                }"
+                @click="closePopover"
+              >
+                Over WDT
+              </nuxt-link-locale>
+            </li>
+            <li>
+              <nuxt-link-locale
+                :to="{
+                  name:
+                    'shows',
+                }"
+                @click="closePopover"
+              >
+                Voorstellingen
+              </nuxt-link-locale>
+            </li>
+            <li>
+              <nuxt-link-locale
+                :to="{
+                  name: 'page',
+                  params: {
+                    slug: 'geschiedenis',
+                  },
+                }"
+                @click="closePopover"
+              >
+                Geschiedenis
+              </nuxt-link-locale>
+            </li>
+            <li>
+              <nuxt-link-locale
+                :to="{
+                  name: 'posts',
+                }"
+                @click="closePopover"
+              >
+                Nieuws
+              </nuxt-link-locale>
+            </li>
+          </ol>
+        </nav>
+      </div>
     </center-wrapper>
   </header>
 </template>
@@ -148,6 +150,12 @@ onUnmounted(() => {
 <style lang="css" scoped>
 header {
   padding-block: var(--spacing-4);
+  color: var(--color-white);
+  background: var(--color-black);
+}
+
+.wrapper {
+  display: flex;
 }
 
 .btn-open {
@@ -198,10 +206,8 @@ nav {
   margin: 0;
   font-family: var(--font-family-heading);
   font-size: var(--font-size-h3);
-  color: var(--text-on-dominant);
-  background-color: var(--color-dominant);
   border: 0;
-  box-shadow: 0 0 0 2px var(--color-secondary);
+  box-shadow: 0 0 0 2px var(--color-black);
   translate: -100% 0;
   transition:
     translate var(--transition),
@@ -213,7 +219,6 @@ nav {
     display: block;
     inline-size: auto;
     padding: 0;
-    color: var(--text-on-secondary);
     background-color: transparent;
     border: 0;
     border-radius: 0;
@@ -233,6 +238,25 @@ nav {
       translate: 0 0;
     }
   }
+
+  &::after {
+    position: fixed;
+    left: anchor(left);
+    display: block;
+    inline-size: anchor-size(inline);
+    block-size: 3px;
+    position-anchor: --active-menu;
+    pointer-events: none;
+    content: "";
+    background: var(--color-white);
+    transition:
+      left var(--transition),
+      width var(--transition);
+  }
+}
+
+.router-link-active {
+  anchor-name: --active-menu;
 }
 
 ol {
@@ -276,10 +300,6 @@ a {
   &:hover,
   &.router-link-exact-active {
     text-decoration: underline;
-  }
-
-  &.router-link-exact-active {
-    text-decoration-thickness: 2px;
   }
 }
 

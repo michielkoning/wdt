@@ -3,7 +3,7 @@
     <div
       v-for="n in 10"
       :key="n"
-      :style="{ background: `var(--color-dominant-${n}00)` }"
+      :style="{ background: `var(--color-black-${n}00)` }"
       class="a"
     />
   </div>
@@ -36,7 +36,7 @@
 .a {
   inline-size: 100px;
   aspect-ratio: 1;
-  background-color: var(--color-dominant-100);
+  background-color: var(--color-black-100);
 }
 
 header {
@@ -89,10 +89,10 @@ nav {
   margin: 0;
   font-family: var(--font-family-heading);
   font-size: var(--font-size-h3);
-  color: var(--text-on-dominant);
-  background-color: var(--color-dominant);
+  color: var(--color-white);
+  background-color: var(--color-black);
   border: 0;
-  border-inline-end: 2px solid var(--color-secondary);
+  border-inline-end: 2px solid var(--color-black);
   translate: -100% 0;
   transition:
     translate var(--transition),
@@ -104,7 +104,7 @@ nav {
     display: block;
     inline-size: auto;
     padding: 0;
-    color: var(--text-on-secondary);
+    color: var(--color-white);
     background-color: transparent;
     border: 0;
     translate: 0 0;

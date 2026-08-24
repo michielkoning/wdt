@@ -52,22 +52,11 @@ a {
 }
 
 li {
-  position: relative;
-
   &:hover,
   &:focus-within {
     a {
       text-decoration: underline;
     }
-  }
-
-  &::after {
-    position: absolute;
-    inset: auto 0 0;
-    display: block;
-    block-size: 2px;
-    content: "";
-    background-image: linear-gradient(to left, transparent, currentcolor, transparent);
   }
 }
 

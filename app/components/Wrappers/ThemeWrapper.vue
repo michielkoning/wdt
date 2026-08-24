@@ -19,18 +19,18 @@ defineProps<{
 
 .dominant {
   margin-inline: var(--gutter);
-  color: var(--text-on-dominant);
-  background-color: var(--color-dominant);
+  color: var(--color-white);
+  background-color: var(--color-black);
 }
 
 .secondary {
-  color: var(--text-on-secondary);
-  background-color: var(--color-secondary);
+  color: var(--color-white);
+  background-color: var(--color-black);
 }
 
 .white {
   padding: var(--spacing-8);
-  color: var(--text-on-dominant);
+  color: var(--color-white);
   background-color: #fff;
 }
 </style>

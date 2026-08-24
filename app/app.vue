@@ -9,12 +9,13 @@ useHead({
 </script>
 
 <template>
-  <div>
+  <div class="page">
     <nuxt-route-announcer />
     <nuxt-loading-indicator
       color="#f7f2eb"
     />
     <the-header />
+
     <main
       tabindex="-1"
     >
@@ -29,6 +30,9 @@ useHead({
   display: flex;
   flex-direction: column;
   min-block-size: 100vh;
-  padding-block-end: var(--spacing-12);
+}
+
+main {
+  flex: 1 0 auto;
 }
 </style>

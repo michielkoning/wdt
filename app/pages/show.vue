@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import AppDivider from '~/components/Shared/AppDivider.vue'
-
 definePageMeta({
   name: 'show',
   i18n: {
@@ -39,7 +37,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <block-wrapper
+  <center-wrapper
     v-if="data"
   >
     <app-modal
@@ -98,7 +96,6 @@ useSeoMeta({
 
     <body-text :text="data.content" />
 
-    <app-divider />
     <app-gallery
       v-if="data.gallery.length"
       :title="data.title"
@@ -110,7 +107,7 @@ useSeoMeta({
       :title="data.title"
       :comments="data.comments"
     />
-  </block-wrapper>
+  </center-wrapper>
 </template>
 
 <style lang="css" scoped>

@@ -106,8 +106,8 @@ a {
   border: 1px solid currentcolor;
 
   &:hover {
-    color: var(--color-dominant);
-    background-color: var(--text-on-dominant);
+    color: var(--color-black);
+    background-color: var(--color-white);
   }
 }
 
@@ -125,7 +125,7 @@ a {
 }
 
 .current a {
-  color: var(--color-dominant);
-  background-color: var(--text-on-dominant);
+  color: var(--color-black);
+  background-color: var(--color-white);
 }
 </style>

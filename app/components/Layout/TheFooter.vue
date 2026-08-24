@@ -1,27 +1,34 @@
 <template>
-  <app-divider variant="dot" />
   <footer>
-    <ol>
-      <li>
-        <h2>Contact</h2>
-        Els Ausema<br>
-        M: <a href="mailto:info@wdttoneel.nl">info@wdttoneel.nl</a>
-      </li>
+    <center-wrapper>
+      <ol>
+        <li>
+          <h2>Contact</h2>
+          Els Ausema<br>
+          M: <a href="mailto:info@wdttoneel.nl">info@wdttoneel.nl</a>
+        </li>
 
-      <li>
-        <h2>Adres</h2>
-        Theater De Wilde Wereld<br>
-        Burgtstraat 1<br>
-        6701 DA Wageningen<br>
-      </li>
-      <li>
-        <activity-list />
-      </li>
-    </ol>
+        <li>
+          <h2>Adres</h2>
+          Theater De Wilde Wereld<br>
+          Burgtstraat 1<br>
+          6701 DA Wageningen<br>
+        </li>
+        <li>
+          <activity-list />
+        </li>
+      </ol>
+    </center-wrapper>
   </footer>
 </template>
 
 <style lang="css" scoped>
+footer {
+  padding-block: var(--spacing-6) var(--spacing-12);
+  color: white;
+  background: #000;
+}
+
 ol {
   @mixin list-reset;
 

@@ -12,12 +12,11 @@ span {
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-heading);
-  color: var(--color-secondary);
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   background-color: transparent;
-  box-shadow: 0 0 0 1px var(--color-secondary);
+  box-shadow: 0 0 0 1px currentcolor;
   transition: background-color var(--transition);
 
   &:hover {
@@ -26,9 +25,9 @@ span {
   }
 
   &:disabled {
-    color: var(--text-on-secondary);
+    color: var(--color-white);
     background: transparent;
-    border: 2px dashed var(--text-on-secondary);
+    border: 2px dashed var(--color-white);
 
     &.active,
     &:hover {

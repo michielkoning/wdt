@@ -54,20 +54,7 @@ li {
   &:not(:first-child) {
     padding-block-start: var(--spacing-4);
     margin-block-end: var(--spacing-4);
-  }
-
-  &::after {
-    display: block;
-    block-size: 2px;
-    content: "";
-    background-image:
-      linear-gradient(
-        to right,
-        transparent,
-        currentcolor 4em,
-        currentcolor calc(100% - 4em),
-        transparent
-      );
+    border-block-end: 2px solid currentcolor;
   }
 }
 </style>

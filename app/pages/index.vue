@@ -16,26 +16,28 @@ const { data } = useFetch('/api/page', {
 </script>
 
 <template>
-  <div v-if="data">
+  <div>
     <upcoming-show />
-    <block-wrapper class="about">
-      <h1>Over WDT</h1>
-      <div
-        class="text"
-        v-html="data.content"
-      />
-      <div class="btn-wrapper">
-        <app-button
-          :to="$localeRoute({
-            name: 'page',
-            params: {
-              slug: 'over-wdt',
-            },
-          })"
-          title="Lees verder"
+    <center-wrapper v-if="data">
+      <block-wrapper class="about">
+        <h1>Over WDT</h1>
+        <div
+          class="text"
+          v-html="data.content"
         />
-      </div>
-    </block-wrapper>
+        <div class="btn-wrapper">
+          <app-button
+            :to="$localeRoute({
+              name: 'page',
+              params: {
+                slug: 'over-wdt',
+              },
+            })"
+            title="Lees verder"
+          />
+        </div>
+      </block-wrapper>
+    </center-wrapper>
     <post-list variant="latest" />
   </div>
 </template>

@@ -66,6 +66,9 @@ importers:
       nuxt:
         specifier: ^4.4.2
         version: 4.4.2(@babel/core@7.29.0)(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@netlify/blobs@10.7.4)(@parcel/watcher@2.5.6)(@types/node@25.3.0)(@vue/compiler-sfc@3.5.30)(cac@6.7.14)(db0@0.3.4)(eslint@10.0.3(jiti@2.6.1))(ioredis@5.9.3)(lightningcss@1.31.1)(magicast@0.5.2)(optionator@0.9.4)(rollup-plugin-visualizer@6.0.5(rollup@4.59.0))(rollup@4.59.0)(stylelint@17.5.0(typescript@5.9.3))(sugarss@5.0.1(postcss@8.5.8))(terser@5.46.0)(typescript@5.9.3)(vite@7.3.1(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)(sugarss@5.0.1(postcss@8.5.8))(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.6(typescript@5.9.3))(yaml@2.8.2)
+      postcss-custom-media-generator:
+        specifier: ^1.1.0
+        version: 1.1.0(postcss@8.5.8)
       postcss-html:
         specifier: ^1.8.1
         version: 1.8.1
@@ -4837,6 +4840,12 @@ packages:
     engines: {node: ^18.12.0 || ^20.9.0 || >=22.0}
     peerDependencies:
       postcss: ^8.4.32
+
+  postcss-custom-media-generator@1.1.0:
+    resolution: {integrity: sha512-9II9UTFpDTOFDC+ErkLLtUv94Ax/CdXPNpMC02jznO5fUxlUomxZDrmG2rkxBuN5AEHCgMYtXhFT0sATzr7MyA==}
+    engines: {node: '>=12.0.0'}
+    peerDependencies:
+      postcss: ^8.3.0
 
   postcss-custom-media@12.0.1:
     resolution: {integrity: sha512-66syE14+VeqkUf0rRX0bvbTCbNRJF132jD+ceo8th1dap2YJEAqpdh5uG98CE3IbgHT7m9XM0GIlOazNWqQdeA==}
@@ -11438,6 +11447,10 @@ snapshots:
       browserslist: 4.28.1
       postcss: 8.5.8
       postcss-value-parser: 4.2.0
+
+  postcss-custom-media-generator@1.1.0(postcss@8.5.8):
+    dependencies:
+      postcss: 8.5.8
 
   postcss-custom-media@12.0.1(postcss@8.5.8):
     dependencies:

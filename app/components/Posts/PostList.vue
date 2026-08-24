@@ -35,76 +35,88 @@ const title = computed(() => {
 </script>
 
 <template>
-  <block-wrapper
+  <section
     v-if="data"
+    :aria-label="title"
   >
-    <h1>
-      {{ title }}
-    </h1>
-    <ul
-      v-if="data.items.length"
-      :class="variant === 'latest' ? 'highlights' : undefined"
-    >
-      <clickable-wrapper
-        v-for="item in data.items"
-        :key="item.id"
-        :to="$localePath({
-          name: 'post',
-          params: {
-            slug: item.slug,
-          },
-        })"
+    <center-wrapper>
+      <h1>
+        {{ title }}
+      </h1>
+      <ul
+        v-if="data.items.length"
+        :class="variant === 'latest' ? 'highlights' : undefined"
       >
-        <div class="wrapper">
-          <div class="image-wrapper">
-            <app-image
-              v-if="item.image"
-              :image="item.image"
-              class="image featured-image"
-            />
+        <clickable-wrapper
+          v-for="item in data.items"
+          :key="item.id"
+          :to="$localePath({
+            name: 'post',
+            params: {
+              slug: item.slug,
+            },
+          })"
+        >
+          <div class="item">
+            <div class="image-wrapper">
+              <app-image
+                v-if="item.image"
+                :image="item.image"
+                class="image featured-image"
+              />
+            </div>
+            <div class="content">
+              <h3>
+                <nuxt-link-locale
+                  :to="{
+                    name: 'post',
+                    params: {
+                      slug: item.slug,
+                    },
+                  }"
+                >
+                  {{ item.title }}
+                </nuxt-link-locale>
+              </h3>
+              {{ $d(new Date(item.date), 'short') }}
+              <div
+                class="text"
+                v-html="item.excerpt"
+              />
+              <read-more />
+            </div>
           </div>
-          <div>
-            <h3>
-              <nuxt-link-locale
-                :to="{
-                  name: 'post',
-                  params: {
-                    slug: item.slug,
-                  },
-                }"
-              >
-                {{ item.title }}
-              </nuxt-link-locale>
-            </h3>
-            {{ $d(new Date(item.date), 'short') }}
-            <div
-              class="text"
-              v-html="item.excerpt"
-            />
-            <read-more />
-          </div>
-        </div>
-      </clickable-wrapper>
-    </ul>
-    <app-pagination
-      v-if="variant==='all'"
-      :total-pages="data.totalPages"
-    />
-    <div
-      v-else
-      class="btn-wrapper"
-    >
-      <app-button
-        title="Alle berichten"
-        :to="{
-          name: 'posts',
-        }"
+        </clickable-wrapper>
+      </ul>
+      <app-pagination
+        v-if="variant==='all'"
+        :total-pages="data.totalPages"
       />
-    </div>
-  </block-wrapper>
+      <div
+        v-else
+        class="btn-wrapper"
+      >
+        <app-button
+          title="Alle berichten"
+          :to="{
+            name: 'posts',
+          }"
+        />
+      </div>
+    </center-wrapper>
+  </section>
 </template>
 
 <style lang="css" scoped>
+section {
+  padding-block: var(--spacing-6);
+  background: var(--color-yellow);
+}
+
+h1 {
+  text-align: center;
+}
+
 ul {
   @mixin list-reset;
 
@@ -133,14 +145,6 @@ li {
   container-name: achive-list;
   container-type: inline-size;
 
-  &::after {
-    display: block;
-    block-size: 2px;
-    margin-block-start: var(--spacing-2);
-    content: "";
-    background-image: linear-gradient(to left, transparent, currentcolor, transparent);
-  }
-
   &:hover,
   &:focus-within {
     a {
@@ -149,8 +153,9 @@ li {
   }
 }
 
-.wrapper {
+.item {
   block-size: 100%;
+  background-color: var(--color-white);
 
   @container achive-list (width > 32em) {
     display: grid;
@@ -159,8 +164,8 @@ li {
   }
 }
 
-.image {
-  margin-block-end: var(--spacing-4);
+.content {
+  padding: var(--spacing-2) var(--spacing-4);
 }
 
 .text:deep(p) {

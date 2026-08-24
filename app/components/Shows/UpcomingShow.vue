@@ -6,52 +6,54 @@ const { data } = useFetch('/api/upcomingShow')
 </script>
 
 <template>
-  <block-wrapper>
-    <h1>Volgende voorstelling</h1>
-    <clickable-wrapper
-      v-if="data"
-      tag="div"
-      :to="$localePath({
-        name: 'show',
-        params: {
-          slug: data.slug,
-        },
-      })"
-    >
-      <div class="upcoming-show">
-        <image-card
-          v-if="data.image"
-          :image="data.image"
-          :banner="data.banner"
-        />
+  <center-wrapper>
+    <block-wrapper>
+      <h1>Volgende voorstelling</h1>
+      <clickable-wrapper
+        v-if="data"
+        tag="div"
+        :to="$localePath({
+          name: 'show',
+          params: {
+            slug: data.slug,
+          },
+        })"
+      >
+        <div class="upcoming-show">
+          <image-card
+            v-if="data.image"
+            :image="data.image"
+            :banner="data.banner"
+          />
 
-        <div>
-          <h2>
-            <nuxt-link-locale
-              :to="{
+          <div>
+            <h2>
+              <nuxt-link-locale
+                :to="{
+                  name: 'show',
+                  params: {
+                    slug: data.slug,
+                  },
+                }"
+              >
+                {{ data.title }}
+              </nuxt-link-locale>
+            </h2>
+            <div v-html="data.excerpt" />
+            <app-button
+              :to="$localeRoute({
                 name: 'show',
                 params: {
                   slug: data.slug,
                 },
-              }"
-            >
-              {{ data.title }}
-            </nuxt-link-locale>
-          </h2>
-          <div v-html="data.excerpt" />
-          <app-button
-            :to="$localeRoute({
-              name: 'show',
-              params: {
-                slug: data.slug,
-              },
-            })"
-            title="Lees verder"
-          />
+              })"
+              title="Lees verder"
+            />
+          </div>
         </div>
-      </div>
-    </clickable-wrapper>
-  </block-wrapper>
+      </clickable-wrapper>
+    </block-wrapper>
+  </center-wrapper>
 </template>
 
 <style lang="css" scoped>

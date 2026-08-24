@@ -45,9 +45,9 @@ dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
   max-inline-size: 1280px;
   padding: 0;
-  background-color: var(--color-secondary);
+  background-color: var(--color-black);
   border: 0;
-  box-shadow: 0 0 0 2px var(--color-secondary), 0 0 0 3px var(--color-dominant);
+  box-shadow: 0 0 0 2px var(--color-black), 0 0 0 3px var(--color-black);
   transition: display var(--transition) allow-discrete, overlay var(--transition) allow-discrete;
   animation: dialog-hide var(--transition);
 
@@ -79,8 +79,8 @@ dialog {
   align-items: start;
   justify-content: space-between;
   padding: var(--spacing-2) var(--spacing-4) 0;
-  color: var(--text-on-secondary);
-  background-color: var(--color-secondary);
+  color: var(--color-white);
+  background-color: var(--color-black);
 }
 
 @keyframes dialog-hide {
