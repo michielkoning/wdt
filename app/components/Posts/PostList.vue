@@ -159,13 +159,18 @@ li {
 
   @container achive-list (width > 32em) {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 14em auto;
     gap: var(--spacing-4);
+    padding: var(--spacing-4);
   }
 }
 
 .content {
   padding: var(--spacing-2) var(--spacing-4);
+
+  @container achive-list (width > 32em) {
+    padding: 0;
+  }
 }
 
 .text:deep(p) {

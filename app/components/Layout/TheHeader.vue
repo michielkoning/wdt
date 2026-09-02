@@ -52,7 +52,15 @@ onUnmounted(() => {
   <header>
     <center-wrapper>
       <div class="wrapper">
-        <h1>Toneelvereniging WDT Wageningen</h1>
+        <h1>
+          <nuxt-link-locale
+            :to="{
+              name: 'home',
+            }"
+          >
+            Toneelvereniging WDT Wageningen
+          </nuxt-link-locale>
+        </h1>
 
         <button
           class="btn-open"
@@ -96,6 +104,17 @@ onUnmounted(() => {
             <li>
               <nuxt-link-locale
                 :to="{
+                  name:
+                    'shows',
+                }"
+                @click="closePopover"
+              >
+                Voorstellingen
+              </nuxt-link-locale>
+            </li>
+            <li>
+              <nuxt-link-locale
+                :to="{
                   name: 'page',
                   params: {
                     slug: 'over-wdt',
@@ -106,17 +125,7 @@ onUnmounted(() => {
                 Over WDT
               </nuxt-link-locale>
             </li>
-            <li>
-              <nuxt-link-locale
-                :to="{
-                  name:
-                    'shows',
-                }"
-                @click="closePopover"
-              >
-                Voorstellingen
-              </nuxt-link-locale>
-            </li>
+
             <li>
               <nuxt-link-locale
                 :to="{
@@ -169,6 +178,17 @@ h1 {
   display: flex;
   align-items: end;
   justify-content: space-between;
+
+  @media (--md) {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    align-items: center;
+  }
+
+  @media (--lg) {
+    flex-direction: row;
+    align-items: end;
+  }
 }
 
 .btn-open {
@@ -209,11 +229,17 @@ h1 {
 li {
   transition: opacity var(--transition), translate 0.25s var(--transition);
   transition-delay: calc(0.1s * (sibling-index() - 1) + calc(var(--transition-duration) / 2));
+
+  &:first-child {
+    @media (--md) {
+      display: none;
+    }
+  }
 }
 
 nav {
   inset: 0;
-  inline-size: 70vw;
+  inline-size: 90vw;
   block-size: 100%;
   padding: var(--spacing-4) var(--gutter);
   margin: 0;
