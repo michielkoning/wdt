@@ -6,6 +6,6 @@
 
 <style lang="css" scoped>
 .block-wrapper {
-  padding-block: var(--spacing-4);
+  padding-block: var(--spacing-8);
 }
 </style>

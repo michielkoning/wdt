@@ -94,6 +94,7 @@ onUnmounted(() => {
   display: grid;
   gap: var(--spacing-4);
   align-items: start;
+  padding-block: var(--section-block-padding);
 
   @media (--md) {
     grid-template-columns: auto 12rem;
@@ -120,7 +121,7 @@ nav {
 ol {
   @mixin list-reset;
 
-  background-color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 li:not(:last-child) a::after {
@@ -148,7 +149,7 @@ a {
     inline-size: var(--spacing-3);
     aspect-ratio: 1;
     content: "";
-    background-color: var(--color-black);
+    background-color: var(--color-white);
     border: 2px solid var(--color-black);
     border-radius: 50%;
     box-shadow: 0 0 0 2px var(--color-black);

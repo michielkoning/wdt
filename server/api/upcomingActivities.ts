@@ -1,6 +1,6 @@
 import { UpcomingActivitiesSchema } from '../schemas/UpcomingActivitiesSchema'
 
-export default defineCachedEventHandler(async () => {
+export default defineEventHandler(async () => {
   const url = getUrl({
     type: 'posts',
     fields: ['title', 'acf', 'slug'],
@@ -17,7 +17,4 @@ export default defineCachedEventHandler(async () => {
   }
 
   return data
-}, {
-  maxAge: 60 * 60,
-  staleMaxAge: 60 * 60 * 24,
 })

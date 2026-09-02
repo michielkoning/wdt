@@ -150,12 +150,25 @@ onUnmounted(() => {
 <style lang="css" scoped>
 header {
   padding-block: var(--spacing-4);
+  line-height: var(--line-height-heading);
   color: var(--color-white);
   background: var(--color-black);
+
+  @media (--md) {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+h1 {
+  margin-bottom: 0;
 }
 
 .wrapper {
   display: flex;
+  align-items: end;
+  justify-content: space-between;
 }
 
 .btn-open {
@@ -205,7 +218,6 @@ nav {
   padding: var(--spacing-4) var(--gutter);
   margin: 0;
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-h3);
   border: 0;
   box-shadow: 0 0 0 2px var(--color-black);
   translate: -100% 0;
@@ -219,6 +231,7 @@ nav {
     display: block;
     inline-size: auto;
     padding: 0;
+    text-transform: uppercase;
     background-color: transparent;
     border: 0;
     border-radius: 0;
@@ -300,6 +313,10 @@ a {
   &:hover,
   &.router-link-exact-active {
     text-decoration: underline;
+  }
+
+  @media (--md) {
+    padding-bottom: 0;
   }
 }
 

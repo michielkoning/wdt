@@ -23,13 +23,21 @@ useSeoMeta({
 </script>
 
 <template>
-  <center-wrapper
-    v-if="data"
-  >
-    <h1>
-      {{ data.title }}
-    </h1>
-    <body-text :text="data.content" />
-    <app-pages :parent-id="data.id" />
-  </center-wrapper>
+  <div class="page">
+    <center-wrapper
+      v-if="data"
+    >
+      <h1>
+        {{ data.title }}
+      </h1>
+      <body-text :text="data.content" />
+      <app-pages :parent-id="data.id" />
+    </center-wrapper>
+  </div>
 </template>
+
+<style lang="css" scoped>
+.page {
+  padding-block: var(--section-block-padding);
+}
+</style>

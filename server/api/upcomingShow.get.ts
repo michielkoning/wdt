@@ -1,6 +1,6 @@
 import { UpcomingShowSchema } from '../schemas/UpcomingShowSchema'
 
-export default defineCachedEventHandler(async (event) => {
+export default defineEventHandler(async (event) => {
   const url = getUrl({
     image: true,
     type: 'shows',
@@ -16,7 +16,4 @@ export default defineCachedEventHandler(async (event) => {
   }
 
   return data
-}, {
-  maxAge: 60 * 60,
-  staleMaxAge: 60 * 60 * 24,
 })

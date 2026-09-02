@@ -23,16 +23,20 @@ useSeoMeta({
 </script>
 
 <template>
-  <div v-if="data">
+  <div
+    v-if="data"
+  >
     <center-wrapper>
-      <h1>{{ data.title }}</h1>
       <div class="content">
         <app-image
           v-if="data.image"
           :image="data.image"
           class="featured-image"
         />
-        <body-text :text="data.content" />
+        <div>
+          <h1>{{ data.title }}</h1>
+          <body-text :text="data.content" />
+        </div>
       </div>
     </center-wrapper>
     <post-list
@@ -46,7 +50,7 @@ useSeoMeta({
   display: grid;
   gap: var(--spacing-4);
   align-items: start;
-  margin-block-end: var(--spacing-8);
+  padding-block: var(--section-block-padding);
 
   @media (--md) {
     grid-template-columns: 1fr 2fr;

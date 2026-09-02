@@ -109,7 +109,7 @@ const title = computed(() => {
 
 <style lang="css" scoped>
 section {
-  padding-block: var(--spacing-6);
+  padding-block: var(--section-block-padding);
   background: var(--color-yellow);
 }
 

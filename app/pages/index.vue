@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import HomeContent from '~/components/Home/HomeContent.vue'
+
 definePageMeta({
   name: 'home',
   i18n: {
@@ -17,34 +19,11 @@ const { data } = useFetch('/api/page', {
 
 <template>
   <div>
-    <upcoming-show />
-    <center-wrapper v-if="data">
-      <block-wrapper class="about">
-        <h1>Over WDT</h1>
-        <div
-          class="text"
-          v-html="data.content"
-        />
-        <div class="btn-wrapper">
-          <app-button
-            :to="$localeRoute({
-              name: 'page',
-              params: {
-                slug: 'over-wdt',
-              },
-            })"
-            title="Lees verder"
-          />
-        </div>
-      </block-wrapper>
-    </center-wrapper>
+    <!-- <upcoming-show /> -->
+    <home-content
+      v-if="data"
+      :page="data"
+    />
     <post-list variant="latest" />
   </div>
 </template>
-
-<style lang="css" scoped>
-.btn-wrapper {
-  display: flex;
-  justify-content: center;
-}
-</style>
