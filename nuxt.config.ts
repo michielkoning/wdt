@@ -142,6 +142,7 @@ export default defineNuxtConfig({
       ],
     },
     families: [{
+      weights: [400, 700],
       styles: ['normal'],
       name: 'Sora',
       provider: 'google',

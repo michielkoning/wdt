@@ -2,4 +2,6 @@
   --color-black: oklch(0% 0 0deg);
   --color-white: oklch(100% 0 0deg);
   --color-yellow: oklch(92.5% 0.193 102.82deg);
+  --color-red: oklch(47.19% 0.1582 33.33deg);
+  --color-red-700: oklch(from var(--color-red) calc(l - 0.1) c h);
 }

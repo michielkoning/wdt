@@ -78,7 +78,9 @@ const title = computed(() => {
                   {{ item.title }}
                 </nuxt-link-locale>
               </h3>
-              {{ $d(new Date(item.date), 'short') }}
+              <time>
+                {{ $d(new Date(item.date), 'short') }}
+              </time>
               <div
                 class="text"
                 v-html="item.excerpt"
@@ -132,7 +134,12 @@ ul {
 }
 
 a {
+  color: currentcolor;
   text-decoration: none;
+}
+
+time {
+  font-size: var(--font-size-sm);
 }
 
 :deep(p) {

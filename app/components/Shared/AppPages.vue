@@ -113,7 +113,7 @@ nav {
   padding-block: var(--spacing-4);
 
   @media (--md) {
-    inset-block-start: var(--spacing-2);
+    inset-block-start: 4em;
     order: 1;
   }
 }
@@ -139,6 +139,7 @@ a {
   gap: var(--spacing-2);
   align-items: start;
   padding-block-end: var(--spacing-1);
+  color: currentcolor;
   text-decoration: none;
 
   &::before {

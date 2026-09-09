@@ -44,6 +44,7 @@ defineProps<{
 
 .content {
   padding-block: var(--section-block-padding);
+  font-family: var(--font-family-heading);
 }
 
 .btn-wrapper {

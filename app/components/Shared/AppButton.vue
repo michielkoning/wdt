@@ -44,26 +44,26 @@ const cssClasses = computed(() => {
 
 <style lang="css" scoped>
 .btn {
-  --color: var(--color-black);
-
   display: inline-block;
   inline-size: auto;
-  padding: var(--spacing-2) var(--spacing-3);
+  padding: var(--spacing-2) var(--spacing-8);
   margin-inline: var(--spacing-1);
   font-family: var(--font-family-heading);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
   color: var(--color-white);
   text-align: center;
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  background-color: var(--color);
+  background-color: var(--color-red);
   border: 0;
+  border-radius: 0.5em;
   transition: background-color var(--transition), box-shadow var(--transition);
 
   &:hover {
-    --color: var(--color-accent-700);
+    background-color: var(--color-red-700);
   }
 
   &:disabled {

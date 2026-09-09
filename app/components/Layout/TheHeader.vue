@@ -54,6 +54,7 @@ onUnmounted(() => {
       <div class="wrapper">
         <h1>
           <nuxt-link-locale
+            class="logo"
             :to="{
               name: 'home',
             }"
@@ -158,16 +159,14 @@ onUnmounted(() => {
 
 <style lang="css" scoped>
 header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-mobile-navigation);
   padding-block: var(--spacing-4);
   line-height: var(--line-height-heading);
   color: var(--color-white);
   background: var(--color-black);
-
-  @media (--md) {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
+  transition: translate var(--transition);
 }
 
 h1 {
@@ -176,12 +175,12 @@ h1 {
 
 .wrapper {
   display: flex;
+  gap: var(--spacing-3);
   align-items: end;
   justify-content: space-between;
 
   @media (--md) {
     flex-direction: column;
-    gap: var(--spacing-3);
     align-items: center;
   }
 
@@ -214,6 +213,7 @@ h1 {
 }
 
 .btn-close {
+  margin-bottom: var(--spacing-4);
   color: currentcolor;
 
   @media (--md) {
@@ -227,13 +227,24 @@ h1 {
 }
 
 li {
+  border-bottom: 1px solid var(--color-white);
   transition: opacity var(--transition), translate 0.25s var(--transition);
   transition-delay: calc(0.1s * (sibling-index() - 1) + calc(var(--transition-duration) / 2));
 
   &:first-child {
+    border-top: 1px solid var(--color-white);
+
     @media (--md) {
+      border: 0;
+    }
+
+    @media (--lg) {
       display: none;
     }
+  }
+
+  @media (--md) {
+    border: 0;
   }
 }
 
@@ -244,6 +255,8 @@ nav {
   padding: var(--spacing-4) var(--gutter);
   margin: 0;
   font-family: var(--font-family-heading);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
   border: 0;
   box-shadow: 0 0 0 2px var(--color-black);
   translate: -100% 0;
@@ -257,6 +270,7 @@ nav {
     display: block;
     inline-size: auto;
     padding: 0;
+    font-size: var(--font-size-base);
     text-transform: uppercase;
     background-color: transparent;
     border: 0;
@@ -332,17 +346,39 @@ ol {
 
 a {
   display: block;
-  padding-block: var(--spacing-1);
+  color: currentcolor;
   text-decoration: none;
   text-underline-offset: 0.35em;
+  transition: padding var(--transition);
+
+  &:not(.logo) {
+    padding-block: var(--spacing-2);
+
+    @media (--md) {
+      padding: 0;
+    }
+  }
 
   &:hover,
   &.router-link-exact-active {
-    text-decoration: underline;
+    padding-left: var(--spacing-2);
+
+    @media (--md) {
+      padding-left: 0;
+      text-decoration: underline;
+    }
   }
 
-  @media (--md) {
-    padding-bottom: 0;
+  &.router-link-exact-active {
+    border-left: 0.25em solid var(--color-white);
+
+    @media (--md) {
+      border-left: 0;
+    }
+  }
+
+  &.logo.router-link-active {
+    text-decoration: none;
   }
 }
 

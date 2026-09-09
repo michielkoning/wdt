@@ -24,9 +24,13 @@
 
 <style lang="css" scoped>
 footer {
-  padding-block: var(--spacing-6) var(--spacing-12);
-  color: white;
-  background: #000;
+  padding-block: var(--spacing-6) var(--spacing-16);
+  color: var(--color-white);
+  background: var(--color-black);
+}
+
+a {
+  color: currentcolor;
 }
 
 ol {

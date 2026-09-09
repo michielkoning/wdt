@@ -21,9 +21,9 @@ defineProps<{
           <h3>
             {{ item.author }}
           </h3>
-          <div class="date">
+          <time>
             {{ $d(new Date(item.date), 'short') }}
-          </div>
+          </time>
         </div>
         <div v-html="item.content" />
       </li>
@@ -42,7 +42,7 @@ ul {
   @mixin list-reset;
 }
 
-.date {
+time {
   font-size: var(--font-size-sm);
 }
 
