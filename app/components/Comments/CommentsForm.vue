@@ -35,33 +35,28 @@ const { execute, error, status } = useFetch('/api/add-comment', {
   },
 })
 
-const url = useRequestURL()
-
-const onSubmit = handleSubmit(() => {
-  execute()
+const onSubmit = handleSubmit(async () => {
+  await execute()
 })
 </script>
 
 <template>
-  <p v-if="status === 'success'">
-    {{ $t("form.success") }}
-  </p>
-  <form
-    v-else
-    name="add-comment"
-    :action="url.href"
+  <app-form
+    :success-text="$t('form.success')"
+    button-title="Reactie plaatsen"
     method="POST"
-    novalidate
-    @submit="onSubmit"
+    :status
+    @submit-form="onSubmit"
   >
     <form-fieldset
       title="Geef een reactie"
       class="fieldset"
+      :colunns="2"
     >
       <div class="name">
         <text-field
-          name="name"
           autocomplete="name"
+          name="name"
           :title="$t('form.name')"
         />
       </div>
@@ -86,26 +81,15 @@ const onSubmit = handleSubmit(() => {
       v-if="error"
       :error-message="error.statusText"
     />
-
-    <app-button
-      title="Reactie plaatsen"
-      type="submit"
-    />
-  </form>
+  </app-form>
 </template>
 
 <style lang="css" scoped>
-.fieldset {
-  @media (--md) {
-    --columns: 2;
-  }
-}
-
 ul {
   @mixin list-reset;
 }
 
 .comment {
-  grid-column: span var(--columns);
+  grid-column: span 2;
 }
 </style>

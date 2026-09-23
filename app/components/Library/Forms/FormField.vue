@@ -2,7 +2,6 @@
 defineProps<{
   id: string
   title: string
-  name: string
   errorMessage?: string
 }>()
 </script>
@@ -24,7 +23,7 @@ defineProps<{
 </template>
 
 <style lang="css" scoped>
-.label {
+label {
   display: block;
   margin-block-end: var(--spacing-xxs);
   font-weight: var(--font-weight-bold);

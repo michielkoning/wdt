@@ -10,6 +10,7 @@ defineProps<{
 
 <template>
   <block-wrapper class="wrapper">
+    <comments-form :id="id" />
     <h1>Reacties</h1>
     <h2>{{ $t('comments', comments.length) }} op {{ title }}</h2>
     <ul v-if="comments.length">
@@ -28,13 +29,12 @@ defineProps<{
         <div v-html="item.content" />
       </li>
     </ul>
-    <comments-form :id="id" />
   </block-wrapper>
 </template>
 
 <style lang="css" scoped>
 .wrapper {
-  max-width: var(--container-size-md);
+  max-inline-size: var(--container-size-md);
   margin-inline: auto;
 }
 

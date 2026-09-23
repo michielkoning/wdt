@@ -3,11 +3,11 @@ const search = defineModel<string>('search', {
   required: true,
 })
 
-const directors = defineModel<number[]>('directors', {
+const directors = defineModel<number | undefined>('directors', {
   required: true,
 })
 
-const authors = defineModel<number[]>('authors', {
+const authors = defineModel<number | undefined>('authors', {
   required: true,
 })
 </script>
@@ -21,11 +21,11 @@ const authors = defineModel<number[]>('authors', {
           name="search"
         />
       </div>
-      <select-field
+      <shows-filter-item
         v-model="directors"
         type="directors"
       />
-      <select-field
+      <shows-filter-item
         v-model="authors"
         type="authors"
       />

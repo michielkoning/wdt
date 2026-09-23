@@ -20,14 +20,14 @@ const directors = computed(() => {
   if (!data.value) {
     return []
   }
-  return data.value.directors.map(item => item.name)
+  return data.value.directors.map(item => item.title)
 })
 
 const authors = computed(() => {
   if (!data.value) {
     return []
   }
-  return data.value.authors.map(item => item.name)
+  return data.value.authors.map(item => item.title)
 })
 
 useSeoMeta({
@@ -40,7 +40,13 @@ useSeoMeta({
   <center-wrapper
     v-if="data"
   >
-    <app-modal
+    <comments-list
+      v-if="data.comments.length"
+      :id="data.id"
+      :title="data.title"
+      :comments="data.comments"
+    />
+    <app-dialog
       v-if="data.ticketsUrl"
       id="tickets"
       :title="`Tickets voor ${data.title}`"
@@ -52,7 +58,7 @@ useSeoMeta({
         height="1400"
         frameborder="0"
       />
-    </app-modal>
+    </app-dialog>
     <h1>{{ data.title }}</h1>
     <div
       class="show"
@@ -100,12 +106,6 @@ useSeoMeta({
       v-if="data.gallery.length"
       :title="data.title"
       :images="data.gallery"
-    />
-    <comments-list
-      v-if="data.comments.length"
-      :id="data.id"
-      :title="data.title"
-      :comments="data.comments"
     />
   </center-wrapper>
 </template>

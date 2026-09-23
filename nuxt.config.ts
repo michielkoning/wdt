@@ -13,12 +13,13 @@ export default defineNuxtConfig({
   components: [
     '~/components/Activities',
     '~/components/Comments',
-    '~/components/Forms',
     '~/components/Layout',
     '~/components/Posts',
     '~/components/Shows',
     '~/components/Shared',
     '~/components/Wrappers',
+    '~/components/Library/Forms',
+    '~/components/Library',
   ],
   devtools: {
     enabled: true,

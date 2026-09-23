@@ -96,14 +96,14 @@ export const ShowSchema = z.array(
       image: getFeaturedImage(item._embedded['wp:featuredmedia']),
       directors: item._embedded['wp:term'].filter(item => item.taxonomy === 'director').map((taxonomy) => {
         return {
-          id: taxonomy.id,
-          name: taxonomy.name,
+          value: taxonomy.id,
+          title: taxonomy.name,
         }
       }),
       authors: item._embedded['wp:term'].filter(item => item.taxonomy === 'author').map((taxonomy) => {
         return {
-          id: taxonomy.id,
-          name: taxonomy.name,
+          value: taxonomy.id,
+          title: taxonomy.name,
         }
       }),
       gallery: item.acf.gallery.map((item) => {

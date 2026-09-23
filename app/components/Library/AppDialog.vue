@@ -23,7 +23,7 @@ const afterOpen = () => {
     closedby="any"
     @toggle="afterOpen"
   >
-    <div class="header">
+    <header>
       <h2>{{ title }}</h2>
       <button
         :commandfor="id"
@@ -35,7 +35,7 @@ const afterOpen = () => {
           class="icon"
         />
       </button>
-    </div>
+    </header>
     <slot />
   </dialog>
 </template>
@@ -71,7 +71,7 @@ dialog {
   animation: backdrop-hide var(--transition);
 }
 
-.header {
+header {
   position: sticky;
   inset-block-start: 0;
   display: flex;

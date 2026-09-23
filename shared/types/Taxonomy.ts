@@ -1,4 +1,4 @@
 export type Taxonomy = {
-  id: number
-  name: string
+  value: number
+  title: string
 }

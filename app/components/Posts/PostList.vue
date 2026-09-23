@@ -1,7 +1,4 @@
 <script lang="ts" setup>
-import AppButton from '../Shared/AppButton.vue'
-import AppPagination from '../Shared/AppPagination.vue'
-
 const props = withDefaults(defineProps<{
   variant?: 'all' | 'latest'
   excludeId?: number

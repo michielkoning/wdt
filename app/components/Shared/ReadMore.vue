@@ -20,8 +20,8 @@ span {
   transition: background-color var(--transition);
 
   &:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+    text-decoration: 1px solid underline;
+    text-underline-offset: 0.25em;
   }
 
   &:disabled {

@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <app-modal
+  <app-dialog
     :id="id"
     :title="`Foto's van ${title}`"
   >
@@ -23,7 +23,7 @@ defineProps<{
         />
       </li>
     </ul>
-  </app-modal>
+  </app-dialog>
 </template>
 
 <style lang="css" scoped>

@@ -39,7 +39,7 @@ defineProps<{
 
 <style lang="css" scoped>
 .featured-image {
-  width: 100%;
+  inline-size: 100%;
 }
 
 .content {

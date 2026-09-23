@@ -9,8 +9,8 @@ definePageMeta({
 })
 
 const search = ref('')
-const directors: Ref<number[]> = ref([])
-const authors: Ref<number[]> = ref([])
+const directors: Ref<number | undefined> = ref(undefined)
+const authors: Ref<number | undefined> = ref(undefined)
 const { start, finish } = useLoadingIndicator()
 
 const route = useRoute()

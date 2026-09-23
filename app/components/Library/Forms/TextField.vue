@@ -1,17 +1,14 @@
 <script lang="ts" setup>
-const props = withDefaults(
-  defineProps<{
-    title: string
-    name: string
-    type?: 'text' | 'email' | 'tel' | 'date' | 'number'
-  }>(),
-  {
-    type: 'text',
-  },
-)
+import type { InputTypeHTMLAttribute } from 'vue'
 
-defineOptions({
-  inheritAttrs: false,
+const props = withDefaults(defineProps<{
+  type?: InputTypeHTMLAttribute
+  autocomplete?: AutoFillField
+  title: string
+  name: string
+}>(), {
+  autocomplete: undefined,
+  type: 'text',
 })
 
 const id = useId()
@@ -34,15 +31,14 @@ const validationListeners = {
   <form-field
     :id="id"
     :title="title"
-    :name="name"
     :error-message="errorMessage"
   >
     <input
-      :id="id"
-      :name="name"
-      v-bind="$attrs"
+      :id
+      :name
+      :type
+      :autocomplete
       :value="inputValue"
-      :type="type"
       class="field"
       v-on="validationListeners"
     >

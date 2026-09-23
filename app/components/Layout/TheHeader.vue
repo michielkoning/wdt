@@ -160,7 +160,7 @@ onUnmounted(() => {
 <style lang="css" scoped>
 header {
   position: sticky;
-  top: 0;
+  inset-block-start: 0;
   z-index: var(--z-mobile-navigation);
   padding-block: var(--spacing-4);
   line-height: var(--line-height-heading);
@@ -170,7 +170,7 @@ header {
 }
 
 h1 {
-  margin-bottom: 0;
+  margin-block-end: 0;
 }
 
 .wrapper {
@@ -213,7 +213,7 @@ h1 {
 }
 
 .btn-close {
-  margin-bottom: var(--spacing-4);
+  margin-block-end: var(--spacing-4);
   color: currentcolor;
 
   @media (--md) {
@@ -227,12 +227,12 @@ h1 {
 }
 
 li {
-  border-bottom: 1px solid var(--color-white);
+  border-block-end: 1px solid var(--color-white);
   transition: opacity var(--transition), translate 0.25s var(--transition);
   transition-delay: calc(0.1s * (sibling-index() - 1) + calc(var(--transition-duration) / 2));
 
   &:first-child {
-    border-top: 1px solid var(--color-white);
+    border-block-start: 1px solid var(--color-white);
 
     @media (--md) {
       border: 0;
@@ -294,7 +294,7 @@ nav {
 
   &::after {
     position: fixed;
-    left: anchor(left);
+    inset-inline-start: anchor(left);
     display: block;
     inline-size: anchor-size(inline);
     block-size: 3px;
@@ -361,19 +361,19 @@ a {
 
   &:hover,
   &.router-link-exact-active {
-    padding-left: var(--spacing-2);
+    padding-inline-start: var(--spacing-2);
 
     @media (--md) {
-      padding-left: 0;
+      padding-inline-start: 0;
       text-decoration: underline;
     }
   }
 
   &.router-link-exact-active {
-    border-left: 0.25em solid var(--color-white);
+    border-inline-start: 0.25em solid var(--color-white);
 
     @media (--md) {
-      border-left: 0;
+      border-inline-start: 0;
     }
   }
 

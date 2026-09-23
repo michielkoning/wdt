@@ -2,20 +2,6 @@ form {
   margin-block-end: var(--spacing-4);
 }
 
-fieldset {
-  padding: 0;
-  border: 0;
-}
-
-legend {
-  display: block;
-  margin-block-end: var(--spacing-2);
-  font-family: var(--font-family-heading);
-  font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-medium);
-  line-height: var(--line-height-heading);
-}
-
 label {
   display: block;
   margin-block-end: var(--spacing-1);
@@ -37,10 +23,11 @@ input,
 textarea {
   display: block;
   inline-size: 100%;
-  padding: var(--spacing-3) var(--spacing-4);
+  padding: var(--spacing-3) var(--spacing-2);
   margin-block-end: var(--spacing-1);
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
+  line-height: var(--line-height-heading);
   color: currentcolor;
   background: var(--color-white);
   border: 2px solid currentcolor;

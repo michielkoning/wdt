@@ -7,7 +7,7 @@ export const TaxonomySchema = z.array(
   }),
 ).transform(val => val.map((item) => {
   return {
-    id: item.id,
-    name: item.name,
+    value: item.id,
+    title: item.name,
   }
 }))
