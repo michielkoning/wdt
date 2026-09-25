@@ -45,6 +45,7 @@ dialog {
   inline-size: calc(100vw - (var(--spacing-4) * 2));
   max-inline-size: 1280px;
   padding: 0;
+  overscroll-behavior: contain;
   background-color: var(--color-black);
   border: 0;
   box-shadow: 0 0 0 2px var(--color-black), 0 0 0 3px var(--color-black);
@@ -66,6 +67,8 @@ dialog {
 }
 
 ::backdrop {
+  overflow: hidden; /* Needed to make this a scroll container */
+  overscroll-behavior: contain;
   background-color: rgb(0 0 0 / 50%);
   backdrop-filter: blur(0.25em);
   animation: backdrop-hide var(--transition);
