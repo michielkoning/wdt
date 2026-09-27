@@ -1,24 +1,29 @@
 <script lang="ts" setup>
-import AppButton from './AppButton.vue'
+import { AppButton, AppCarousel } from '@m11g/library'
 
-defineProps<{
+const props = defineProps<{
   images: Image[]
   title: string
 }>()
+
+const imageIds = computed(() => {
+  return props.images.map(image => `${image.id}`)
+})
 </script>
 
 <template>
   <block-wrapper>
-    <app-carousel :total="images.length">
-      <li
+    <app-carousel :items="imageIds">
+      <template
         v-for="image in images"
+        #[image.id]
         :key="image.id"
       >
         <app-image
           :image="image"
           class="image"
         />
-      </li>
+      </template>
     </app-carousel>
     <div class="btn-wrapper">
       <app-button

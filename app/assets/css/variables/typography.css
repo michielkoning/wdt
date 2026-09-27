@@ -1,17 +1,4 @@
 :root {
-  --font-size-base: clamp(16px, 2.75vw, 18px);
-  --scale-base: 1rem;
-  --scale-ratio: 1.1;
-  --font-size-h1: calc(var(--scale-base) * pow(var(--scale-ratio), 4));
-  --font-size-h2: calc(var(--scale-base) * pow(var(--scale-ratio), 3));
-  --font-size-h3: calc(var(--scale-base) * pow(var(--scale-ratio), 2));
-  --font-size-h4: calc(var(--scale-base) * pow(var(--scale-ratio), 1));
-  --font-size-sm: calc(var(--scale-base) * pow(var(--scale-ratio), -1));
-  --line-height: 1.5;
-  --line-height-heading: 1.2;
   --font-family-base: "Domine", arial, helvetica, sans-serif;
   --font-family-heading: "Sora", var(--font-family-base);
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
 }

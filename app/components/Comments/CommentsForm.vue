@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { toTypedSchema } from '@vee-validate/zod'
+import { AppForm, FormFieldset, TextField, TextareaField } from '@m11g/library'
 import z from 'zod'
 
 const props = defineProps<{
@@ -16,7 +17,7 @@ const validationSchema = toTypedSchema(
   }),
 )
 
-const { values, handleSubmit } = useForm({
+const { values, handleSubmit, errors } = useForm({
   name: 'add-comment',
   validationSchema: validationSchema,
 })
@@ -42,6 +43,7 @@ const onSubmit = handleSubmit(async () => {
 
 <template>
   <app-form
+    :errors
     :success-text="$t('form.success')"
     button-title="Reactie plaatsen"
     method="POST"
@@ -51,7 +53,7 @@ const onSubmit = handleSubmit(async () => {
     <form-fieldset
       title="Geef een reactie"
       class="fieldset"
-      :colunns="2"
+      :columns="2"
     >
       <div class="name">
         <text-field
@@ -85,10 +87,6 @@ const onSubmit = handleSubmit(async () => {
 </template>
 
 <style lang="css" scoped>
-ul {
-  @mixin list-reset;
-}
-
 .comment {
   grid-column: span 2;
 }

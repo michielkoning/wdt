@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { AppButton, AppDialog } from '@m11g/library'
+
 definePageMeta({
   name: 'show',
   i18n: {

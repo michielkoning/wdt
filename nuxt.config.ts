@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['~/assets/css/base.css'],
+  css: ['@m11g/library/style.css', '~/assets/css/base.css'],
   vue: {
     compilerOptions: {
       isCustomElement: (tag: string) =>

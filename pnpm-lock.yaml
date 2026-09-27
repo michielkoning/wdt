@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@m11g/library':
+        specifier: ^0.0.9
+        version: 0.0.9(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(rolldown@1.2.7)(rollup@4.63.1)(typescript@6.0.3)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(sugarss@5.0.1(postcss@8.5.28))(terser@5.46.0)(yaml@2.9.0))(webpack@5.105.2(esbuild@0.28.2))
       '@netlify/blobs':
         specifier: ^11.1.0
         version: 11.1.0
@@ -1504,6 +1507,10 @@ packages:
 
   '@kwsites/promise-deferred@1.1.1':
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+
+  '@m11g/library@0.0.9':
+    resolution: {integrity: sha512-8cBayEfIvevP77u7pPIJemqhN47bTVOouWbMsnkqhB+YoJ0uXykJSHEONbmeKoZZz3jhfYiEvIfA8UMSYNX3sA==}
+    engines: {node: ^22.18.0 || >=24.12.0}
 
   '@mapbox/node-pre-gyp@2.0.3':
     resolution: {integrity: sha512-uwPAhccfFJlsfCxMYTwOdVfOz3xqyj8xYL3zJj8f0pb30tLohnnFPhLuqp4/qoEz8sNxe4SESZedcBojRefIzg==}
@@ -7797,6 +7804,28 @@ snapshots:
       - supports-color
 
   '@kwsites/promise-deferred@1.1.1': {}
+
+  '@m11g/library@0.0.9(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(rolldown@1.2.7)(rollup@4.63.1)(typescript@6.0.3)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(sugarss@5.0.1(postcss@8.5.28))(terser@5.46.0)(yaml@2.9.0))(webpack@5.105.2(esbuild@0.28.2))':
+    dependencies:
+      '@vee-validate/zod': 4.15.1(vue@3.5.43(typescript@6.0.3))(zod@4.6.5)
+      vee-validate: 4.15.1(vue@3.5.43(typescript@6.0.3))
+      vue: 3.5.43(typescript@6.0.3)
+      vue-router: 5.3.1(@vue/compiler-sfc@3.5.43)(esbuild@0.28.2)(rolldown@1.2.7)(rollup@4.63.1)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.2)(jiti@2.7.0)(sugarss@5.0.1(postcss@8.5.28))(terser@5.46.0)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.3))(webpack@5.105.2(esbuild@0.28.2))
+      zod: 4.6.5
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@pinia/colada'
+      - '@rspack/core'
+      - '@vue/compiler-sfc'
+      - bun-types-no-globals
+      - esbuild
+      - pinia
+      - rolldown
+      - rollup
+      - typescript
+      - unloader
+      - vite
+      - webpack
 
   '@mapbox/node-pre-gyp@2.0.3':
     dependencies:

@@ -42,6 +42,7 @@
     "vue-tsc": "^3.3.11"
   },
   "dependencies": {
+    "@m11g/library": "^0.0.9",
     "@netlify/blobs": "^11.1.0",
     "@vee-validate/i18n": "^4.15.1",
     "@vee-validate/nuxt": "^4.15.1",
