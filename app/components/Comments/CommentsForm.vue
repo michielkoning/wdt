@@ -9,17 +9,15 @@ const props = defineProps<{
 
 const { t } = useI18n()
 
-const validationSchema = toTypedSchema(
-  z.object({
-    name: z.string().min(1, { error: t('form.error.required') }).default(''),
-    email: z.email({ error: t('form.error.email.incorrect') }).default(''),
-    comment: z.string().min(1, { error: t('form.error.required') }).default(''),
-  }),
-)
-
 const { values, handleSubmit, errors } = useForm({
   name: 'add-comment',
-  validationSchema: validationSchema,
+  validationSchema: toTypedSchema(
+    z.object({
+      name: z.string().min(1, { error: t('form.error.required') }).default(''),
+      email: z.email({ error: t('form.error.email.incorrect') }).default(''),
+      comment: z.string().min(1, { error: t('form.error.required') }).default(''),
+    }),
+  ),
 })
 
 const { start, finish } = useLoadingIndicator()
@@ -50,6 +48,7 @@ const onSubmit = handleSubmit(async () => {
     :status
     @submit-form="onSubmit"
   >
+    {{ values }}
     <form-fieldset
       title="Geef een reactie"
       class="fieldset"

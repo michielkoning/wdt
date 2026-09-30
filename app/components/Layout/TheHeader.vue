@@ -157,14 +157,10 @@ onUnmounted(() => {
 
 <style lang="css" scoped>
 header {
-  position: sticky;
-  inset-block-start: 0;
-  z-index: var(--z-mobile-navigation);
   padding-block: var(--spacing-4);
   line-height: var(--line-height-heading);
   color: var(--color-white);
   background: var(--color-landmark-bg);
-  transition: translate var(--transition);
 }
 
 h1 {

@@ -64,14 +64,6 @@ li {
   }
 }
 
-/* h2 {
-  position: absolute;
-  inset: auto 0 0;
-  padding: var(--spacing-2);
-  margin-bottom: 0;
-  background-color: rgb(0 0 0 / 50%);
-} */
-
 .image-wrapper {
   aspect-ratio: 3 / 4;
   margin-block-end: var(--spacing-2);

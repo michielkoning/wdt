@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import z from 'zod'
-
 definePageMeta({
   name: 'shows',
   i18n: {
@@ -40,11 +38,7 @@ useSeoMeta({
   <center-wrapper>
     <block-wrapper>
       <h1>Voorstellingen</h1>
-      <shows-filter
-        v-model:authors="authors"
-        v-model:directors="directors"
-        v-model:search="search"
-      />
+      <shows-filter />
       <div v-if="data">
         <show-list
           v-if="data.items.length"

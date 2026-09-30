@@ -8,11 +8,13 @@ defineProps<{
 
 <template>
   <div>
-    <app-image
-      v-if="page.image"
-      :image="page.image"
-      class="featured-image"
-    />
+    <div class="hero">
+      <app-image
+        v-if="page.image"
+        :image="page.image"
+        class="featured-image"
+      />
+    </div>
     <center-wrapper
       class="home-content"
       size="md"
@@ -40,8 +42,14 @@ defineProps<{
 </template>
 
 <style lang="css" scoped>
+.hero {
+  background: var(--color-landmark-bg);
+}
+
 .featured-image {
   inline-size: 100%;
+  max-inline-size: 1440px;
+  margin-inline: auto;
 }
 
 .content {
