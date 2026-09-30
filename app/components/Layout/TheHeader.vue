@@ -301,6 +301,7 @@ nav {
     position: fixed;
     inset-inline-start: anchor(left);
     display: block;
+    /* stylelint-disable-next-line declaration-property-value-no-unknown */
     inline-size: anchor-size(inline);
     block-size: 3px;
     position-anchor: --active-menu;

@@ -1,0 +1,6 @@
+minimumReleaseAgeExclude:
+  - "@m11g/library"
+
+allowBuilds:
+  esbuild: true
+  unrs-resolver: true
