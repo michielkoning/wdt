@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import z from 'zod'
+
 definePageMeta({
   name: 'shows',
   i18n: {

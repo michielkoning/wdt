@@ -1,2 +1,6 @@
 @import "./variables/_base.css";
 @import "./vendors/_base.css";
+
+:root {
+  --color-black: #000;
+}

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { AppDialog } from '@m11g/library'
+
 defineProps<{
   images: Image[]
   id: string
@@ -40,7 +42,7 @@ li {
   scroll-snap-align: start;
 
   &:not(:last-child) {
-    margin-block-end: var(--spacing-2);
+    margin-block-end: var(--spacing-4);
   }
 }
 </style>

@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { AppButton } from '@m11g/library'
+
 const props = withDefaults(defineProps<{
   variant?: 'all' | 'latest'
   excludeId?: number
@@ -65,6 +67,7 @@ const title = computed(() => {
             <div class="content">
               <h3>
                 <nuxt-link-locale
+                  class="link"
                   :to="{
                     name: 'post',
                     params: {
@@ -97,9 +100,7 @@ const title = computed(() => {
       >
         <app-button
           title="Alle berichten"
-          :to="{
-            name: 'posts',
-          }"
+          to="/nieuws"
         />
       </div>
     </center-wrapper>
@@ -108,8 +109,9 @@ const title = computed(() => {
 
 <style lang="css" scoped>
 section {
-  padding-block: var(--section-block-padding);
-  background: var(--color-yellow);
+  padding-block: 2em;
+  color: var(--color-secondary-fg);
+  background: var(--color-secondary-solid);
 }
 
 h1 {
@@ -130,7 +132,7 @@ ul {
   }
 }
 
-a {
+.link {
   color: currentcolor;
   text-decoration: none;
 }
@@ -159,6 +161,7 @@ li {
 
 .item {
   block-size: 100%;
+  color: var(--color-black);
   background-color: var(--color-white);
 
   @container achive-list (width > 32em) {

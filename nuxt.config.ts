@@ -18,8 +18,8 @@ export default defineNuxtConfig({
     '~/components/Shows',
     '~/components/Shared',
     '~/components/Wrappers',
-    '~/components/Library/Forms',
-    '~/components/Library',
+    // '~/components/Library/Forms',
+    // '~/components/Library',
   ],
   devtools: {
     enabled: true,
@@ -44,7 +44,7 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['@m11g/library/style.css', '~/assets/css/base.css'],
+  css: ['@m11g/library/style.css', '@m11g/library/wdt.css', '~/assets/css/base.css'],
   vue: {
     compilerOptions: {
       isCustomElement: (tag: string) =>

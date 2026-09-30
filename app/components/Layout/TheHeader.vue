@@ -52,16 +52,14 @@ onUnmounted(() => {
   <header>
     <center-wrapper>
       <div class="wrapper">
-        <h1>
-          <nuxt-link-locale
-            class="logo"
-            :to="{
-              name: 'home',
-            }"
-          >
-            Toneelvereniging WDT Wageningen
-          </nuxt-link-locale>
-        </h1>
+        <nuxt-link-locale
+          class="logo"
+          :to="{
+            name: 'home',
+          }"
+        >
+          Toneelvereniging WDT Wageningen
+        </nuxt-link-locale>
 
         <button
           class="btn-open"
@@ -165,7 +163,7 @@ header {
   padding-block: var(--spacing-4);
   line-height: var(--line-height-heading);
   color: var(--color-white);
-  background: var(--color-black);
+  background: var(--color-landmark-bg);
   transition: translate var(--transition);
 }
 
@@ -248,6 +246,12 @@ li {
   }
 }
 
+.logo {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+}
+
 nav {
   inset: 0;
   inline-size: 90vw;
@@ -255,8 +259,9 @@ nav {
   padding: var(--spacing-4) var(--gutter);
   margin: 0;
   font-family: var(--font-family-heading);
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-h4);
   font-weight: var(--font-weight-bold);
+  background-color: var(--color-landmark-bg);
   border: 0;
   box-shadow: 0 0 0 2px var(--color-black);
   translate: -100% 0;
@@ -378,7 +383,9 @@ a {
   }
 
   &.logo.router-link-active {
+    padding-inline-start: 0;
     text-decoration: none;
+    border-inline-start: 0;
   }
 }
 

@@ -10,7 +10,6 @@ defineProps<{
 
 <template>
   <block-wrapper class="wrapper">
-    <comments-form :id="id" />
     <h1>Reacties</h1>
     <h2>{{ $t('comments', comments.length) }} op {{ title }}</h2>
     <ul v-if="comments.length">
@@ -29,6 +28,10 @@ defineProps<{
         <div v-html="item.content" />
       </li>
     </ul>
+    <comments-form
+      :id="id"
+      class="form"
+    />
   </block-wrapper>
 </template>
 
@@ -43,16 +46,21 @@ ul {
 }
 
 time {
+  flex: 0 0 auto;
   font-size: var(--font-size-sm);
 }
 
 .meta {
+  display: flex;
+  gap: var(--spacing-2);
+  align-items: end;
+  justify-content: space-between;
   margin-block-end: var(--spacing-1);
 }
 
 li {
-  &:not(:first-child) {
-    padding-block-start: var(--spacing-4);
+  &:not(:last-child) {
+    padding-block-start: var(--spacing-1);
     margin-block-end: var(--spacing-4);
     border-block-end: 2px solid currentcolor;
   }

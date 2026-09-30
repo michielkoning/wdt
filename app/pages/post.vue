@@ -50,7 +50,7 @@ useSeoMeta({
   display: grid;
   gap: var(--spacing-4);
   align-items: start;
-  padding-block: var(--section-block-padding);
+  padding-block: var(--spacing-8);
 
   @media (--md) {
     grid-template-columns: 1fr 2fr;

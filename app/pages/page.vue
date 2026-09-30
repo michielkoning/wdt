@@ -38,6 +38,6 @@ useSeoMeta({
 
 <style lang="css" scoped>
 .page {
-  padding-block: var(--section-block-padding);
+  padding-block: var(--spacing-8);
 }
 </style>

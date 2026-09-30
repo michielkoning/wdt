@@ -1,15 +1,5 @@
 <script lang="ts" setup>
-const search = defineModel<string>('search', {
-  required: true,
-})
-
-const directors = defineModel<number | undefined>('directors', {
-  required: true,
-})
-
-const authors = defineModel<number | undefined>('authors', {
-  required: true,
-})
+import { SearchField } from '@m11g/library'
 </script>
 
 <template>
@@ -17,16 +7,14 @@ const authors = defineModel<number | undefined>('authors', {
     <form @submit.prevent>
       <div class="search">
         <search-field
-          v-model="search"
+          title="Zoeken"
           name="search"
         />
       </div>
       <shows-filter-item
-        v-model="directors"
         type="directors"
       />
       <shows-filter-item
-        v-model="authors"
         type="authors"
       />
     </form>
@@ -36,7 +24,7 @@ const authors = defineModel<number | undefined>('authors', {
 <style lang="css" scoped>
 form {
   display: grid;
-  gap: var(--spacing-2);
+  gap: var(--spacing-2) var(--spacing-4);
 
   @media (--md) {
     grid-template-columns: repeat(2, 1fr);

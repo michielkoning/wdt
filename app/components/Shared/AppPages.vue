@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { ScrollSpy } from '@m11g/library'
+
 const props = defineProps<{
   parentId: number
 }>()
@@ -7,162 +9,28 @@ const { data } = await useFetch('/api/pages', {
   query: {
     parentId: props.parentId,
   },
+  default: () => [],
 })
 
-let observer: IntersectionObserver | undefined
-
-const activeLinks: Ref<string[]> = ref([])
-const wrappers = useTemplateRef('wrapper')
-
-onMounted(() => {
-  if (!wrappers.value) return
-
-  observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          activeLinks.value = [...activeLinks.value, entry.target.id]
-        }
-        else {
-          activeLinks.value = activeLinks.value.filter(item => item !== entry.target.id)
-        }
-      })
-    },
-    { rootMargin: '0px 0px 0px 0px' },
-  )
-
-  wrappers.value.forEach((wrapper) => {
-    if (observer) {
-      observer.observe(wrapper)
-    }
-  })
-})
-onUnmounted(() => {
-  if (!wrappers.value || !observer) return
-  wrappers.value.forEach((wrapper) => {
-    if (observer) {
-      observer.unobserve(wrapper)
+const pages = computed(() => {
+  return data.value.map((page) => {
+    return {
+      id: `page-${page.id}`,
+      title: page.title,
+      content: page.content,
     }
   })
 })
 </script>
 
 <template>
-  <div
-    v-if="data"
-    class="content"
-  >
-    <div>
-      <div
-        v-for="item in data"
-        :id="`link-${item.id}`"
-        :key="item.id"
-        ref="wrapper"
-        class="wrapper"
-      >
-        <h1>
-          {{ item.title }}
-        </h1>
-        <div v-html="item.content" />
-      </div>
-    </div>
-    <nav>
-      <ol>
-        <li
-          v-for="item in data"
-          :id="`link-${item.id}`"
-          :key="item.id"
-        >
-          <router-link
-            :to="{
-              hash: `#link-${item.id}`,
-            }"
-            :class="{ active: activeLinks.includes(`link-${item.id}`) } "
-          >
-            {{ item.title }}
-          </router-link>
-        </li>
-      </ol>
-    </nav>
-  </div>
+  <scroll-spy :pages>
+    <template
+      v-for="page in pages"
+      #[page.id]
+      :key="page.id"
+    >
+      <div v-html="page.content" />
+    </template>
+  </scroll-spy>
 </template>
-
-<style lang="css" scoped>
-.content {
-  position: relative;
-  clear: both;
-  display: grid;
-  gap: var(--spacing-4);
-  align-items: start;
-  padding-block: var(--section-block-padding);
-
-  @media (--md) {
-    grid-template-columns: auto 12rem;
-  }
-}
-
-.wrapper {
-  clear: both;
-  scroll-padding-top: var(--spacing-4);
-}
-
-nav {
-  position: sticky;
-  inset-block-start: 0;
-  order: -1;
-  padding-block: var(--spacing-4);
-
-  @media (--md) {
-    inset-block-start: 4em;
-    order: 1;
-  }
-}
-
-ol {
-  @mixin list-reset;
-
-  background-color: var(--color-white);
-}
-
-li:not(:last-child) a::after {
-  position: absolute;
-  inset: var(--spacing-3) auto calc(-1 * var(--spacing-2)) 0.325rem;
-  display: block;
-  inline-size: 2px;
-  content: "";
-  background-color: var(--color-black);
-}
-
-a {
-  position: relative;
-  display: flex;
-  gap: var(--spacing-2);
-  align-items: start;
-  padding-block-end: var(--spacing-1);
-  color: currentcolor;
-  text-decoration: none;
-
-  &::before {
-    position: relative;
-    z-index: 1;
-    display: block;
-    flex: 0 0 auto;
-    inline-size: var(--spacing-3);
-    aspect-ratio: 1;
-    content: "";
-    background-color: var(--color-white);
-    border: 2px solid var(--color-black);
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px var(--color-black);
-    translate: 0 0.4rem;
-    transition: background-color var(--transition);
-  }
-
-  &.active,
-  &:hover {
-    &::before {
-      background-color: var(--color-black);
-    }
-  }
-}
-</style>

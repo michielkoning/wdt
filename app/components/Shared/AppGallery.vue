@@ -32,12 +32,12 @@ const imageIds = computed(() => {
         title="Bekijk alle foto's"
       />
     </div>
+    <gallery-modal
+      id="gallery"
+      :title
+      :images
+    />
   </block-wrapper>
-  <gallery-modal
-    id="gallery"
-    :title
-    :images
-  />
 </template>
 
 <style lang="css" scoped>

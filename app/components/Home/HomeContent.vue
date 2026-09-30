@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { AppButton } from '@m11g/library'
+
 defineProps<{
   page: Page
 }>()
@@ -43,7 +45,7 @@ defineProps<{
 }
 
 .content {
-  padding-block: var(--section-block-padding);
+  padding-block: var(--spacing-8);
   font-family: var(--font-family-heading);
 }
 

@@ -40,11 +40,15 @@ defineProps<{
 <style lang="css" scoped>
 ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-4);
   padding-inline-start: 0;
   margin-block-end: var(--spacing-4);
   list-style: none outside;
+
+  @media (--xs) {
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+  }
 }
 
 a {
