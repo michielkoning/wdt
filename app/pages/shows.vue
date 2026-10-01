@@ -16,8 +16,8 @@ const { defineField } = useForm({
   name: 'filters',
   validationSchema: toTypedSchema(z.object({
     search: z.string(),
-    directors: z.number().or(z.string()),
-    authors: z.number().or(z.string()),
+    directors: z.number().optional(),
+    authors: z.number().optional(),
   })),
 })
 
