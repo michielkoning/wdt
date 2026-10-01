@@ -10,7 +10,7 @@ definePageMeta({
   },
 })
 
-const { data } = useFetch('/api/page', {
+const { data } = await useFetch('/api/page', {
   query: {
     slug: 'home',
   },
@@ -18,9 +18,8 @@ const { data } = useFetch('/api/page', {
 </script>
 
 <template>
-  <div>
+  <div v-if="data">
     <home-content
-      v-if="data"
       :page="data"
     />
     <post-list variant="latest" />
