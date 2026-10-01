@@ -22,7 +22,7 @@ export default defineNuxtModule({
         return
       }
 
-      const baseURL = 'http://wdt.local/'
+      const baseURL = process.env.NUXT_API_URL ?? ''
 
       addPrerenderRoutes(defaultRoutes)
 
