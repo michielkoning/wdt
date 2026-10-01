@@ -10,7 +10,7 @@ definePageMeta({
   },
 })
 
-const { data } = useFetch('/api/page', {
+const { data } = await useFetch('/api/page', {
   query: {
     slug: 'home',
   },

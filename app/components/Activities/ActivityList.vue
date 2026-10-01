@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-// const { data } = useFetch('/api/activities')
+// const { data } = await useFetch('/api/activities')
 
 import { CenterWrapper } from '@m11g/library'
 

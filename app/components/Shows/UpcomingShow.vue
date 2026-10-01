@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { AppButton, ClickableWrapper } from '@m11g/library'
 
-const { data } = useFetch('/api/upcomingShow')
+const { data } = await useFetch('/api/upcomingShow')
 </script>
 
 <template>

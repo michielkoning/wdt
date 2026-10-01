@@ -31,7 +31,7 @@ const route = useRoute()
 
 const page = computed(() => route.query.page)
 
-const { data } = useFetch('/api/shows', {
+const { data } = await useFetch('/api/shows', {
   query: {
     search,
     directors,

@@ -12,7 +12,7 @@ definePageMeta({
 
 const route = useRoute()
 
-const { data } = useFetch('/api/show', {
+const { data } = await useFetch('/api/show', {
   query: {
     slug: route.params.slug,
   },

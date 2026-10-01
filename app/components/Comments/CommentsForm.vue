@@ -23,7 +23,7 @@ const { values, handleSubmit, errors } = useForm({
 
 const { start, finish } = useLoadingIndicator()
 
-const { execute, status } = useFetch('/api/add-comment', {
+const { execute, status } = await useFetch('/api/add-comment', {
   method: 'POST',
   immediate: false,
   watch: false,

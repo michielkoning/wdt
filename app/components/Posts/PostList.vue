@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<{
 const route = useRoute()
 const page = computed(() => route.query.page)
 
-const { data } = useFetch('/api/posts', {
+const { data } = await useFetch('/api/posts', {
   query: {
     pageSize: props.variant === 'all' ? 6 : 3,
     page,

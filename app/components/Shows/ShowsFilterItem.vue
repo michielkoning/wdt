@@ -5,7 +5,7 @@ const props = defineProps<{
   type: 'directors' | 'authors'
 }>()
 
-const { data } = useFetch('/api/taxonomy', {
+const { data } = await useFetch('/api/taxonomy', {
   query: {
     type: props.type,
   },

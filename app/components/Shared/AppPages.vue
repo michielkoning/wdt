@@ -5,7 +5,7 @@ const props = defineProps<{
   parentId: number
 }>()
 
-const { data } = await useFetch('/api/pages', {
+const { data } = await await useFetch('/api/pages', {
   query: {
     parentId: props.parentId,
   },
