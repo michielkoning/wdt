@@ -1,15 +1,7 @@
 import { ofetch } from 'ofetch'
 import { defineNuxtModule, addPrerenderRoutes } from 'nuxt/kit'
 
-const PAGESIZE = 20
-// const PAGESIZE = 99
-const FETCH_TIMEOUT = 0
-
-const pauseFetching = () => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, FETCH_TIMEOUT)
-  })
-}
+const PAGESIZE = 10
 
 const defaultRoutes = [
   '/',
@@ -21,8 +13,6 @@ export default defineNuxtModule({
       if (process.env.NODE_ENV === 'development') {
         return
       }
-
-      return
 
       const baseURL = process.env.NUXT_API_URL ?? ''
 
@@ -59,7 +49,6 @@ export default defineNuxtModule({
             hasNextPage = false
           }
           page = page + 1
-          pauseFetching()
         }
       }
       await fetchPagesByType('shows')

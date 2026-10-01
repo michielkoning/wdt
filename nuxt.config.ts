@@ -76,10 +76,10 @@ export default defineNuxtConfig({
     //   },
     // },
     // preset: 'netlify',
-    // prerender: {
-    //   interval: 3000,
-    //   concurrency: 5,
-    // },
+    prerender: {
+      interval: 3000,
+      concurrency: 5,
+    },
     devStorage: {
       cache: {
         driver: 'null',
