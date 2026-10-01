@@ -41,9 +41,13 @@ const data: Activity[] = [{
         v-for="item in data"
         :key="item.date"
       >
-        <div class="date">
-          {{ $d(new Date(item.date), 'short') }}
-        </div>
+        <nuxt-time
+          class="date"
+          :datetime="new Date(item.date)"
+          year="numeric"
+          month="long"
+          day="numeric"
+        />
         <div class="title">
           {{ item.title }}
         </div>

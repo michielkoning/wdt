@@ -21,9 +21,13 @@ defineProps<{
           <h3>
             {{ item.author }}
           </h3>
-          <time>
-            {{ $d(new Date(item.date), 'short') }}
-          </time>
+
+          <nuxt-time
+            :datetime="new Date(item.date)"
+            year="numeric"
+            month="long"
+            day="numeric"
+          />
         </div>
         <div v-html="item.content" />
       </li>

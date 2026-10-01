@@ -16,7 +16,13 @@ defineProps<{
           name="solar:check-circle-linear"
           class="icon"
         />
-        {{ $d(new Date(date), 'short') }}
+        <nuxt-time
+          class="date"
+          :datetime="new Date(date)"
+          year="numeric"
+          month="long"
+          day="numeric"
+        />
       </li>
     </ul>
   </div>

@@ -80,9 +80,13 @@ const title = computed(() => {
                   {{ item.title }}
                 </nuxt-link-locale>
               </h3>
-              <time>
-                {{ $d(new Date(item.date), 'short') }}
-              </time>
+              <nuxt-time
+                class="date"
+                :datetime="new Date(item.date)"
+                year="numeric"
+                month="long"
+                day="numeric"
+              />
               <div
                 class="text"
                 v-html="item.excerpt"

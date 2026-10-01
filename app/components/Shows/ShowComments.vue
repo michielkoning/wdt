@@ -17,7 +17,13 @@ defineProps<{
         >
           <div class="meta">
             {{ item.author }}
-            {{ $d(new Date(item.date), 'short') }}
+            <nuxt-time
+              class="date"
+              :datetime="new Date(item.date)"
+              year="numeric"
+              month="long"
+              day="numeric"
+            />
           </div>
           <div v-html="item.content" />
         </li>

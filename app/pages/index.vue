@@ -10,7 +10,7 @@ definePageMeta({
   },
 })
 
-const { data } = await useFetch('/api/page', {
+const { data } = useFetch('/api/page', {
   query: {
     slug: 'home',
   },
@@ -24,7 +24,7 @@ const { data } = await useFetch('/api/page', {
       :page="data"
     />
     <post-list variant="latest" />
-    <!-- <upcoming-show /> -->
+    <upcoming-show />
     <activity-list />
   </div>
 </template>
