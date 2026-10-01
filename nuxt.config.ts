@@ -43,8 +43,8 @@ export default defineNuxtConfig({
   },
 
   css: [
-    // '@m11g/library/style.css',
-    // '@m11g/library/wdt.css',
+    '@m11g/library/style.css',
+    '@m11g/library/wdt.css',
     '~/assets/css/base.css',
   ],
   vue: {
@@ -58,12 +58,7 @@ export default defineNuxtConfig({
     password: '',
     apiUrl: '',
   },
-  experimental: {
-    // inlineSSRStyles: false,
-    viewTransition: true,
-    renderJsonPayloads: true,
-  },
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2065-07-15',
   nitro: {
     // routeRules: {
     //   '/**': {
