@@ -4,3 +4,6 @@ minimumReleaseAgeExclude:
 allowBuilds:
   esbuild: true
   unrs-resolver: true
+
+overrides:
+  '@m11g/library': link:../../library

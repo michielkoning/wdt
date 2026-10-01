@@ -48,13 +48,16 @@ defineProps<{
 
 .featured-image {
   inline-size: 100%;
-  max-inline-size: 1440px;
+  max-inline-size: var(--container-size-xlg);
   margin-inline: auto;
 }
 
 .content {
+  --font-size-lg: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 1.1));
+
   padding-block: var(--spacing-8);
   font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
 }
 
 .btn-wrapper {

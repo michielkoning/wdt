@@ -19,11 +19,12 @@ const { data } = useFetch('/api/page', {
 
 <template>
   <div>
-    <!-- <upcoming-show /> -->
     <home-content
       v-if="data"
       :page="data"
     />
     <post-list variant="latest" />
+    <!-- <upcoming-show /> -->
+    <activity-list />
   </div>
 </template>

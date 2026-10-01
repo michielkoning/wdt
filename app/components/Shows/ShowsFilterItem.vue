@@ -9,7 +9,13 @@ const { data } = useFetch('/api/taxonomy', {
   query: {
     type: props.type,
   },
+
 })
+
+const baseOption = {
+  title: '',
+  value: '',
+}
 </script>
 
 <template>
@@ -17,6 +23,6 @@ const { data } = useFetch('/api/taxonomy', {
     v-if="data"
     :title="type"
     :name="type"
-    :options="data"
+    :options="[baseOption, ...data]"
   />
 </template>

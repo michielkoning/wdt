@@ -1,24 +1,12 @@
 <script lang="ts" setup>
-import { SearchField, TextField } from '@m11g/library'
-import z from 'zod'
-
-const { values } = useForm({
-  name: 'filters',
-  validationSchema: toTypedSchema(z.object({
-    search: z.string().min(1),
-  })),
-  initialValues: {
-    search: '',
-  },
-})
+import { SearchField } from '@m11g/library'
 </script>
 
 <template>
   <search>
     <form @submit.prevent>
-      {{ values }}
       <div class="search">
-        <text-field
+        <search-field
           title="Zoeken"
           name="search"
         />

@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import { AppPopover } from '@m11g/library'
+
+import z from 'zod'
+
 definePageMeta({
   name: 'shows',
   i18n: {
@@ -8,9 +12,19 @@ definePageMeta({
   },
 })
 
-const search = ref('')
-const directors: Ref<number | undefined> = ref(undefined)
-const authors: Ref<number | undefined> = ref(undefined)
+const { defineField } = useForm({
+  name: 'filters',
+  validationSchema: toTypedSchema(z.object({
+    search: z.string(),
+    directors: z.number().or(z.string()),
+    authors: z.number().or(z.string()),
+  })),
+})
+
+const [search] = defineField('search')
+const [directors] = defineField('directors')
+const [authors] = defineField('authors')
+
 const { start, finish } = useLoadingIndicator()
 
 const route = useRoute()
@@ -44,7 +58,7 @@ useSeoMeta({
           v-if="data.items.length"
           :shows="data.items"
         />
-        <app-pagination :total-pages="data.totalPages" />
+        <app-popover :total-pages="data.totalPages" />
       </div>
     </block-wrapper>
   </center-wrapper>

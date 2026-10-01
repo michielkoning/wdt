@@ -14,9 +14,9 @@
           Burgtstraat 1<br>
           6701 DA Wageningen<br>
         </li>
-        <li>
+        <!-- <li>
           <activity-list />
-        </li>
+        </li> -->
       </ol>
     </center-wrapper>
   </footer>

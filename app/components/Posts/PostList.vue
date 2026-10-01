@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import { AppButton, ClickableWrapper } from '@m11g/library'
+import { AppButton,
+  ClickableWrapper,
+} from '@m11g/library'
 
 const props = withDefaults(defineProps<{
   variant?: 'all' | 'latest'
@@ -56,7 +58,7 @@ const title = computed(() => {
             },
           })"
         >
-          <div class="item">
+          <div class="wrapper">
             <div class="image-wrapper">
               <app-image
                 v-if="item.image"
@@ -193,11 +195,12 @@ li {
   }
 }
 
-.item {
+.wrapper {
   display: flex;
   flex-direction: column;
   justify-content: start;
   block-size: 100%;
+  padding-block-end: var(--spacing-4);
   color: var(--color-black);
   background-color: var(--color-white);
 

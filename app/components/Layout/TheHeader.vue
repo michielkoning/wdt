@@ -161,6 +161,10 @@ header {
   line-height: var(--line-height-heading);
   color: var(--color-white);
   background: var(--color-landmark-bg);
+
+  @media (--lg) {
+    padding-block: var(--spacing-6);
+  }
 }
 
 h1 {
@@ -303,7 +307,7 @@ nav {
     position-anchor: --active-menu;
     pointer-events: none;
     content: "";
-    background: var(--color-white);
+    background: var(--color-secondary-solid);
     transition:
       left var(--transition),
       width var(--transition);
@@ -364,6 +368,7 @@ a {
   &:hover,
   &.router-link-exact-active {
     padding-inline-start: var(--spacing-2);
+    color: var(--color-secondary-solid);
 
     @media (--md) {
       padding-inline-start: 0;
@@ -372,7 +377,7 @@ a {
   }
 
   &.router-link-exact-active {
-    border-inline-start: 0.25em solid var(--color-white);
+    border-inline-start: 0.25em solid currentcolor;
 
     @media (--md) {
       border-inline-start: 0;

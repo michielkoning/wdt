@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { toTypedSchema } from '@vee-validate/zod'
 import { AppForm, FormFieldset, TextField, TextareaField } from '@m11g/library'
+
 import z from 'zod'
 
 const props = defineProps<{
@@ -22,7 +23,7 @@ const { values, handleSubmit, errors } = useForm({
 
 const { start, finish } = useLoadingIndicator()
 
-const { execute, error, status } = useFetch('/api/add-comment', {
+const { execute, status } = useFetch('/api/add-comment', {
   method: 'POST',
   immediate: false,
   watch: false,
@@ -48,7 +49,6 @@ const onSubmit = handleSubmit(async () => {
     :status
     @submit-form="onSubmit"
   >
-    {{ values }}
     <form-fieldset
       title="Geef een reactie"
       class="fieldset"
@@ -78,10 +78,6 @@ const onSubmit = handleSubmit(async () => {
         />
       </div>
     </form-fieldset>
-    <form-error-message
-      v-if="error"
-      :error-message="error.statusText"
-    />
   </app-form>
 </template>
 
