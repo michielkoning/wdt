@@ -39,8 +39,15 @@ export default defineNuxtModule({
           }) as string[]
 
           const prerenderRoutes = urls.filter((url) => {
-            const excludeUrls = ['/geschiedenis/2021-2030/', '/geschiedenis/1981-2008/', '/geschiedenis/1946-1980/',
+            const excludeUrls = [
+              '/geschiedenis/2021-2030/',
+              '/geschiedenis/1981-2008/',
+              '/geschiedenis/1946-1980/',
               '/geschiedenis/1908-1941/',
+              '/voorstellingen/vijfmaal-verrassend/de-heldentenor/',
+              '/voorstellingen/vijfmaal-verrassend/een-lichte-lunch/',
+              '/voorstellingen/vijfmaal-verrassend/puntgaaf/',
+              '/voorstellingen/vijfmaal-verrassend/wat-jij-niet-allemaal-weet/',
             ]
             return !excludeUrls.includes(url)
           })
