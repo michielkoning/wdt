@@ -41,7 +41,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
   css: [
     '@m11g/library/style.css',
     '@m11g/library/wdt.css',
@@ -87,6 +86,16 @@ export default defineNuxtConfig({
       },
     },
 
+  },
+  vite: {
+    optimizeDeps: {
+      include: [
+        // '@unhead/schema-org/vue',
+        '@vee-validate/i18n',
+        '@vee-validate/zod',
+        'zod',
+      ],
+    },
   },
   typescript: {
     typeCheck: true,
