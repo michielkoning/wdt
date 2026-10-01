@@ -43,8 +43,8 @@ export default defineNuxtConfig({
   },
 
   css: [
-    '@m11g/library/style.css',
-    '@m11g/library/wdt.css',
+    // '@m11g/library/style.css',
+    // '@m11g/library/wdt.css',
     '~/assets/css/base.css',
   ],
   vue: {
