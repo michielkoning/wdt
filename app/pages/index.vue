@@ -18,8 +18,9 @@ const { data } = await useFetch('/api/page', {
 </script>
 
 <template>
-  <div v-if="data">
+  <div>
     <home-content
+      v-if="data"
       :page="data"
     />
     <post-list variant="latest" />
