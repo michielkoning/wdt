@@ -4,8 +4,14 @@ import { ShowsSchema } from '../schemas/ShowsSchema'
 const querySchema = z.object({
   page: z.coerce.number().default(1),
   search: z.string().optional(),
-  directors: z.coerce.number().transform(val => [val]).or(z.array(z.coerce.number())).optional(),
-  authors: z.coerce.number().transform(val => [val]).or(z.array(z.coerce.number())).optional(),
+  directors: z.coerce.number()
+    .transform(val => val > 0 ? [val] : undefined)
+    .or(z.array(z.coerce.number()))
+    .optional(),
+  authors: z.coerce.number()
+    .transform(val => val > 0 ? [val] : undefined)
+    .or(z.array(z.coerce.number()))
+    .optional(),
 })
 
 export default defineCachedEventHandler(async (event): Promise<ShowList> => {

@@ -21,7 +21,8 @@ const { data } = await useFetch('/api/page', {
       v-if="data"
       :page="data"
     />
-    <!-- <post-list variant="latest" /> -->
+
+    <post-list variant="latest" />
     <!-- <upcoming-show /> -->
     <activity-list />
   </div>

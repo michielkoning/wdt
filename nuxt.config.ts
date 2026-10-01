@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   components: [
     '~/components/Activities',
     '~/components/Comments',
+    '~/components/Home',
     '~/components/Layout',
     '~/components/Posts',
     '~/components/Shows',

@@ -14,7 +14,7 @@ const { data } = await useFetch('/api/taxonomy', {
 
 const baseOption = {
   title: '',
-  value: '',
+  value: 0,
 }
 </script>
 
