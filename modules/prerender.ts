@@ -22,7 +22,7 @@ export default defineNuxtModule({
         return
       }
 
-      const baseURL = process.env.NUXT_API_URL
+      const baseURL = process.env.NUXT_API_URL ?? ''
 
       addPrerenderRoutes(defaultRoutes)
 
