@@ -17,10 +17,10 @@ const { data } = await useFetch('/api/page', {
 
 <template>
   <div>
-    <!-- <home-content
+    <home-content
       v-if="data"
       :page="data"
-    /> -->
+    />
     <!-- <post-list variant="latest" /> -->
     <!-- <upcoming-show /> -->
     <activity-list />

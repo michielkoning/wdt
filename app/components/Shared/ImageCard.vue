@@ -1,10 +1,8 @@
 <script lang="ts" setup>
-const props = defineProps<{
+defineProps<{
   banner?: Image
   image?: Image
 }>()
-
-const transitionName = computed(() => `image-${props.image?.id}`)
 </script>
 
 <template>
@@ -25,10 +23,6 @@ const transitionName = computed(() => `image-${props.image?.id}`)
 </template>
 
 <style lang="css" scoped>
-.card {
-  view-transition-name: v-bind(transitionName);
-}
-
 .image-sm {
   @media (--md) {
     display: none;
