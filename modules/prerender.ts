@@ -32,7 +32,7 @@ export default defineNuxtModule({
         let hasNextPage = true
         let page = 1
         while (hasNextPage) {
-          const apiUrl = `wp-json/wp/v2/${type}/?_fields=link&per_page=${PAGESIZE}&page=${[
+          const apiUrl = `${type}/?_fields=link&per_page=${PAGESIZE}&page=${[
             page,
           ]}&status=publish`
           const response = await ofetch
