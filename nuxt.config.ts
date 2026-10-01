@@ -75,7 +75,7 @@ export default defineNuxtConfig({
     //     isr: false,
     //   },
     // },
-    // preset: 'netlify',
+    preset: 'netlify',
     // prerender: {
     //   interval: 3000,
     //   concurrency: 5,

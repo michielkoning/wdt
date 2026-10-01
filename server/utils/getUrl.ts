@@ -54,7 +54,7 @@ export const getUrl = ({
   locale?: string
 }) => {
   const { apiUrl } = useRuntimeConfig()
-  const baseUrl = `${apiUrl}${type}/`
+  const baseUrl = `${apiUrl}wp-json/wp/v2/${type}/`
 
   const url = new URL(baseUrl)
   if (image) {

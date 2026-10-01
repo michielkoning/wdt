@@ -22,7 +22,7 @@ export default defineNuxtModule({
         return
       }
 
-      const baseURL = process.env.NUXT_API_URL ?? ''
+      const baseURL = process.env.NUXT_API_URL
 
       addPrerenderRoutes(defaultRoutes)
 
@@ -32,7 +32,7 @@ export default defineNuxtModule({
         let hasNextPage = true
         let page = 1
         while (hasNextPage) {
-          const apiUrl = `${type}/?_fields=link&per_page=${PAGESIZE}&page=${[
+          const apiUrl = `wp-json/wp/v2/${type}/?_fields=link&per_page=${PAGESIZE}&page=${[
             page,
           ]}&status=publish`
           const response = await ofetch
@@ -61,7 +61,7 @@ export default defineNuxtModule({
         }
       }
       await fetchPagesByType('shows')
-      // await fetchPagesByType('posts')
+      await fetchPagesByType('posts')
       await fetchPagesByType('pages')
     },
 
