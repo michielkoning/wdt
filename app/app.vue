@@ -14,14 +14,14 @@ useHead({
     <nuxt-loading-indicator
       color="#f7f2eb"
     />
-    <!-- <the-header /> -->
+    <the-header />
 
     <main
       tabindex="-1"
     >
       <nuxt-page />
     </main>
-    <!-- <the-footer /> -->
+    <the-footer />
   </div>
 </template>
 
