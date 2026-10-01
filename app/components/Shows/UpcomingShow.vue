@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-import AppButton from '../Shared/AppButton.vue'
-import ImageCard from '../Shared/ImageCard.vue'
+import { AppButton, ClickableWrapper } from '@m11g/library'
 
 const { data } = useFetch('/api/upcomingShow')
 </script>

@@ -18,8 +18,6 @@ export default defineNuxtConfig({
     '~/components/Shows',
     '~/components/Shared',
     '~/components/Wrappers',
-    // '~/components/Library/Forms',
-    // '~/components/Library',
   ],
   devtools: {
     enabled: true,

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AppPopover } from '@m11g/library'
+import { AppPopover, CenterWrapper } from '@m11g/library'
 
 import z from 'zod'
 

@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import type { Comment } from '#imports'
+import { CenterWrapper } from '@m11g/library'
 
 defineProps<{
   comments: Comment[]

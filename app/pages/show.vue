@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AppButton, AppDialog } from '@m11g/library'
+import { AppButton, AppDialog, CenterWrapper } from '@m11g/library'
 
 definePageMeta({
   name: 'show',

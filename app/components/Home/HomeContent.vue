@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AppButton } from '@m11g/library'
+import { AppButton, CenterWrapper } from '@m11g/library'
 
 defineProps<{
   page: Page

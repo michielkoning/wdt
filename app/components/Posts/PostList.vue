@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { AppButton,
-  ClickableWrapper,
+  ClickableWrapper, CenterWrapper,
 } from '@m11g/library'
 
 const props = withDefaults(defineProps<{

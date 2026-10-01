@@ -1,4 +1,8 @@
 <script lang="ts" setup>
+import {
+  ClickableWrapper,
+} from '@m11g/library'
+
 defineProps<{
   shows: Shows
 }>()

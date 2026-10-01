@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+import { CenterWrapper } from '@m11g/library'
+</script>
+
 <template>
   <footer>
     <center-wrapper>

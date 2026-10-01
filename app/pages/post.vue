@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { CenterWrapper } from '@m11g/library'
+
 definePageMeta({
   name: 'post',
   i18n: {
