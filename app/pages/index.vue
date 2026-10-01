@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import HomeContent from '~/components/Home/HomeContent.vue'
-
 definePageMeta({
   name: 'home',
   i18n: {
@@ -19,11 +17,11 @@ const { data } = await useFetch('/api/page', {
 
 <template>
   <div>
-    <home-content
+    <!-- <home-content
       v-if="data"
       :page="data"
-    />
-    <post-list variant="latest" />
+    /> -->
+    <!-- <post-list variant="latest" /> -->
     <!-- <upcoming-show /> -->
     <activity-list />
   </div>
