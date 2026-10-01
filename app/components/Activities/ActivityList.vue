@@ -31,41 +31,43 @@ const data: Activity[] = [{
 </script>
 
 <template>
-  <center-wrapper
+  <div
     v-if="data"
     class="wrapper"
   >
-    <h1>Agenda</h1>
-    <ul v-if="data.length">
-      <li
-        v-for="item in data"
-        :key="item.date"
-      >
-        <nuxt-time
-          class="date"
-          :datetime="new Date(item.date)"
-          year="numeric"
-          month="long"
-          day="numeric"
-        />
-        <div class="title">
-          {{ item.title }}
-        </div>
-        <div class="location">
-          Wilde Wereld
-        </div>
-        <div
-          v-if="item.type === 'post'"
-          class="members-only"
+    <center-wrapper>
+      <h1>Agenda</h1>
+      <ul v-if="data.length">
+        <li
+          v-for="item in data"
+          :key="item.date"
         >
-          Members only
-        </div>
-      </li>
-    </ul>
-    <p v-else>
-      Geen activiteit gevonden
-    </p>
-  </center-wrapper>
+          <nuxt-time
+            class="date"
+            :datetime="new Date(item.date)"
+            year="numeric"
+            month="long"
+            day="numeric"
+          />
+          <div class="title">
+            {{ item.title }}
+          </div>
+          <div class="location">
+            Wilde Wereld
+          </div>
+          <div
+            v-if="item.type === 'post'"
+            class="members-only"
+          >
+            Members only
+          </div>
+        </li>
+      </ul>
+      <p v-else>
+        Geen activiteit gevonden
+      </p>
+    </center-wrapper>
+  </div>
 </template>
 
 <style lang="css" scoped>

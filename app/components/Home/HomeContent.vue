@@ -16,7 +16,6 @@ defineProps<{
       />
     </div>
     <center-wrapper
-      class="home-content"
       size="md"
     >
       <div class="content">
