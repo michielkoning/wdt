@@ -3,6 +3,7 @@
   "authors": "Auteur | Auteurs",
   "comments": "Geen reacties | Eén reactie | {count} reacties",
   "form": {
+    "success": "Het formulier is verzonden",
     "comment": "Reactie",
     "email": "E-mailadres",
     "name": "Naam",

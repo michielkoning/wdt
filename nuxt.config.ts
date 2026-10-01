@@ -74,19 +74,20 @@ export default defineNuxtConfig({
     //   },
     // },
     // preset: 'netlify',
-    prerender: {
-      interval: 3000,
-      concurrency: 5,
-    },
+    // prerender: {
+    //   interval: 3000,
+    //   concurrency: 5,
+    // },
     devStorage: {
       cache: {
-        driver: 'null',
+        driver: 'fs',
+        base: './.nuxt/cache',
       },
     },
     storage: {
       cache: {
-        driver: 'null',
-        // driver: 'netlify-blobs',
+        // driver: 'null',
+        driver: 'netlify-blobs',
         name: 'cache',
       },
     },
