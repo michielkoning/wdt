@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { CenterWrapper } from '@m11g/library'
+import { CenterWrapper, AppButton } from '@m11g/library'
 </script>
 
 <template>
@@ -7,9 +7,19 @@ import { CenterWrapper } from '@m11g/library'
     <center-wrapper :bottom="true">
       <ol>
         <li>
-          <h2>Contact</h2>
-          Els Ausema<br>
-          M: <a href="mailto:info@wdttoneel.nl">info@wdttoneel.nl</a>
+          <h2>Meespelen bij WDT?</h2>
+          <div>
+            <app-button
+              title="Meespelen bij WDT"
+              theme="secondary"
+              to="/contact"
+              class="btn"
+            />
+          </div>
+          <a
+            href="mailto:info@wdttoneel.nl"
+            class="link"
+          >info@wdttoneel.nl</a>
         </li>
 
         <li>
@@ -18,9 +28,9 @@ import { CenterWrapper } from '@m11g/library'
           Burgtstraat 1<br>
           6701 DA Wageningen<br>
         </li>
-        <!-- <li>
-          <activity-list />
-        </li> -->
+        <li>
+          <follow-us />
+        </li>
       </ol>
     </center-wrapper>
   </footer>
@@ -28,13 +38,19 @@ import { CenterWrapper } from '@m11g/library'
 
 <style lang="css" scoped>
 footer {
-  padding-block: var(--spacing-6) var(--spacing-16);
+  padding-block: var(--spacing-8) var(--spacing-16);
+  font-family: var(--font-family-heading);
   color: var(--color-white);
   background: var(--color-black);
 }
 
-a {
+.link {
   color: currentcolor;
+}
+
+.btn {
+  inline-size: auto;
+  margin-block-end: var(--spacing-3);
 }
 
 ol {

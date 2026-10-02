@@ -15,28 +15,30 @@ defineProps<{
         class="featured-image"
       />
     </div>
-    <center-wrapper
-      size="md"
-    >
-      <div class="content">
-        <h1>{{ page.title }}</h1>
-        <div
-          class="text"
-          v-html="page.content"
-        />
-        <div class="btn-wrapper">
-          <app-button
-            :to="$localeRoute({
-              name: 'page',
-              params: {
-                slug: 'over-wdt',
-              },
-            })"
-            title="Lees verder"
+    <block-wrapper>
+      <center-wrapper
+        size="md"
+      >
+        <div class="content">
+          <h1>{{ page.title }}</h1>
+          <div
+            class="text"
+            v-html="page.content"
           />
+          <div class="btn-wrapper">
+            <app-button
+              :to="$localeRoute({
+                name: 'page',
+                params: {
+                  slug: 'over-wdt',
+                },
+              })"
+              title="Lees verder"
+            />
+          </div>
         </div>
-      </div>
-    </center-wrapper>
+      </center-wrapper>
+    </block-wrapper>
   </div>
 </template>
 
@@ -54,7 +56,6 @@ defineProps<{
 .content {
   --font-size-lg: calc(var(--font-size-scale-base) * pow(var(--font-size-scale-ratio), 1.1));
 
-  padding-block: var(--spacing-8);
   font-family: var(--font-family-heading);
   font-size: var(--font-size-lg);
 }

@@ -41,84 +41,85 @@ const title = computed(() => {
     v-if="data"
     :aria-label="title"
   >
-    <center-wrapper>
-      <h1>
-        {{ title }}
-      </h1>
-      <ul
-        v-if="data.items.length"
-        :class="variant === 'latest' ? 'highlights' : undefined"
-      >
-        <clickable-wrapper
-          v-for="item in data.items"
-          :key="item.id"
-          :to="$localePath({
-            name: 'post',
-            params: {
-              slug: item.slug,
-            },
-          })"
+    <block-wrapper>
+      <center-wrapper>
+        <h1>
+          {{ title }}
+        </h1>
+        <ul
+          v-if="data.items.length"
+          :class="variant === 'latest' ? 'highlights' : undefined"
         >
-          <div class="wrapper">
-            <div class="image-wrapper">
-              <app-image
-                v-if="item.image"
-                :image="item.image"
-                class="image featured-image"
-              />
+          <clickable-wrapper
+            v-for="item in data.items"
+            :key="item.id"
+            :to="$localePath({
+              name: 'post',
+              params: {
+                slug: item.slug,
+              },
+            })"
+          >
+            <div class="wrapper">
+              <div class="image-wrapper">
+                <app-image
+                  v-if="item.image"
+                  :image="item.image"
+                  class="image featured-image"
+                />
+              </div>
+              <div class="content">
+                <h3>
+                  <nuxt-link-locale
+                    class="link"
+                    :to="{
+                      name: 'post',
+                      params: {
+                        slug: item.slug,
+                      },
+                    }"
+                  >
+                    {{ item.title }}
+                  </nuxt-link-locale>
+                </h3>
+                <nuxt-time
+                  class="date"
+                  :datetime="new Date(item.date)"
+                  year="numeric"
+                  month="long"
+                  day="numeric"
+                />
+                <div
+                  class="text"
+                  v-html="item.excerpt"
+                />
+              </div>
+              <div class="read-more-wrapper">
+                <read-more class="read-more" />
+              </div>
             </div>
-            <div class="content">
-              <h3>
-                <nuxt-link-locale
-                  class="link"
-                  :to="{
-                    name: 'post',
-                    params: {
-                      slug: item.slug,
-                    },
-                  }"
-                >
-                  {{ item.title }}
-                </nuxt-link-locale>
-              </h3>
-              <nuxt-time
-                class="date"
-                :datetime="new Date(item.date)"
-                year="numeric"
-                month="long"
-                day="numeric"
-              />
-              <div
-                class="text"
-                v-html="item.excerpt"
-              />
-            </div>
-            <div class="read-more-wrapper">
-              <read-more class="read-more" />
-            </div>
-          </div>
-        </clickable-wrapper>
-      </ul>
-      <app-pagination
-        v-if="variant==='all'"
-        :total-pages="data.totalPages"
-      />
-      <div
-        v-else
-        class="btn-wrapper"
-      >
-        <app-button
-          title="Alle berichten"
-          to="/nieuws"
+          </clickable-wrapper>
+        </ul>
+        <app-pagination
+          v-if="variant==='all'"
+          :total-pages="data.totalPages"
         />
-      </div>
-    </center-wrapper>
+        <div
+          v-else
+          class="btn-wrapper"
+        >
+          <app-button
+            title="Alle berichten"
+            to="/nieuws"
+          />
+        </div>
+      </center-wrapper>
+    </block-wrapper>
   </section>
 </template>
 
 <style lang="css" scoped>
 section {
-  padding-block: 2em;
   color: var(--color-secondary-fg);
   background: var(--color-secondary-solid);
 }

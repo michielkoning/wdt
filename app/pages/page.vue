@@ -25,7 +25,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="page">
+  <block-wrapper>
     <center-wrapper
       v-if="data"
     >
@@ -35,11 +35,5 @@ useSeoMeta({
       <body-text :text="data.content" />
       <app-pages :parent-id="data.id" />
     </center-wrapper>
-  </div>
+  </block-wrapper>
 </template>
-
-<style lang="css" scoped>
-.page {
-  padding-block: var(--spacing-8);
-}
-</style>

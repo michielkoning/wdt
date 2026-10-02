@@ -12,7 +12,7 @@ useHead({
   <div class="page">
     <nuxt-route-announcer />
     <nuxt-loading-indicator
-      color="#f7f2eb"
+      color="#a12b12"
     />
     <the-header />
 

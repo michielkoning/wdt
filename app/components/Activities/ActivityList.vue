@@ -31,7 +31,7 @@ const data: Activity[] = [{
 </script>
 
 <template>
-  <div
+  <block-wrapper
     v-if="data"
     class="wrapper"
   >
@@ -67,7 +67,7 @@ const data: Activity[] = [{
         Geen activiteit gevonden
       </p>
     </center-wrapper>
-  </div>
+  </block-wrapper>
 </template>
 
 <style lang="css" scoped>
@@ -107,9 +107,5 @@ li {
   @media (--lg) {
     grid-column: span 1;
   }
-}
-
-.wrapper {
-  padding-block: var(--spacing-8);
 }
 </style>

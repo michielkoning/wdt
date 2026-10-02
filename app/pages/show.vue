@@ -40,7 +40,7 @@ useSeoMeta({
 
 <template>
   <div v-if="data">
-    <div class="block-text">
+    <block-wrapper>
       <center-wrapper>
         <app-dialog
           v-if="data.ticketsUrl"
@@ -98,7 +98,7 @@ useSeoMeta({
 
         <div v-html="data.content" />
       </center-wrapper>
-    </div>
+    </block-wrapper>
     <div class="block-gallery">
       <center-wrapper>
         <app-gallery
@@ -137,10 +137,6 @@ useSeoMeta({
 
 .btn {
   margin-block-start: auto;
-}
-
-.block-text {
-  padding-block: var(--spacing-8);
 }
 
 .block-gallery {

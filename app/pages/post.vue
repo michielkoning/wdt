@@ -25,7 +25,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div
+  <block-wrapper
     v-if="data"
   >
     <center-wrapper>
@@ -44,7 +44,7 @@ useSeoMeta({
     <post-list
       :exclude-id="data.id"
     />
-  </div>
+  </block-wrapper>
 </template>
 
 <style lang="css" scoped>
@@ -52,7 +52,6 @@ useSeoMeta({
   display: grid;
   gap: var(--spacing-4);
   align-items: start;
-  padding-block: var(--spacing-8);
 
   @media (--md) {
     grid-template-columns: 1fr 2fr;

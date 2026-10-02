@@ -6,7 +6,9 @@ defineProps<{
 
 <template>
   <div v-if="dates.length">
-    <h2>Speeldata</h2>
+    <div class="title">
+      Speeldata
+    </div>
     <ul>
       <li
         v-for="date in dates"
@@ -44,5 +46,10 @@ li {
 .icon {
   inline-size: 1em;
   translate: 0 0.25rem;
+}
+
+.title {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
 }
 </style>

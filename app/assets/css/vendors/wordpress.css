@@ -27,3 +27,12 @@ a img.aligncenter {
   display: block;
   margin-inline: auto;
 }
+
+.wp-block-verse {
+  padding: 0;
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height);
+  background: transparent;
+  border: 0;
+}
