@@ -48,7 +48,7 @@ export default defineNuxtConfig({
   vue: {
     compilerOptions: {
       isCustomElement: (tag: string) =>
-        ['selectedcontent'].includes(tag),
+        ['search', 'selectedcontent'].includes(tag),
     },
   },
   runtimeConfig: {
