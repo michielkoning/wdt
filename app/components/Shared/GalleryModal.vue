@@ -49,9 +49,11 @@ li {
 }
 
 .image {
-  opacity: 0.75;
-  scale: 0.95;
-  transition: scale var(--transition), opacity var(--transition);
+  @supports (container-type: scroll-state) {
+    opacity: 0.75;
+    scale: 0.95;
+    transition: scale var(--transition), opacity var(--transition);
+  }
 
   @container scroll-state(snapped: y) {
     opacity: 1;
