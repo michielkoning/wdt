@@ -25,18 +25,16 @@ defineProps<{
         :image="item.image"
       />
 
-      <h3>
-        <nuxt-link-locale
-          :to="{
-            name: 'show',
-            params: {
-              slug: item.slug,
-            },
-          }"
-        >
-          {{ item.title }}
-        </nuxt-link-locale>
-      </h3>
+      <nuxt-link-locale
+        :to="{
+          name: 'show',
+          params: {
+            slug: item.slug,
+          },
+        }"
+      >
+        {{ item.title }}
+      </nuxt-link-locale>
     </clickable-wrapper>
   </ul>
 </template>
@@ -56,6 +54,8 @@ ul {
 }
 
 a {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
   text-decoration: none;
 }
 

@@ -7,7 +7,7 @@ import { SearchField } from '@m11g/library'
     <form @submit.prevent>
       <div class="search">
         <search-field
-          title="Zoeken"
+          :title="$t('search')"
           name="search"
         />
       </div>

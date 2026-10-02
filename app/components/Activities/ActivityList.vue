@@ -74,18 +74,38 @@ const data: Activity[] = [{
 ul {
   @mixin list-reset;
 
-  border-block-start: 2px solid var(--color-border);
+  border-block-start: 2px solid var(--color-subtle);
 }
 
 li {
   display: grid;
-  grid-template-columns: 3fr 5fr 3fr 2fr;
-  gap: var(--spacing-2);
-  padding-block: var(--spacing-2) var(--spacing-2);
-  border-block-end: 2px solid var(--color-border);
+  padding: var(--spacing-2) var(--spacing-2);
 
-  &:nth-child(odd) {
-    /* background-color: oklch(96.52% 0.0818 101.03deg); */
+  @media (--md) {
+    grid-template-columns: 5fr 3fr 3fr;
+    gap: var(--spacing-2);
+  }
+
+  @media (--lg) {
+    grid-template-columns: 3fr 5fr 3fr 2fr;
+  }
+
+  &:nth-child(even) {
+    background-color: var(--color-subtle);
+  }
+
+  &:nth-child(odd):last-child {
+    border-block-end: 2px solid var(--color-subtle);
+  }
+}
+
+.date {
+  @media (--md) {
+    grid-column: span 3;
+  }
+
+  @media (--lg) {
+    grid-column: span 1;
   }
 }
 

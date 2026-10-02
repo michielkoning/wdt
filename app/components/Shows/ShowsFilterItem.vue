@@ -21,7 +21,7 @@ const baseOption = {
 <template>
   <select-field
     v-if="data"
-    :title="type"
+    :title="$t(type)"
     :name="type"
     :options="[baseOption, ...data]"
   />

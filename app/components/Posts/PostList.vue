@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { AppButton,
+  AppPagination,
   ClickableWrapper, CenterWrapper,
 } from '@m11g/library'
 

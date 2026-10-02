@@ -299,20 +299,22 @@ nav {
     }
   }
 
-  &::after {
-    position: fixed;
-    inset-inline-start: anchor(left);
-    display: block;
-    /* stylelint-disable-next-line declaration-property-value-no-unknown */
-    inline-size: anchor-size(inline);
-    block-size: 3px;
-    position-anchor: --active-menu;
-    pointer-events: none;
-    content: "";
-    background: var(--color-secondary-solid);
-    transition:
-      left var(--transition),
-      width var(--transition);
+  @media (--md) {
+    &::after {
+      position: fixed;
+      inset-inline-start: anchor(left);
+      display: block;
+      /* stylelint-disable-next-line declaration-property-value-no-unknown */
+      inline-size: anchor-size(inline);
+      block-size: 3px;
+      position-anchor: --active-menu;
+      pointer-events: none;
+      content: "";
+      background: var(--color-secondary-solid);
+      transition:
+        left var(--transition),
+        width var(--transition);
+    }
   }
 }
 
@@ -388,8 +390,14 @@ a {
 
   &.logo.router-link-active {
     padding-inline-start: 0;
+    color: currentcolor;
     text-decoration: none;
     border-inline-start: 0;
+
+    &:hover {
+      color: var(--color-secondary-solid);
+      text-decoration: underline;
+    }
   }
 }
 

@@ -1,6 +1,7 @@
 {
-  "director": "Regiseur | Regiseurs",
+  "directors": "Regiseur | Regiseurs",
   "authors": "Auteur | Auteurs",
+  "search": "Zoeken",
   "comments": "Geen reacties | Eén reactie | {count} reacties",
   "form": {
     "success": "Het formulier is verzonden",

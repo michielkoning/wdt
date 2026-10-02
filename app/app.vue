@@ -29,7 +29,8 @@ useHead({
 .page {
   display: flex;
   flex-direction: column;
-  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  background: var(--color-bg);
 }
 
 main {

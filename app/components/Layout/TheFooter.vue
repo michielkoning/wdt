@@ -4,7 +4,7 @@ import { CenterWrapper } from '@m11g/library'
 
 <template>
   <footer>
-    <center-wrapper>
+    <center-wrapper :bottom="true">
       <ol>
         <li>
           <h2>Contact</h2>

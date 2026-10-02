@@ -21,6 +21,7 @@ defineProps<{
         <app-image
           :id="`image-${image.id}`"
           :image="image"
+          class="image"
           :lazy="false"
         />
       </li>
@@ -39,10 +40,22 @@ ul {
 }
 
 li {
-  scroll-snap-align: start;
+  container-type: scroll-state;
+  scroll-snap-align: center;
 
   &:not(:last-child) {
     margin-block-end: var(--spacing-4);
+  }
+}
+
+.image {
+  opacity: 0.75;
+  scale: 0.95;
+  transition: scale var(--transition), opacity var(--transition);
+
+  @container scroll-state(snapped: y) {
+    opacity: 1;
+    scale: 1;
   }
 }
 </style>

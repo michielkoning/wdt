@@ -72,7 +72,7 @@ useSeoMeta({
             <div v-html="data.excerpt" />
             <dl>
               <template v-if="directors.length">
-                <dt>{{ $t('director', directors.length) }}</dt>
+                <dt>{{ $t('directors', directors.length) }}</dt>
                 <dd>{{ directors.join(', ') }}</dd>
               </template>
 
@@ -145,5 +145,9 @@ useSeoMeta({
 
 .block-gallery {
   background-color: var(--color-black);
+}
+
+dt {
+  font-family: var(--font-family-heading);
 }
 </style>

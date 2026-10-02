@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { AppPopover, CenterWrapper } from '@m11g/library'
+import { AppPagination, CenterWrapper } from '@m11g/library'
 
 import z from 'zod'
 
@@ -63,7 +63,7 @@ useSeoMeta({
           v-if="data.items.length"
           :shows="data.items"
         />
-        <app-popover :total-pages="data.totalPages" />
+        <app-pagination :total-pages="data.totalPages" />
       </div>
     </block-wrapper>
   </center-wrapper>
