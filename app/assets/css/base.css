@@ -1,2 +1,4 @@
+@import "@m11g/library/style.css";
+@import "@m11g/library/wdt.css";
 @import "./variables/_base.css";
 @import "./vendors/_base.css";

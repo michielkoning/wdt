@@ -43,8 +43,6 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    '@m11g/library/style.css',
-    '@m11g/library/wdt.css',
     '~/assets/css/base.css',
   ],
   vue: {
@@ -81,9 +79,11 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
+        driver: 'fs',
+        base: './.nuxt/cache',
         // driver: 'null',
-        driver: 'netlify-blobs',
-        name: 'cache',
+        // driver: 'netlify-blobs',
+        // name: 'cache',
       },
     },
 
