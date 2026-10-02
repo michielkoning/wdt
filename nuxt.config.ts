@@ -79,9 +79,9 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
-        driver: 'fs',
-        base: './.nuxt/cache',
-        // driver: 'null',
+        // driver: 'fs',
+        // base: './.nuxt/cache',
+        driver: 'null',
         // driver: 'netlify-blobs',
         // name: 'cache',
       },
