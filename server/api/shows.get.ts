@@ -32,7 +32,7 @@ export default defineCachedEventHandler(async (event): Promise<ShowList> => {
     image: true,
     type: 'shows',
     parent: 0,
-    fields: ['title', 'slug', 'excerpt'],
+    fields: ['title', 'slug', 'excerpt', 'acf'],
   })
 
   const response = await $fetch.raw(url)

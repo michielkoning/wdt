@@ -1,3 +1,5 @@
+import { ofetch } from 'ofetch'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
@@ -52,8 +54,6 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    user: '',
-    password: '',
     apiUrl: '',
   },
   compatibilityDate: '2065-07-15',
@@ -71,6 +71,9 @@ export default defineNuxtConfig({
     //   interval: 3000,
     //   concurrency: 5,
     // },
+    prerender: {
+      crawlLinks: false,
+    },
     devStorage: {
       cache: {
         driver: 'fs',
@@ -79,11 +82,11 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
-        // driver: 'fs',
-        // base: './.nuxt/cache',
+        driver: 'fs',
+        base: './.nuxt/cache',
         // driver: 'null',
-        driver: 'netlify-blobs',
-        name: 'cache',
+        // driver: 'netlify-blobs',
+        // name: 'cache',
       },
     },
 
@@ -137,6 +140,67 @@ export default defineNuxtConfig({
     },
   },
   telemetry: false,
+  hooks: {
+    async 'prerender:routes'(ctx: { routes: Set<string> }) {
+      const defaultRoutes = [
+        '/',
+        '/nieuws',
+        '/voorstellingen',
+        '/over-wdt',
+        '/geschiedenis',
+      ]
+
+      defaultRoutes.forEach((r: string) => {
+        ctx.routes.add(r)
+      })
+
+      const fetchPagesByType = async (type: string) => {
+        const PAGESIZE = 20
+        let hasNextPage = true
+        let page = 1
+        const baseUrl = process.env.NUXT_API_URL as string
+
+        while (hasNextPage) {
+          const apiUrl = `${baseUrl}wp-json/wp/v2/${type}/?_fields[]=link&per_page=${PAGESIZE}&page=${[
+            page,
+          ]}&status=publish`
+          const response = await ofetch
+            .raw(apiUrl)
+            .catch(error => error.data)
+          const totalPages = Number(response.headers.get('X-WP-TotalPages'))
+
+          const routes = response._data.map((r: { link: string }) => r.link.replace(baseUrl, '/'))
+
+          const prerenderedRouters = routes.filter((r: string) => {
+            const excludeUrls = [
+              '/geschiedenis/2021-2030/',
+              '/geschiedenis/1981-2008/',
+              '/geschiedenis/1946-1980/',
+              '/geschiedenis/1908-1941/',
+              '/voorstellingen/vijfmaal-verrassend/de-heldentenor/',
+              '/voorstellingen/vijfmaal-verrassend/een-lichte-lunch/',
+              '/voorstellingen/vijfmaal-verrassend/puntgaaf/',
+              '/voorstellingen/vijfmaal-verrassend/wat-jij-niet-allemaal-weet/',
+            ]
+            return !excludeUrls.includes(r)
+          })
+
+          prerenderedRouters.forEach((r: string) => {
+            ctx.routes.add(r)
+          })
+
+          if (page >= totalPages) {
+            hasNextPage = false
+          }
+
+          page = page + 1
+        }
+      }
+      // await fetchPagesByType('posts')
+      // await fetchPagesByType('pages')
+      // await fetchPagesByType('shows')
+    },
+  },
   eslint: {
     config: {
       stylistic: true,

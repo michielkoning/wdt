@@ -15,6 +15,21 @@ export const ShowsSchema = z.object({
       }).default({
         'wp:featuredmedia': [],
       }),
+      acf: z.object({ banner: z.literal(false).or(
+        z.object({
+          id: z.number(),
+          width: z.number(),
+          height: z.number(),
+          alt: z.string(),
+          url: z.url(),
+        }))
+        .transform((val) => {
+          if (val === false) {
+            return undefined
+          }
+          return val
+        }),
+      }),
     }),
   ).transform(val => val.map((item) => {
     return {
@@ -22,6 +37,16 @@ export const ShowsSchema = z.object({
       slug: item.slug,
       title: item.title,
       image: getFeaturedImage(item._embedded['wp:featuredmedia']),
+      banner: item.acf.banner
+        ? {
+            id: item.acf.banner.id,
+            alt: item.acf.banner.alt,
+            width: item.acf.banner.width,
+            height: item.acf.banner.height,
+            src: item.acf.banner.url,
+
+          }
+        : undefined,
     }
   })),
 })
