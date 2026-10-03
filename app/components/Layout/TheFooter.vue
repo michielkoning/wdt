@@ -57,8 +57,8 @@ ol {
   @mixin list-reset;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
-  gap: var(--spacing-4);
+  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
+  gap: var(--spacing-8) var(--spacing-4);
   justify-content: space-between;
   margin: 0;
 }
