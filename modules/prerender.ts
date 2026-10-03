@@ -6,6 +6,12 @@ const PAGESIZE = 10
 const defaultRoutes = [
   '/',
   '/nieuws',
+  '/voorstellingen',
+  '/over-wdt',
+  '/geschiedenis',
+  '/voorstellingen/tristan-isolde',
+  '/voorstellingen/het-bezoek-van-de-oude-dame',
+
 ]
 export default defineNuxtModule({
   hooks: {
@@ -14,11 +20,11 @@ export default defineNuxtModule({
         return
       }
 
-      return
-
       const baseURL = process.env.NUXT_API_URL ?? ''
 
       addPrerenderRoutes(defaultRoutes)
+
+      return
 
       const fetchPagesByType = async (
         type: 'posts' | 'shows' | 'pages',
@@ -60,7 +66,7 @@ export default defineNuxtModule({
           page = page + 1
         }
       }
-      await fetchPagesByType('shows')
+      // await fetchPagesByType('shows')
       await fetchPagesByType('posts')
       await fetchPagesByType('pages')
     },
