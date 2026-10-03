@@ -25,26 +25,26 @@ useSeoMeta({
 </script>
 
 <template>
-  <block-wrapper
-    v-if="data"
-  >
-    <center-wrapper>
-      <div class="content">
-        <app-image
-          v-if="data.image"
-          :image="data.image"
-          class="featured-image"
-        />
-        <div>
-          <h1>{{ data.title }}</h1>
-          <body-text :text="data.content" />
+  <div v-if="data">
+    <block-wrapper>
+      <center-wrapper>
+        <div class="content">
+          <app-image
+            v-if="data.image"
+            :image="data.image"
+            class="featured-image"
+          />
+          <div>
+            <h1>{{ data.title }}</h1>
+            <body-text :text="data.content" />
+          </div>
         </div>
-      </div>
-    </center-wrapper>
+      </center-wrapper>
+    </block-wrapper>
     <post-list
       :exclude-id="data.id"
     />
-  </block-wrapper>
+  </div>
 </template>
 
 <style lang="css" scoped>

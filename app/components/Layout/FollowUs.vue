@@ -22,7 +22,7 @@
 <style lang="css" scoped>
 .icons {
   display: flex;
-  gap: var(--spacing-3);
+  gap: var(--spacing-2);
 }
 
 a {

@@ -4,25 +4,25 @@
 import { CenterWrapper } from '@m11g/library'
 
 const data: Activity[] = [{
-  date: '11-12-2026',
+  date: '2026-11-12',
   title: 'Algemene leden vergadering',
   id: 0,
   slug: '/',
   type: 'post',
 }, {
-  date: '12-10-2026',
+  date: '2026-12-10',
   title: 'Presentatie montagetheater',
   id: 2,
   slug: '/',
   type: 'show',
 }, {
-  date: '12-10-2026',
+  date: '2026-12-10',
   title: 'Voorstelling korte productie',
   id: 4,
   slug: '/',
   type: 'show',
 }, {
-  date: '12-11-2026',
+  date: '2026-12-11',
   title: 'Voorstelling korte productie',
   id: 5,
   slug: '/',
