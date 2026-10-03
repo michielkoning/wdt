@@ -9,8 +9,6 @@ const defaultRoutes = [
   '/voorstellingen',
   '/over-wdt',
   '/geschiedenis',
-  '/voorstellingen/tristan-isolde',
-  '/voorstellingen/het-bezoek-van-de-oude-dame',
 
 ]
 export default defineNuxtModule({
@@ -20,6 +18,7 @@ export default defineNuxtModule({
         return
       }
 
+      return
       const baseURL = process.env.NUXT_API_URL ?? ''
 
       addPrerenderRoutes(defaultRoutes)
