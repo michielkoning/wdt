@@ -2,10 +2,15 @@
   <div>
     <h2>Volg ons</h2>
     <div class="icons">
-      <icon
-        class="icon"
-        name="streamline-logos:instagram-logo-1"
-      />
+      <nuxt-link
+        to="https://www.instagram.com/wdttoneel/"
+        external
+      >
+        <icon
+          class="icon"
+          name="streamline-logos:instagram-logo-1"
+        />
+      </nuxt-link>
       <nuxt-link
         to="https://www.facebook.com/Toneelvereniging-WDT-Wageningen-281724261856217/"
         external

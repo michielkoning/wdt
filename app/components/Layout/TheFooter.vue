@@ -12,7 +12,7 @@ import { CenterWrapper, AppButton } from '@m11g/library'
             <app-button
               title="Meespelen bij WDT"
               theme="secondary"
-              to="/contact"
+              to="/over-wdt"
               class="btn"
             />
           </div>
