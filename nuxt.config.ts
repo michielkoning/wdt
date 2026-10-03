@@ -82,11 +82,11 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
-        driver: 'fs',
-        base: './.nuxt/cache',
+        // driver: 'fs',
+        // base: './.nuxt/cache',
         // driver: 'null',
-        // driver: 'netlify-blobs',
-        // name: 'cache',
+        driver: 'netlify-blobs',
+        name: 'cache',
       },
     },
 
@@ -142,6 +142,7 @@ export default defineNuxtConfig({
   telemetry: false,
   hooks: {
     async 'prerender:routes'(ctx: { routes: Set<string> }) {
+      return
       const defaultRoutes = [
         '/',
         '/nieuws',
