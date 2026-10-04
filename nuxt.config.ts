@@ -54,7 +54,9 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    apiUrl: '',
+    public: {
+      apiUrl: '',
+    },
   },
   compatibilityDate: '2065-07-15',
   nitro: {
@@ -82,11 +84,11 @@ export default defineNuxtConfig({
     },
     storage: {
       cache: {
-        // driver: 'fs',
-        // base: './.nuxt/cache',
+        driver: 'fs',
+        base: './.nuxt/cache',
         // driver: 'null',
-        driver: 'netlify-blobs',
-        name: 'cache',
+        // driver: 'netlify-blobs',
+        // name: 'cache',
       },
     },
 
@@ -142,7 +144,6 @@ export default defineNuxtConfig({
   telemetry: false,
   hooks: {
     async 'prerender:routes'(ctx: { routes: Set<string> }) {
-      return
       const defaultRoutes = [
         '/',
         '/nieuws',
@@ -159,7 +160,7 @@ export default defineNuxtConfig({
         const PAGESIZE = 20
         let hasNextPage = true
         let page = 1
-        const baseUrl = process.env.NUXT_API_URL as string
+        const baseUrl = process.env.NUXT_PUBLIC_API_URL as string
 
         while (hasNextPage) {
           const apiUrl = `${baseUrl}wp-json/wp/v2/${type}/?_fields[]=link&per_page=${PAGESIZE}&page=${[
@@ -170,7 +171,13 @@ export default defineNuxtConfig({
             .catch(error => error.data)
           const totalPages = Number(response.headers.get('X-WP-TotalPages'))
 
-          const routes = response._data.map((r: { link: string }) => r.link.replace(baseUrl, '/'))
+          let suffix = '/'
+
+          if (type === 'posts') {
+            suffix = `/nieuws/`
+          }
+
+          const routes = response._data.map((r: { link: string }) => r.link.replace(baseUrl, suffix))
 
           const prerenderedRouters = routes.filter((r: string) => {
             const excludeUrls = [
@@ -197,9 +204,9 @@ export default defineNuxtConfig({
           page = page + 1
         }
       }
-      // await fetchPagesByType('posts')
-      // await fetchPagesByType('pages')
-      // await fetchPagesByType('shows')
+      await fetchPagesByType('posts')
+      await fetchPagesByType('pages')
+      await fetchPagesByType('shows')
     },
   },
   eslint: {
@@ -252,6 +259,7 @@ export default defineNuxtConfig({
     mode: 'svg',
   },
   image: {
+    provider: 'none',
     domains: ['wdt.local', 'test.wdttoneel.nl'],
   },
   stylelint: {

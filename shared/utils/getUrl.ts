@@ -53,8 +53,8 @@ export const getUrl = ({
   order?: 'asc' | 'desc'
   locale?: string
 }) => {
-  const { apiUrl } = useRuntimeConfig()
-  const baseUrl = `${apiUrl}wp-json/wp/v2/${type}/`
+  const config = useRuntimeConfig()
+  const baseUrl = `${config.public.apiUrl}wp-json/wp/v2/${type}/`
 
   const url = new URL(baseUrl)
   if (image) {
@@ -64,7 +64,6 @@ export const getUrl = ({
     fields.push('wp:featuredmedia')
   }
   const allFields = ['id', ...fields]
-  url.searchParams.set('status', 'publish')
   url.searchParams.set('_fields', allFields.join(','))
   if (fields.includes('acf')) {
     url.searchParams.set('acf_format', 'standard')

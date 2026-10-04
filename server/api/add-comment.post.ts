@@ -17,14 +17,14 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const { user, password, apiUrl } = useRuntimeConfig()
+  const config = useRuntimeConfig()
 
-  const credentials = `${user}:${password}`
+  const credentials = `${config.user}:${config.password}`
 
   const key = Buffer.from(credentials, 'utf8').toString('base64')
 
   await $fetch('comments', {
-    baseURL: apiUrl,
+    baseURL: config.public.apiUrl,
     method: 'POST',
     body: {
       author_name: body.data.name,

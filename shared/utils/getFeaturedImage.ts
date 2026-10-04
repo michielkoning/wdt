@@ -1,5 +1,5 @@
 import type { z } from 'zod'
-import type { ImageSchema } from '../schemas/ImageSchema'
+import type { ImageSchema } from '~~/shared/schemas/ImageSchema'
 
 export const getFeaturedImage = (
   featuredImage: z.infer<typeof ImageSchema>[],

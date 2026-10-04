@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ImageSchema } from './ImageSchema'
+import { ImageSchema } from '~~/shared/schemas/ImageSchema'
 
 export const PostsSchema = z.object({
   totalPages: z.coerce.number(),
