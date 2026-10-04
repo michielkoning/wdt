@@ -259,7 +259,7 @@ export default defineNuxtConfig({
     mode: 'svg',
   },
   image: {
-    // provider: 'none',
+    provider: 'none',
     domains: ['wdt.local', 'test.wdttoneel.nl'],
   },
   stylelint: {
