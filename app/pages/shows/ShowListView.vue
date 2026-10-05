@@ -33,7 +33,9 @@ const [authors] = defineField('authors')
 
 const route = useRoute()
 
-const page = ref(route.query.page ? Number(route.query.page) : 1)
+const title = useTemplateRef('title')
+
+const page = computed(() => route.query.page ? Number(route.query.page) : 1)
 
 useSeoMeta({
   title: () => 'Voorstellingen',
@@ -47,7 +49,7 @@ const keys = computed(() => {
 
 const { data, execute } = await useAsyncData(keys, async () => {
   const url = getUrl({
-    page: page.value as number | undefined,
+    page: page.value as number,
     search: search.value,
     directors: directors.value ? [directors.value] as number[] : undefined,
     authors: authors.value ? [authors.value] as number[] : undefined,
@@ -64,11 +66,19 @@ const { data, execute } = await useAsyncData(keys, async () => {
     items: response._data,
     totalPages: response.headers.get('X-WP-TotalPages'),
   }, ShowsSchema)
-}, {
 })
 
 watch([search, directors, authors], async () => {
-  page.value = 1
+  if (page.value > 1) {
+    await navigateTo({
+      query: {
+        page: 1,
+      },
+
+    }, {
+      replace: true,
+    })
+  }
   start()
   await execute()
   finish()
@@ -77,6 +87,9 @@ watch([search, directors, authors], async () => {
 watch(page, async () => {
   start()
   await execute()
+  if (import.meta.client && title.value) {
+    title.value.scrollIntoView()
+  }
   finish()
 })
 </script>
@@ -84,7 +97,9 @@ watch(page, async () => {
 <template>
   <center-wrapper>
     <block-wrapper>
-      <h1>Voorstellingen</h1>
+      <h1 ref="title">
+        Voorstellingen
+      </h1>
       <shows-filter />
       <div v-if="data">
         <show-list
