@@ -370,7 +370,7 @@ a {
   }
 
   &:hover,
-  &.router-link-exact-active {
+  &.router-link-active {
     padding-inline-start: var(--spacing-2);
     color: var(--color-secondary-solid);
 

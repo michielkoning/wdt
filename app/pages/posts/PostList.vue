@@ -1,14 +1,19 @@
 <script lang="ts" setup>
 definePageMeta({
-  name: 'posts-overview',
+  name: 'posts',
   i18n: {
     paths: {
       nl: '/nieuws',
     },
   },
 })
+
+useSeoMeta({
+  title: () => 'Nieuws',
+  ogTitle: () => 'Nieuws',
+})
 </script>
 
 <template>
-  <nuxt-page />
+  <post-list />
 </template>
