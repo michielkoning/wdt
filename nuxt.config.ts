@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/eslint',
     '@nuxtjs/stylelint-module',
-    '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
     '@vee-validate/nuxt',
@@ -78,17 +77,17 @@ export default defineNuxtConfig({
     },
     devStorage: {
       cache: {
-        driver: 'fs',
+        driver: 'null',
         base: './.nuxt/cache',
       },
     },
     storage: {
       cache: {
-        driver: 'fs',
-        base: './.nuxt/cache',
+        // driver: 'fs',
+        // base: './.nuxt/cache',
         // driver: 'null',
-        // driver: 'netlify-blobs',
-        // name: 'cache',
+        driver: 'netlify-blobs',
+        name: 'cache',
       },
     },
 
@@ -257,10 +256,6 @@ export default defineNuxtConfig({
   },
   icon: {
     mode: 'svg',
-  },
-  image: {
-    provider: 'none',
-    domains: ['wdt.local', 'test.wdttoneel.nl'],
   },
   stylelint: {
     lintOnStart: true,

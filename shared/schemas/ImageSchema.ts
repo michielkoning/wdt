@@ -62,7 +62,44 @@ export const ImageSchema = z.object({
       medium_large: size.optional(),
       large: size.optional(),
       full: size.optional(),
+    }).transform((val) => {
+      const images: { url: string, width: number }[] = []
+      if (val.medium) {
+        images.push({
+          url: val.medium.source_url,
+          width: val.medium.width,
+        })
+      }
+      if (val.medium_large) {
+        images.push({
+          url: val.medium_large.source_url,
+          width: val.medium_large.width,
+        })
+      }
+
+      if (val.large) {
+        images.push({
+          url: val.large.source_url,
+          width: val.large.width,
+        })
+      }
+      if (val.full) {
+        images.push({
+          url: val.full.source_url,
+          width: val.full.width,
+        })
+      }
+      return getSrcset(images)
     }),
   }),
   source_url: z.string(),
+}).transform((val) => {
+  return {
+    id: val.id,
+    alt: val.alt_text,
+    width: val.media_details.width,
+    height: val.media_details.height,
+    src: val.source_url,
+    srcset: val.media_details.sizes,
+  }
 })

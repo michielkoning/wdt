@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ImageSchema } from '~~/shared/schemas/ImageSchema'
+import { acfImageSchema, ImageSchema } from '~~/shared/schemas/ImageSchema'
 
 export const ShowsSchema = z.object({
   totalPages: z.coerce.number(),
@@ -15,14 +15,7 @@ export const ShowsSchema = z.object({
       }).default({
         'wp:featuredmedia': [],
       }),
-      acf: z.object({ banner: z.literal(false).or(
-        z.object({
-          id: z.number(),
-          width: z.number(),
-          height: z.number(),
-          alt: z.string(),
-          url: z.url(),
-        }))
+      acf: z.object({ banner: z.literal(false).or(acfImageSchema)
         .transform((val) => {
           if (val === false) {
             return undefined
@@ -37,16 +30,7 @@ export const ShowsSchema = z.object({
       slug: item.slug,
       title: item.title,
       image: getFeaturedImage(item._embedded['wp:featuredmedia']),
-      banner: item.acf.banner
-        ? {
-            id: item.acf.banner.id,
-            alt: item.acf.banner.alt,
-            width: item.acf.banner.width,
-            height: item.acf.banner.height,
-            src: item.acf.banner.url,
-
-          }
-        : undefined,
+      banner: item.acf.banner,
     }
   })),
 })

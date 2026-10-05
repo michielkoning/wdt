@@ -22,24 +22,10 @@ const loading = computed(() => {
   <img
     :srcset="image.srcset"
     :alt="image.alt ? image.alt : ''"
-    :loading="loading"
+    :loading="loading ? 'lazy' : undefined"
     :src="image.src"
     :width="image.width"
     :height="image.height"
     format="avif,webp"
-    class="image"
   >
 </template>
-
-<style lang="css" scoped>
-picture {
-  display: block;
-  background-color: var(--color-secondary-100);
-}
-
-.image :deep(img) {
-  display: block;
-  inline-size: 100%;
-  block-size: auto;
-}
-</style>
