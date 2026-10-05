@@ -4,7 +4,7 @@ import { CenterWrapper, AppButton } from '@m11g/library'
 
 <template>
   <footer>
-    <center-wrapper :bottom="true">
+    <center-wrapper>
       <ol>
         <li>
           <h2>Meespelen bij WDT?</h2>
