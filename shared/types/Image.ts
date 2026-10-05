@@ -4,4 +4,5 @@ export type Image = {
   width: number
   height: number
   alt: string
+  srcset: string
 }

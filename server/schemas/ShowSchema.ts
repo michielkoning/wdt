@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ImageSchema } from '~~/shared/schemas/ImageSchema'
+import { acfImageSchema, ImageSchema } from '~~/shared/schemas/ImageSchema'
 
 export const ShowSchema = z.array(
   z.object({
@@ -41,13 +41,8 @@ export const ShowSchema = z.array(
     }),
     acf: z.object({
       gallery: z.literal(false).or(z.array(
-        z.object({
-          id: z.number(),
-          width: z.number(),
-          height: z.number(),
-          alt: z.string(),
-          url: z.url(),
-        })))
+        acfImageSchema,
+      ))
         .transform((val) => {
           if (val === false) {
             return []
@@ -65,13 +60,7 @@ export const ShowSchema = z.array(
           return val
         }),
       banner: z.literal(false).or(
-        z.object({
-          id: z.number(),
-          width: z.number(),
-          height: z.number(),
-          alt: z.string(),
-          url: z.url(),
-        }))
+        acfImageSchema)
         .transform((val) => {
           if (val === false) {
             return undefined
@@ -106,25 +95,8 @@ export const ShowSchema = z.array(
           title: taxonomy.name,
         }
       }),
-      gallery: item.acf.gallery.map((item) => {
-        return {
-          id: item.id,
-          alt: item.alt,
-          width: item.width,
-          height: item.height,
-          src: item.url,
-        }
-      }),
-      banner: item.acf.banner
-        ? {
-            id: item.acf.banner.id,
-            alt: item.acf.banner.alt,
-            width: item.acf.banner.width,
-            height: item.acf.banner.height,
-            src: item.acf.banner.url,
-
-          }
-        : undefined,
+      gallery: item.acf.gallery,
+      banner: item.acf.banner,
       comments: item._embedded.replies.map((item) => {
         return {
           id: item.id,

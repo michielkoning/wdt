@@ -33,14 +33,19 @@ const [authors] = defineField('authors')
 
 const route = useRoute()
 
-const page = computed(() => route.query.page)
+const page = ref(route.query.page ? Number(route.query.page) : 1)
 
 useSeoMeta({
   title: () => 'Voorstellingen',
   ogTitle: () => 'Voorstellingen',
 })
+const { start, finish } = useLoadingIndicator()
 
-const { data } = await useAsyncData(`search-${search}`, async () => {
+const keys = computed(() => {
+  return `search:${search.value}_page:${page.value}directors:${directors.value}_authors:${authors.value}`
+})
+
+const { data, execute } = await useAsyncData(keys, async () => {
   const url = getUrl({
     page: page.value as number | undefined,
     search: search.value,
@@ -61,7 +66,20 @@ const { data } = await useAsyncData(`search-${search}`, async () => {
   }, ShowsSchema)
 }, {
   server: false,
-  watch: [search, directors, authors, page],
+  watch: [page],
+})
+
+watch([search, directors, authors], async () => {
+  page.value = 1
+  start()
+  await execute()
+  finish()
+})
+
+watch(page, async () => {
+  start()
+  await execute()
+  finish()
 })
 </script>
 

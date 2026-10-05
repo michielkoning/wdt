@@ -19,18 +19,16 @@ const loading = computed(() => {
 </script>
 
 <template>
-  <nuxt-picture
-    :sizes="sizes"
+  <img
+    :srcset="image.srcset"
     :alt="image.alt ? image.alt : ''"
     :loading="loading"
     :src="image.src"
-    :preload="loading === 'eager'"
     :width="image.width"
-    :quality="100"
     :height="image.height"
     format="avif,webp"
     class="image"
-  />
+  >
 </template>
 
 <style lang="css" scoped>
