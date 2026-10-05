@@ -65,8 +65,6 @@ const { data, execute } = await useAsyncData(keys, async () => {
     totalPages: response.headers.get('X-WP-TotalPages'),
   }, ShowsSchema)
 }, {
-  server: false,
-  watch: [page],
 })
 
 watch([search, directors, authors], async () => {

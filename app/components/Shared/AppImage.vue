@@ -29,3 +29,9 @@ const loading = computed(() => {
     format="avif,webp"
   >
 </template>
+
+<style lang="css" scoped>
+img {
+  display: block;
+}
+</style>
