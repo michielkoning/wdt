@@ -26,6 +26,7 @@ const loading = computed(() => {
     :src="image.src"
     :width="image.width"
     :height="image.height"
+    :fetchpriority="!loading ? 'high' : undefined"
   >
 </template>
 
