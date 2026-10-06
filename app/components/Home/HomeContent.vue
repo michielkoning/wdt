@@ -11,6 +11,7 @@ defineProps<{
     <div class="hero">
       <app-image
         v-if="page.image"
+        :lazy="false"
         :image="page.image"
         class="featured-image"
       />
