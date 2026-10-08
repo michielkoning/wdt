@@ -15,29 +15,29 @@
 ::view-transition-new(secondary):only-child {
   animation:
     var(--transition-duration) var(--transition-timing-function) var(--animation-delay, 0s) both fade-in,
-    var(--transition-duration) var(--transition-timing-function) var(--animation-delay, 0s) both slide-up;
+    var(--transition-duration) var(--transition-timing-function) var(--animation-delay, 0s) both slide-up-out;
 }
 
 ::view-transition-old(header):only-child {
   animation:
     var(--transition-duration) var(--transition-timing-function) var(--animation-delay, 0s) both fade-out,
-    var(--transition-duration) var(--transition-timing-function) var(--animation-delay, 0s) both slide-down;
+    var(--transition-duration) var(--transition-timing-function) var(--animation-delay, 0s) both slide-down-in;
 }
 
 ::view-transition-new(title):only-child {
-  --animation-delay: 0.15s;
+  --animation-delay: 0.1s;
 }
 
 ::view-transition-new(meta):only-child {
-  --animation-delay: 0.2s;
+  --animation-delay: 0.15s;
 }
 
 ::view-transition-new(text):only-child {
-  --animation-delay: 0.3s;
+  --animation-delay: 0.2s;
 }
 
 ::view-transition-new(secondary):only-child {
-  --animation-delay: 0.4s;
+  --animation-delay: 0.25s;
 }
 
 @keyframes fade-in {
@@ -60,22 +60,26 @@
   }
 }
 
-@keyframes slide-up {
+@keyframes slide-up-out {
   0% {
+    scale: 0.99;
     translate: 0 var(--spacing-6);
   }
 
   100% {
+    scale: 1;
     translate: 0 0;
   }
 }
 
-@keyframes slide-down {
+@keyframes slide-down-in {
   0% {
+    scale: 1;
     translate: 0 0;
   }
 
   100% {
+    scale: 0.99;
     translate: 0 calc(var(--spacing-6) * -1);
   }
 }

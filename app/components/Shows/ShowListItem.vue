@@ -15,12 +15,12 @@ const imageViewTransitioName = computed(() => {
 
 <template>
   <clickable-wrapper
-    @clicked="navigateTo($localePath({
+    :to="$localePath({
       name: 'show',
       params: {
         slug: show.slug,
       },
-    }))"
+    })"
   >
     <image-card
       class="image-wrapper"

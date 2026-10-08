@@ -53,12 +53,12 @@ const title = computed(() => {
           <clickable-wrapper
             v-for="item in data.items"
             :key="item.id"
-            @clicked="navigateTo($localePath({
+            :to="$localePath({
               name: 'post',
               params: {
                 slug: item.slug,
               },
-            }))"
+            })"
           >
             <div class="wrapper">
               <div class="image-wrapper">
