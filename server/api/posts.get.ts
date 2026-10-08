@@ -7,7 +7,7 @@ const querySchema = z.object({
   excludeId: z.coerce.number().optional(),
 })
 
-export default defineCachedEventHandler(async (event) => {
+export default defineCachedEventHandler<Promise<PostList>>(async (event) => {
   const query = await getValidatedQuery(event, input => safeParse(querySchema, input))
 
   if (!query.success) {

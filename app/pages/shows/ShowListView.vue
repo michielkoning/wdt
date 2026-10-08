@@ -88,7 +88,9 @@ watch(page, async () => {
   start()
   await execute()
   if (import.meta.client && title.value) {
-    title.value.scrollIntoView()
+    title.value.scrollIntoView({
+      behavior: 'smooth',
+    })
   }
   finish()
 })

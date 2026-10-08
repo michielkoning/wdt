@@ -1,13 +1,11 @@
 <script lang="ts" setup>
 import { ClickableWrapper } from '@m11g/library'
 
-const props = defineProps<{
-  show: ShowListItem
-}>()
+const props = defineProps<ShowListItem>()
 
 const imageViewTransitioName = computed(() => {
-  if (props.show.image) {
-    return `image-${props.show.image.id}`
+  if (props.image) {
+    return `image-${props.image.id}`
   }
   return 'none'
 })
@@ -18,24 +16,24 @@ const imageViewTransitioName = computed(() => {
     :to="$localePath({
       name: 'show',
       params: {
-        slug: show.slug,
+        slug: slug,
       },
     })"
   >
     <image-card
       class="image-wrapper"
-      :image="show.image"
+      :image="image"
     />
 
     <nuxt-link-locale
       :to="{
         name: 'show',
         params: {
-          slug: show.slug,
+          slug: slug,
         },
       }"
     >
-      {{ show.title }}
+      {{ title }}
     </nuxt-link-locale>
   </clickable-wrapper>
 </template>

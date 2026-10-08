@@ -9,7 +9,7 @@ defineProps<{
     <show-list-item
       v-for="show in shows"
       :key="show.id"
-      :show
+      v-bind="show"
     />
   </ul>
 </template>

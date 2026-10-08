@@ -56,6 +56,11 @@ export default defineNuxtConfig({
         ['search', 'selectedcontent'].includes(tag),
     },
   },
+  router: {
+    options: {
+      scrollBehaviorType: 'auto',
+    },
+  },
   runtimeConfig: {
     public: {
       apiUrl: '',
