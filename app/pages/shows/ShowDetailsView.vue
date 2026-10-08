@@ -36,38 +36,35 @@ useSeoMeta({
   title: () => data.value?.title,
   ogTitle: () => data.value?.title,
 })
+
+const imageViewTransitioName = computed(() => {
+  if (data.value?.image) {
+    return `image-${data.value.image.id}`
+  }
+  return 'none'
+})
 </script>
 
 <template>
   <div v-if="data">
     <block-wrapper>
       <center-wrapper>
-        <app-dialog
-          v-if="data.ticketsUrl"
-          id="tickets"
-          :title="`Tickets voor ${data.title}`"
-        >
-          <iframe
-            title="Ik Ben Aanwezig Shop"
-            :src="data.ticketsUrl"
-            width="100%"
-            height="1400"
-            frameborder="0"
-          />
-        </app-dialog>
         <h1>{{ data.title }}</h1>
         <div
           class="show"
         >
-          <div class="image-wrapper">
+          <div
+            v-if="data.image"
+          >
             <image-card
               v-if="data.image"
+              class="image"
               :image="data.image"
               :banner="data.banner"
             />
           </div>
           <div
-            class="content"
+            class="meta"
           >
             <div v-html="data.excerpt" />
             <dl>
@@ -96,27 +93,45 @@ useSeoMeta({
           </div>
         </div>
 
-        <div v-html="data.content" />
-      </center-wrapper>
-    </block-wrapper>
-    <div class="block-gallery">
-      <center-wrapper>
-        <app-gallery
-          v-if="data.gallery.length"
-          class="gallery"
-          :title="data.title"
-          :images="data.gallery"
+        <div
+          class="text"
+          v-html="data.content"
         />
       </center-wrapper>
+    </block-wrapper>
+    <div class="secondary">
+      <div class="block-gallery">
+        <center-wrapper>
+          <app-gallery
+            v-if="data.gallery.length"
+            class="gallery"
+            :title="data.title"
+            :images="data.gallery"
+          />
+        </center-wrapper>
+      </div>
+      <center-wrapper>
+        <comments-list
+          v-if="data.comments.length"
+          :id="data.id"
+          :title="data.title"
+          :comments="data.comments"
+        />
+      </center-wrapper>
+      <app-dialog
+        v-if="data.ticketsUrl"
+        id="tickets"
+        :title="`Tickets voor ${data.title}`"
+      >
+        <iframe
+          title="Ik Ben Aanwezig Shop"
+          :src="data.ticketsUrl"
+          width="100%"
+          height="1400"
+          frameborder="0"
+        />
+      </app-dialog>
     </div>
-    <center-wrapper>
-      <comments-list
-        v-if="data.comments.length"
-        :id="data.id"
-        :title="data.title"
-        :comments="data.comments"
-      />
-    </center-wrapper>
   </div>
 </template>
 
@@ -135,6 +150,22 @@ useSeoMeta({
   }
 }
 
+h1 {
+  view-transition-name: title;
+}
+
+.meta {
+  view-transition-name: meta;
+}
+
+.text {
+  view-transition-name: text;
+}
+
+.secondary {
+  view-transition-name: secondary;
+}
+
 .btn {
   margin-block-start: auto;
 }
@@ -147,8 +178,8 @@ dt {
   font-family: var(--font-family-heading);
 }
 
-.image-wrapper {
-  view-transition-name: image;
+.image {
+  view-transition-name: v-bind(imageViewTransitioName);
   view-transition-class: image;
 }
 </style>

@@ -97,10 +97,12 @@ watch(page, async () => {
 <template>
   <center-wrapper>
     <block-wrapper>
-      <h1 ref="title">
-        Voorstellingen
-      </h1>
-      <shows-filter />
+      <header>
+        <h1 ref="title">
+          Voorstellingen
+        </h1>
+        <shows-filter />
+      </header>
       <div v-if="data">
         <show-list
           v-if="data.items.length"
@@ -111,3 +113,9 @@ watch(page, async () => {
     </block-wrapper>
   </center-wrapper>
 </template>
+
+<style lang="css" scoped>
+header {
+  view-transition-name: header;
+}
+</style>
