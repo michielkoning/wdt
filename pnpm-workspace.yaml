@@ -1,5 +1,6 @@
 minimumReleaseAgeExclude:
   - "@m11g/library"
+  - vue-router@5.4.0
 
 allowBuilds:
   esbuild: true
