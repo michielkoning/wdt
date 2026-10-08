@@ -6,6 +6,14 @@ import {
 defineProps<{
   shows: Shows
 }>()
+
+const id: Ref<number | undefined> = ref(undefined)
+
+const add = async (value: number, url: string) => {
+  id.value = value
+
+  await navigateTo(url)
+}
 </script>
 
 <template>
@@ -13,12 +21,15 @@ defineProps<{
     <clickable-wrapper
       v-for="item in shows"
       :key="item.id"
-      :to="$localePath({
+      :class="{
+        active: item.id === id,
+      }"
+      @clicked="add(item.id, $localePath({
         name: 'show',
         params: {
           slug: item.slug,
         },
-      })"
+      }))"
     >
       <image-card
         class="image-wrapper"
@@ -32,6 +43,7 @@ defineProps<{
             slug: item.slug,
           },
         }"
+        @click="id = item.id"
       >
         {{ item.title }}
       </nuxt-link-locale>
@@ -76,5 +88,10 @@ li {
     block-size: 100%;
     object-fit: cover;
   }
+}
+
+.active .image-wrapper {
+  view-transition-name: image;
+  view-transition-class: image;
 }
 </style>

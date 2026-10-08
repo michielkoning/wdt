@@ -11,12 +11,12 @@ const { data } = await useFetch('/api/upcomingShow')
       <clickable-wrapper
         v-if="data"
         tag="div"
-        :to="$localePath({
+        @clicked="navigateTo($localePath({
           name: 'show',
           params: {
             slug: data.slug,
           },
-        })"
+        }))"
       >
         <div class="upcoming-show">
           <image-card

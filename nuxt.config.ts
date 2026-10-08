@@ -25,6 +25,10 @@ export default defineNuxtConfig({
     enabled: true,
   },
   app: {
+    viewTransition: {
+      enabled: true,
+      // types: ['slide'],
+    },
     head: {
       meta: [
         {
@@ -56,6 +60,9 @@ export default defineNuxtConfig({
     public: {
       apiUrl: '',
     },
+  },
+  experimental: {
+    viewTransition: true,
   },
   compatibilityDate: '2065-07-15',
   nitro: {

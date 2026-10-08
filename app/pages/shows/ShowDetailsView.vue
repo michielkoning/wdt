@@ -59,7 +59,7 @@ useSeoMeta({
         <div
           class="show"
         >
-          <div class="meta-data">
+          <div class="image-wrapper">
             <image-card
               v-if="data.image"
               :image="data.image"
@@ -145,5 +145,10 @@ useSeoMeta({
 
 dt {
   font-family: var(--font-family-heading);
+}
+
+.image-wrapper {
+  view-transition-name: image;
+  view-transition-class: image;
 }
 </style>
