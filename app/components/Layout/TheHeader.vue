@@ -140,16 +140,6 @@ onUnmounted(() => {
                 Geschiedenis
               </nuxt-link-locale>
             </li>
-            <li>
-              <nuxt-link-locale
-                :to="{
-                  name: 'posts',
-                }"
-                @click="closePopover"
-              >
-                Nieuws
-              </nuxt-link-locale>
-            </li>
           </ol>
         </nav>
       </div>

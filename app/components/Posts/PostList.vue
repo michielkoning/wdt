@@ -59,15 +59,6 @@ const title = computed(() => {
           v-if="variant==='all'"
           :total-pages="data.totalPages"
         />
-        <div
-          v-else
-          class="btn-wrapper"
-        >
-          <app-button
-            title="Alle berichten"
-            to="/nieuws"
-          />
-        </div>
       </center-wrapper>
     </block-wrapper>
   </section>
@@ -77,10 +68,6 @@ const title = computed(() => {
 section {
   color: var(--color-secondary-fg);
   background: var(--color-secondary-solid);
-}
-
-h1 {
-  text-align: center;
 }
 
 ul {
