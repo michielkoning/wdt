@@ -1,6 +1,7 @@
 <script lang="ts" setup>
-import { AppButton,
-  AppPagination, CenterWrapper,
+import {
+  AppPagination,
+  CenterWrapper,
 } from '@m11g/library'
 
 const props = withDefaults(defineProps<{
@@ -27,7 +28,7 @@ const title = computed(() => {
     return 'Overig nieuws'
   }
   else if (props.variant === 'latest') {
-    return 'Laatste nieuws'
+    return 'Nieuws'
   }
   else {
     return 'Nieuws'
