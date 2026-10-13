@@ -149,12 +149,16 @@ onUnmounted(() => {
 
 <style lang="css" scoped>
 header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: var(--z-header);
   padding-block: var(--spacing-4);
   line-height: var(--line-height-heading);
   color: var(--color-white);
   background: var(--color-landmark-bg);
 
   @media (--lg) {
+    position: relative;
     padding-block: var(--spacing-6);
   }
 }
@@ -253,6 +257,7 @@ nav {
   font-family: var(--font-family-heading);
   font-size: var(--font-size-h4);
   font-weight: var(--font-weight-bold);
+  color: var(--color-white);
   background-color: var(--color-landmark-bg);
   border: 0;
   box-shadow: 0 0 0 2px var(--color-black);

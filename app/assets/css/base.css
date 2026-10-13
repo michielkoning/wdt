@@ -6,6 +6,6 @@
 @import "./elements//_base.css";
 @import "./vendors/_base.css";
 
-html {
-  scroll-behavior: auto;
+:root {
+  color-scheme: light;
 }

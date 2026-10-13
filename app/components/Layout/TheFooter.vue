@@ -1,5 +1,8 @@
 <script lang="ts" setup>
 import { CenterWrapper, AppButton } from '@m11g/library'
+
+const subject = encodeURI('Inschrijven voor de wdt nieuwsbrief')
+const body = encodeURI('Ik wil me graag inschrijven voor de nieuwsbrief van WDT.')
 </script>
 
 <template>
@@ -7,29 +10,34 @@ import { CenterWrapper, AppButton } from '@m11g/library'
     <center-wrapper>
       <ol>
         <li>
+          <h2>Altijd op de hoogte?</h2>
+          <div>
+            <app-button
+              title="Inschrijven op de mailinglist"
+              theme="secondary"
+              :href="`mailto:info@wdttoneel.nl?body=${body}&subject=${subject}`"
+              :external="true"
+              class="btn"
+            />
+          </div>
+        </li>
+        <li>
           <h2>Meespelen bij WDT?</h2>
           <div>
             <app-button
-              title="Meespelen bij WDT"
+              title="Over bij WDT"
               theme="secondary"
               to="/over-wdt"
               class="btn"
             />
           </div>
-          <a
-            href="mailto:info@wdttoneel.nl"
-            class="link"
-          >info@wdttoneel.nl</a>
-        </li>
-
-        <li>
-          <h2>Adres</h2>
-          Theater De Wilde Wereld<br>
-          Burgtstraat 1<br>
-          6701 DA Wageningen<br>
         </li>
         <li>
           <follow-us />
+        </li>
+        <li>
+          Contact<br>
+          <a href="mailto:info@wdttoneel.nl">info@wdttoneel.nl</a>
         </li>
       </ol>
     </center-wrapper>
@@ -57,9 +65,12 @@ ol {
   @mixin list-reset;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16em, 1fr));
   gap: var(--spacing-8) var(--spacing-4);
   justify-content: space-between;
   margin: 0;
+
+  @media (--md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 </style>

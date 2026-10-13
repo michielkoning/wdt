@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <h2>Volg ons</h2>
+  <div class="follow-us">
     <div class="icons">
       <nuxt-link
         to="https://www.instagram.com/wdttoneel/"
@@ -20,6 +19,9 @@
           name="streamline-logos:facebook-logo-2"
         />
       </nuxt-link>
+      <div class="text">
+        Volg ons op Facebook en Instagram
+      </div>
     </div>
   </div>
 </template>
@@ -38,6 +40,11 @@ svg {
   inline-size: 1em;
   block-size: 1em;
   aspect-ratio: 1;
+  margin-block-start: var(--spacing-1);
   font-size: 2em;
+}
+
+.text {
+  max-inline-size: 12em;
 }
 </style>
