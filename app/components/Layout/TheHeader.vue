@@ -66,12 +66,12 @@ onUnmounted(() => {
         <button
           class="btn-open"
           popovertarget="menu"
+          aria-label="Menu"
         >
           <icon
             class="icon"
             name="solar:hamburger-menu-linear"
           />
-          Menu
         </button>
 
         <nav
@@ -152,7 +152,7 @@ header {
   position: sticky;
   inset-block-start: 0;
   z-index: var(--z-header);
-  padding-block: var(--spacing-4);
+  padding-block: var(--spacing-2);
   line-height: var(--line-height-heading);
   color: var(--color-white);
   background: var(--color-landmark-bg);
@@ -170,12 +170,11 @@ h1 {
 .wrapper {
   display: flex;
   gap: var(--spacing-3);
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
 
   @media (--md) {
     flex-direction: column;
-    align-items: center;
   }
 
   @media (--lg) {
@@ -190,7 +189,7 @@ h1 {
   align-items: center;
   padding: var(--spacing-2) var(--spacing-4);
   color: currentcolor;
-  border: 2px solid currentcolor;
+  translate: var(--spacing-4) 0;
 
   @media (--md) {
     display: none;
