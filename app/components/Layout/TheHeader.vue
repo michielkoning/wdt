@@ -187,7 +187,8 @@ h1 {
   display: flex;
   gap: var(--spacing-2);
   align-items: center;
-  padding: var(--spacing-2) var(--spacing-4);
+  padding: var(--spacing-1) var(--spacing-4);
+  font-size: 1.5em;
   color: currentcolor;
   translate: var(--spacing-4) 0;
 
