@@ -25,7 +25,7 @@
     "@stylistic/stylelint-config": "^5.0.0",
     "eslint": "^10.12.0",
     "eslint-plugin-vue": "^10.11.1",
-    "nuxt": "4.5.2",
+    "nuxt": "^4.5.2",
     "postcss-custom-media-generator": "^1.1.0",
     "postcss-html": "^2.0.0",
     "postcss-import": "^17.0.0",
@@ -43,7 +43,7 @@
     "vue-tsc": "^3.3.13"
   },
   "dependencies": {
-    "@m11g/library": "^0.0.36",
+    "@m11g/library": "^0.0.37",
     "@netlify/blobs": "^11.1.4",
     "@vee-validate/i18n": "^4.15.1",
     "@vee-validate/nuxt": "^4.15.1",
