@@ -101,14 +101,16 @@ const imageViewTransitioName = computed(() => {
     </block-wrapper>
     <div class="secondary">
       <div class="block-gallery">
-        <center-wrapper>
-          <app-gallery
-            v-if="data.gallery.length"
-            class="gallery"
-            :title="data.title"
-            :images="data.gallery"
-          />
-        </center-wrapper>
+        <div class="block-gallery-content">
+          <center-wrapper>
+            <app-gallery
+              v-if="data.gallery.length"
+              class="gallery"
+              :title="data.title"
+              :images="data.gallery"
+            />
+          </center-wrapper>
+        </div>
       </div>
       <center-wrapper>
         <comments-list
@@ -172,6 +174,19 @@ h1 {
 
 .block-gallery {
   background-color: var(--color-black);
+}
+
+.block-gallery-content {
+  animation: gallery-in-view linear forwards;
+  animation-timeline: view();
+  animation-range: 0 36%;
+}
+
+@keyframes gallery-in-view {
+  from {
+    opacity: 0;
+    scale: 0.8;
+  }
 }
 
 dt {
