@@ -185,7 +185,7 @@ h1 {
 @keyframes gallery-in-view {
   from {
     opacity: 0;
-    scale: 0.8;
+    scale: 0.9;
   }
 }
 
